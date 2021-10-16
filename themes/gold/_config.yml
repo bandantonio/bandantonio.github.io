@@ -1,0 +1,29 @@
+title: "Hi, I'm Anton"
+subtitle: "👨‍💻 Coding - 🗺️ Travelling - 🏂 Snowboarding - 📚 Reading"
+owner: "Technical Writer and practicing Javascript coder"
+info: "Welcome to my personal website. I'm an experienced Technical Writer and practicing Javascript coder from Ukraine 🇺🇦"
+
+# menu:
+#   Works: /Works
+#   About: /About
+
+max_post: 4
+
+theme-color: 0FA0CE
+
+# Define path to user css
+#(could be also located outside of theme)
+# Relative to source/ directory
+usercss: css/user.css
+
+footer: true
+github: https://github.com/bandantonio
+linkedin: https://linkedin.com/in/bandantonio
+
+switch_light: ☀️
+switch_dark: 🌑
+
+article:
+  thumbnail: true
+
+disqus_enabled: false
