@@ -4,9 +4,6 @@ html {
 
 img {
   max-width: 100%;
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
-  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
   margin-bottom: 1%;
 }
 
@@ -36,6 +33,17 @@ img {
     display: block;
     margin: auto;
     float: none !important;
+  }
+
+  img[alt$="profile_photo"] {
+    width: 30%;
+    display: block;
+    margin: 0 auto 2%;
+    border-radius: 50%;
+  }
+
+  p.summary {
+    text-align: center;
   }
 }
 

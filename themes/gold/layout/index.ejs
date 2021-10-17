@@ -1,9 +1,17 @@
 <div class="row">
+
   <div class="column">
-    <p><%= theme.info %></p>
-    <p><%= theme.subtitle %></p>
-    <p><%= theme.desc %></p>
+    <% site.pages.filter(function(page) { %>
+      <% if (page.title == 'summary') { %>
+        <div class="summary-content">
+          <%- page.content %>
+        </div>
+        <% } %>
+    <% }) %>
   </div>
+
+  <p class="summary"><%= theme.summary %></p>
+
 </div>
 
 <h3>Recent Posts</h3>
