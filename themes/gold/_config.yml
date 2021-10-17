@@ -9,12 +9,12 @@ info: "Welcome to my personal website. I'm an experienced Technical Writer and p
 
 max_post: 4
 
-theme-color: 0FA0CE
+theme_color: 0FA0CE
 
 # Define path to user css
 #(could be also located outside of theme)
 # Relative to source/ directory
-usercss: css/user.css
+# usercss: css/user.css
 
 footer: true
 github: https://github.com/bandantonio
