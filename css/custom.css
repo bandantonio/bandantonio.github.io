@@ -117,7 +117,7 @@ img {
 .mode {
   position: absolute;
   display: block;
-  cursor: poRoboto;
+  cursor: pointer;
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
      -khtml-user-select: none; /* Konqueror HTML */
