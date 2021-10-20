@@ -1,9 +1,9 @@
 title: "Hi, I'm Anton"
 summary: "👨‍💻 Coding - 🗺️ Travelling - 🏂 Snowboarding - 📚 Reading"
 
-# menu:
+menu:
 #   Works: /Works
-#   About: /About
+  About: pages/about/
 
 max_post: 4
 
