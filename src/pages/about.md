@@ -1,3 +1,7 @@
+---
+title: About me
+---
+
 Hello there.
 
 ## Detailed information is under construction
