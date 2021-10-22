@@ -8,6 +8,8 @@ menu:
 max_post: 4
 
 theme_color: 0FA0CE
+
+favicon_ico: images/favicon.ico
 favicon: images/favicon.png
 favicon_apple: images/apple-touch-icon.png
 # Define path to user css
