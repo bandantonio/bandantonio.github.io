@@ -11,11 +11,11 @@
 
   var title = title = config.title;
   if (is_archive()){
-    title = 'All Posts - ' + config.author;
+    title = 'All Posts - ' + config.title;
   } else if (is_post()){
     title = page.title;
   } else if (is_page()){
-    title = page.title + ' - ' + config.author;
+    title = page.title + ' - ' + config.title;
   } else if (is_tag()){
     title = 'Posts Related to ' + page.tag;
   }
