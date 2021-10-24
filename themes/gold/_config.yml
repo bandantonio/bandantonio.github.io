@@ -18,9 +18,9 @@ favicon_apple: images/apple-touch-icon.png
 # usercss: css/user.css
 
 footer: true
-github: https://github.com/bandantonio
-linkedin: https://linkedin.com/in/bandantonio
-medium: https://medium.com/@mister_gold
+github: bandantonio
+linkedin: bandantonio
+medium: mister_gold
 
 switch_light: ☀️
 switch_dark: 🌑
