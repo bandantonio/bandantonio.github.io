@@ -15,7 +15,7 @@ favicon_apple: images/apple-touch-icon.png
 # Define path to user css
 #(could be also located outside of theme)
 # Relative to source/ directory
-# usercss: css/user.css
+usercss: css/user.css
 
 footer: true
 github: bandantonio
