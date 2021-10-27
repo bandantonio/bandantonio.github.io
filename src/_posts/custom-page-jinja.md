@@ -11,7 +11,7 @@ tags:
 
 Hi everyone!
 
-Today I want to tell you how to create your own custom page in [Pelican]({filename}/pelican-on-gitlab-pages.md) using Jinja2 templating language.
+Today I want to tell you how to create your own custom page in [Pelican](./pelican-on-gitlab-pages.md) using Jinja2 templating language.
 
 ## Introduction
 
