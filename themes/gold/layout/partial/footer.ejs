@@ -25,6 +25,12 @@
       </a>
       <% } %>
 
+      <% if (theme.s_overflow) { %>
+      <a class="ml-0 footer-link icon" href="https://stackoverflow.com/users/<%- theme.s_overflow %>" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="Stack Overflow">
+        <i class="icon-stackoverflow"></i>
+      </a>
+      <% } %>
+
       <% if (theme.medium) { %>
       <a class="ml-0 footer-link icon" href="https://medium.com/@<%- theme.medium %>" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="Medium">
         <i class="icon-medium"></i>
