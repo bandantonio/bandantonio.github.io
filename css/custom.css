@@ -228,27 +228,34 @@ a.footer-link:focus {
   cursor: pointer;
 }
 
-.icon-heart:before {
+.icon-heart::before {
   content: '\e801';
   color: #ff4d4d;
 }
 
-.icon-hexo:before {
+.icon-hexo::before {
   content: '\e800';
   color: #03adfc;
 }
 
 .icon-github::before {
   content: '\f09b';
+  color: #797979;
 }
 
-.icon-linkedin:before {
+.icon-linkedin::before {
   content: '\f30c';
   color: #0073b1;
 }
 
-.icon-medium:before {
+.icon-stackoverflow::before {
+  content: '\f16c';
+  color: #F58025;
+}
+
+.icon-medium::before {
   content: '\f23a';
+  color: #797979;
 }
 
 body {
