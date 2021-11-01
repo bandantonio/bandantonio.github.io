@@ -4,7 +4,7 @@ title: About me
 
 Hello there.
 
-## Detailed information is under construction
+***Detailed information is under construction***
 
 ## Short facts
 
