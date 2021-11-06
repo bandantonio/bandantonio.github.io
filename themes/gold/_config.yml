@@ -2,7 +2,6 @@ title: "Hi, I'm Anton"
 summary: "👨‍💻 Coding - 🗺️ Travelling - 🏂 Snowboarding - 📚 Reading"
 
 menu:
-#   Works: /Works
   About: pages/about
 
 max_post: 4
@@ -23,8 +22,8 @@ linkedin: bandantonio
 s_overflow: 11147608/anton-zolotukhin
 medium: mister_gold
 
-switch_light: ☀️
-switch_dark: 🌑
+switch_light: lightbulb
+switch_dark: lightbulb
 
 article:
   thumbnail: true
