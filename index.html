@@ -50,6 +50,9 @@
 <link rel="stylesheet" href="/css/custom.css">
 
   
+<link rel="stylesheet" href="/css/icons.css">
+
+  
 <link rel="stylesheet" href="/css/prism-okaidia.css">
 
   
@@ -114,27 +117,27 @@
         <div class="row">
   <div class="two columns" style="max-width: 50px">
     <h1 class="mt-2 mode">
-      <div onclick=setDarkMode(true) id="darkBtn">🌑</div>
-      <div onclick=setDarkMode(false) id="lightBtn" class=hidden>☀️</div>
-      <script >
-        if (localStorage.getItem('preferredTheme') == 'dark') {
-          setDarkMode(true)
-        }
-        function setDarkMode(isDark) {
-          var darkBtn = document.getElementById('darkBtn')
-          var lightBtn = document.getElementById('lightBtn')
-          if (isDark) {
-            lightBtn.style.display = "block"
-            darkBtn.style.display = "none"
-            localStorage.setItem('preferredTheme', 'dark');
-          } else {
-            lightBtn.style.display = "none"
-            darkBtn.style.display = "block"
-            localStorage.removeItem('preferredTheme');
-          }
-          document.body.classList.toggle("darkmode");
-        }
-      </script>
+      <div onclick=setDarkMode(true) id="darkBtn"><i class="icon-lightbulb"></i></div>
+<div onclick=setDarkMode(false) id="lightBtn" class=hidden><i class="icon-lightbulb"></i></div>
+<script >
+  if (localStorage.getItem('preferredTheme') == 'dark') {
+    setDarkMode(true)
+  }
+  function setDarkMode(isDark) {
+    var darkBtn = document.getElementById('darkBtn')
+    var lightBtn = document.getElementById('lightBtn')
+    if (isDark) {
+      lightBtn.style.display = "block"
+      darkBtn.style.display = "none"
+      localStorage.setItem('preferredTheme', 'dark');
+    } else {
+      lightBtn.style.display = "none"
+      darkBtn.style.display = "block"
+      localStorage.removeItem('preferredTheme');
+    }
+    document.body.classList.toggle("darkmode");
+  }
+</script>
     </h1>
   </div>
 
@@ -188,7 +191,7 @@ I’m a top-grade Technical Writer and practicing Javascript coder from Ukraine 
 <div class="row">
 
   <div class="three columns left lit">
-    <p class="bottom">Nov 1, 2021</p>
+    <p class="bottom">Nov 6, 2021</p>
   </div>
   <div class="nine columns left mb-3">
     <a href="/posts/hello-world-again/" >
