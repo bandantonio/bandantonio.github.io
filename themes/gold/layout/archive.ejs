@@ -1,7 +1,27 @@
+<div class="row">
+  <div class="eight columns">
+    <h2>All Posts</h2>
+  </div>
+  <div class="four columns">
+    <div id="legacy_toggle" class="legacy_posts" onclick=toggleLegacyPosts()><i class="icon-<%- theme.switch_light %>"></i> Legacy posts</div>
+  </div>
+</div>
 
-<h2>All Posts</h2>
-
+<script>
+  function toggleLegacyPosts() {
+    var list = document.querySelector('.legacy_posts_list');
+    var toggle = document.getElementById('legacy_toggle');
+    if (list.classList.contains('hidden')) {
+      list.classList.remove('hidden');
+      toggle.style.color = '#fcbb17';
+    } else {
+      list.classList.add('hidden');
+      toggle.style.color = '';
+    }
+  }
+</script>
 <% page.posts.each(function(post) { %>
+  <% if (!post.tags.findOne({name: "archive"})) { %>
     <article>
       <div class="row">
 
@@ -19,5 +39,31 @@
         </div>
       </div>
     </article>
+  <% } %>
 <% }) %>
+
+<div class="legacy_posts_list hidden">
+  <h2>Legacy Posts</h2>
+  <% page.posts.each(function(post) { %>
+    <% if (post.tags.findOne({name: "archive"})) { %>
+      <article>
+        <div class="row">
+
+          <div class="three columns left lit">
+            <p class="bottom"><%- full_date(post.date, 'll') %></p>
+          </div>
+          <div class="nine columns left mb-3">
+            <a href="<%- url_for(post.path) %>" class="">
+              <% if (post.title == "") { %>
+                no title
+              <% } else { %>
+                <%- post.title %>
+              <% } %>
+            </a>
+          </div>
+        </div>
+      </article>
+    <% } %>
+  <% }) %>
+</div>
 <%- partial('partial/pagination', {type: 'page'}) %>

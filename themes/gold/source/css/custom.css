@@ -1,17 +1,3 @@
-#lightBtn i {
-  color: #fcbb17;
-  text-shadow: 1px 1px 10px #fcbb17;
-}
-
-html {
-  overflow: auto;
-}
-
-img {
-  width: 100%;
-  margin-bottom: 1%;
-}
-
 @media (min-width: 550px) {
   /*
   Side by side gallery
@@ -235,6 +221,10 @@ a.footer-link:focus {
   color: #797979;
 }
 
+html {
+  overflow: auto;
+}
+
 body {
   position: absolute;
   top: 10px;
@@ -250,6 +240,11 @@ body {
 body.darkmode {
   background: rgb(34, 34, 38);
   color: rgb(230, 230, 230);
+}
+
+img {
+  width: 100%;
+  margin-bottom: 1%;
 }
 
 .trans {
@@ -284,7 +279,10 @@ body.darkmode {
   text-align: center;
 }
 
-
+#lightBtn i {
+  color: #fcbb17;
+  text-shadow: 1px 1px 10px #fcbb17;
+}
 
 @media (min-width: 550px) {
   .posisi {
