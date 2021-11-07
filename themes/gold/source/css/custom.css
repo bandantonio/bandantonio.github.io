@@ -3,6 +3,16 @@
   text-shadow: 1px 1px 10px #fcbb17;
 }
 
+html {
+  overflow: auto;
+}
+
+img {
+  min-width: 100%;
+  max-width: 100%;
+  margin-bottom: 1%;
+}
+
 @media (min-width: 550px) {
   /*
   Side by side gallery
