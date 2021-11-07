@@ -164,10 +164,30 @@
 </div>
 
         <div class="trans">
-          
-<h2>All Posts</h2>
+          <div class="row">
+  <div class="eight columns">
+    <h2>All Posts</h2>
+  </div>
+  <div class="four columns">
+    <div id="legacy_toggle" class="legacy_posts" onclick=toggleLegacyPosts()><i class="icon-lightbulb"></i> Legacy posts</div>
+  </div>
+</div>
 
+<script>
+  function toggleLegacyPosts() {
+    var list = document.querySelector('.legacy_posts_list');
+    var toggle = document.getElementById('legacy_toggle');
+    if (list.classList.contains('hidden')) {
+      list.classList.remove('hidden');
+      toggle.style.color = '#fcbb17';
+    } else {
+      list.classList.add('hidden');
+      toggle.style.color = '';
+    }
+  }
+</script>
 
+  
     <article>
       <div class="row">
 
@@ -183,7 +203,9 @@
         </div>
       </div>
     </article>
+  
 
+  
     <article>
       <div class="row">
 
@@ -199,7 +221,9 @@
         </div>
       </div>
     </article>
+  
 
+  
     <article>
       <div class="row">
 
@@ -215,7 +239,9 @@
         </div>
       </div>
     </article>
+  
 
+  
     <article>
       <div class="row">
 
@@ -231,39 +257,61 @@
         </div>
       </div>
     </article>
+  
 
-    <article>
-      <div class="row">
+  
 
-        <div class="three columns left lit">
-          <p class="bottom">May 18, 2012</p>
+  
+
+
+<div class="legacy_posts_list hidden">
+  <h2>Legacy Posts</h2>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <article>
+        <div class="row">
+
+          <div class="three columns left lit">
+            <p class="bottom">May 18, 2012</p>
+          </div>
+          <div class="nine columns left mb-3">
+            <a href="/posts/wrc-legends-burns-mcrae-park/" class="">
+              
+                Легенды WRC с Туманного Альбиона - Бёрнс, МакРэй, Парк
+              
+            </a>
+          </div>
         </div>
-        <div class="nine columns left mb-3">
-          <a href="/posts/wrc-legends-burns-mcrae-park/" class="">
-            
-              Легенды WRC с Туманного Альбиона - Бёрнс, МакРэй, Парк
-            
-          </a>
-        </div>
-      </div>
-    </article>
+      </article>
+    
+  
+    
+      <article>
+        <div class="row">
 
-    <article>
-      <div class="row">
-
-        <div class="three columns left lit">
-          <p class="bottom">Dec 31, 2011</p>
+          <div class="three columns left lit">
+            <p class="bottom">Dec 31, 2011</p>
+          </div>
+          <div class="nine columns left mb-3">
+            <a href="/posts/tu-144-first-flight-anniversary/" class="">
+              
+                43-я годовщина первого полета ТУ-144
+              
+            </a>
+          </div>
         </div>
-        <div class="nine columns left mb-3">
-          <a href="/posts/tu-144-first-flight-anniversary/" class="">
-            
-              43-я годовщина первого полета ТУ-144
-            
-          </a>
-        </div>
-      </div>
-    </article>
-
+      </article>
+    
+  
+</div>
 <div class="pagination-bar">
   <ul class="pagination">
     

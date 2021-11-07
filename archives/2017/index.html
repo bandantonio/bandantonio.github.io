@@ -164,10 +164,30 @@
 </div>
 
         <div class="trans">
-          
-<h2>All Posts</h2>
+          <div class="row">
+  <div class="eight columns">
+    <h2>All Posts</h2>
+  </div>
+  <div class="four columns">
+    <div id="legacy_toggle" class="legacy_posts" onclick=toggleLegacyPosts()><i class="icon-lightbulb"></i> Legacy posts</div>
+  </div>
+</div>
 
+<script>
+  function toggleLegacyPosts() {
+    var list = document.querySelector('.legacy_posts_list');
+    var toggle = document.getElementById('legacy_toggle');
+    if (list.classList.contains('hidden')) {
+      list.classList.remove('hidden');
+      toggle.style.color = '#fcbb17';
+    } else {
+      list.classList.add('hidden');
+      toggle.style.color = '';
+    }
+  }
+</script>
 
+  
     <article>
       <div class="row">
 
@@ -183,7 +203,9 @@
         </div>
       </div>
     </article>
+  
 
+  
     <article>
       <div class="row">
 
@@ -199,7 +221,17 @@
         </div>
       </div>
     </article>
+  
 
+
+<div class="legacy_posts_list hidden">
+  <h2>Legacy Posts</h2>
+  
+    
+  
+    
+  
+</div>
 <div class="pagination-bar">
   <ul class="pagination">
     
