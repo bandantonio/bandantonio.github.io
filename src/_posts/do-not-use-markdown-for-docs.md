@@ -15,7 +15,7 @@ Hi everyone!
 
 Today I want to explain why Markdown is a poor writing tool that you should avoid using in your documentation.
 
-Markdown is the most renowned lightweight markup language on the Internet. It is used in readme documents, introduction guides, wiki pages, blog posts, comments. Its popularity is based on simplicity and low writing threshold. You can learn all the syntax in [60 seconds](http://commonmark.org/help/) and start writing your first document with your favorite IDE almost in no time. This is especially good when composing quick notes to describe what the product does and basic usage commands. GitHub and [GitLab](./pelican-on-gitlab-pages.md) even allow developers to automatically initiate new repositories with README.md file, though both projects support a multitude of languages, including Asciidoc and reStructuredText.
+Markdown is the most renowned lightweight markup language on the Internet. It is used in readme documents, introduction guides, wiki pages, blog posts, comments. Its popularity is based on simplicity and low writing threshold. You can learn all the syntax in [60 seconds](http://commonmark.org/help/) and start writing your first document with your favorite IDE almost in no time. This is especially good when composing quick notes to describe what the product does and basic usage commands. GitHub and [GitLab](/posts/pelican-on-gitlab-pages/) even allow developers to automatically initiate new repositories with README.md file, though both projects support a multitude of languages, including Asciidoc and reStructuredText.
 
 Let me guess your question - how can such a popular tool be so bad? Does it really have many drawbacks? In fact, there are more of them than you might imagine.
 
