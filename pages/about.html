@@ -71,16 +71,47 @@
 
   <style>
   a:not(.icon) {
-    text-decoration-color: #0FA0CE;
+    color: #03adfc;
+    text-decoration: none;
     background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0) 50%,
-      #0FA0CE 50%
+      #03adfc 50%
     );
   }
-  blockquote {
-    border-left: 8px solid #0FA0CE;
+
+  body a:not(.icon):hover {
+    color: #fff;
   }
+
+  #lightBtn i {
+    color: #03adfc;
+    text-shadow: 1px 1px 10px #03adfc;
+  }
+
+  body.darkmode a:not(.icon) {
+    color: #fcbb17;
+    text-decoration: none;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      #fcbb17 50%
+    );
+  }
+
+  body.darkmode a:not(.icon):hover {
+    color: #000;
+  }
+
+  body.darkmode #lightBtn i {
+    color: #fcbb17;
+    text-shadow: 1px 1px 10px #fcbb17;
+  }
+
+  blockquote {
+    border-left: 8px solid #03adfc;
+  }
+
   .button.button-primary:hover,
   button.button-primary:hover,
   input[type="submit"].button-primary:hover,
@@ -91,8 +122,8 @@
   input[type="submit"].button-primary:focus,
   input[type="reset"].button-primary:focus,
   input[type="button"].button-primary:focus {
-    background-color: #0FA0CE;
-    border-color: #0FA0CE;
+    background-color: #03adfc;
+    border-color: #03adfc;
   }
   input[type="email"]:focus,
   input[type="number"]:focus,
@@ -103,7 +134,7 @@
   input[type="password"]:focus,
   textarea:focus,
   select:focus {
-    border: 1px solid #0FA0CE;
+    border: 1px solid #03adfc;
   }
 </style>
 
