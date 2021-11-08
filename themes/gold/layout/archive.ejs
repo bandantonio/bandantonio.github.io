@@ -3,20 +3,18 @@
     <h2>All Posts</h2>
   </div>
   <div class="four columns">
-    <div id="legacy_toggle" class="legacy_posts" onclick=toggleLegacyPosts()><i class="icon-<%- theme.switch_light %>"></i> Legacy posts</div>
+    <div id="toggle_posts" class="legacy_posts" onclick=toggleLegacyPosts()>Show/hide legacy posts</div>
   </div>
 </div>
 
 <script>
   function toggleLegacyPosts() {
     var list = document.querySelector('.legacy_posts_list');
-    var toggle = document.getElementById('legacy_toggle');
+    var toggle = document.querySelector('.legacy_posts');
     if (list.classList.contains('hidden')) {
       list.classList.remove('hidden');
-      toggle.style.color = '#fcbb17';
     } else {
       list.classList.add('hidden');
-      toggle.style.color = '';
     }
   }
 </script>

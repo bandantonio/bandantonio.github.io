@@ -6,7 +6,8 @@ menu:
 
 max_post: 4
 
-theme_color: 0FA0CE
+theme_color: 03adfc
+theme_dark_color: fcbb17
 
 favicon_ico: images/favicon.ico
 favicon: images/favicon.png

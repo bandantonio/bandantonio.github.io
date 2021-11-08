@@ -247,6 +247,10 @@ img {
   margin-bottom: 1%;
 }
 
+.legacy_posts:hover {
+  cursor: pointer;
+}
+
 .trans {
   animation: transitionPlay 0.7s;
 }
@@ -277,11 +281,6 @@ img {
 
 .posisi {
   text-align: center;
-}
-
-#lightBtn i {
-  color: #fcbb17;
-  text-shadow: 1px 1px 10px #fcbb17;
 }
 
 @media (min-width: 550px) {

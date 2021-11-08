@@ -1,15 +1,46 @@
 <style>
   a:not(.icon) {
-    text-decoration-color: #<%= theme.theme_color %>;
+    color: #<%= theme.theme_color %>;
+    text-decoration: none;
     background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0) 50%,
       #<%= theme.theme_color %> 50%
     );
   }
+
+  body a:not(.icon):hover {
+    color: #fff;
+  }
+
+  #lightBtn i {
+    color: #<%= theme.theme_color %>;
+    text-shadow: 1px 1px 10px #<%= theme.theme_color %>;
+  }
+
+  body.darkmode a:not(.icon) {
+    color: #<%= theme.theme_dark_color %>;
+    text-decoration: none;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      #<%= theme.theme_dark_color %> 50%
+    );
+  }
+
+  body.darkmode a:not(.icon):hover {
+    color: #000;
+  }
+
+  body.darkmode #lightBtn i {
+    color: #<%= theme.theme_dark_color %>;
+    text-shadow: 1px 1px 10px #<%= theme.theme_dark_color %>;
+  }
+
   blockquote {
     border-left: 8px solid #<%= theme.theme_color %>;
   }
+
   .button.button-primary:hover,
   button.button-primary:hover,
   input[type="submit"].button-primary:hover,
