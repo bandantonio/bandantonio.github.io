@@ -9,7 +9,7 @@ language: en
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://mister-gold.pro
+url: https://bandantonio.github.io
 root: /
 permalink: posts/:name/
 permalink_defaults:
