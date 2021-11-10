@@ -27,7 +27,7 @@
   }
 
   img[alt$="profile_photo"] {
-    width: 30%;
+    width: 200px;
     display: block;
     margin: 0 auto 2%;
     border-radius: 50%;
@@ -35,6 +35,15 @@
 
   p.summary {
     text-align: center;
+  }
+
+  .recent_posts {
+    margin-bottom: 1em;
+  }
+
+  #all_posts {
+    border-top: .2em solid #ffa500;
+    padding: .5em 0;
   }
 }
 
@@ -245,6 +254,11 @@ body.darkmode {
 img {
   width: 100%;
   margin-bottom: 1%;
+}
+
+.legacy_posts {
+  font-size: .8em;
+  text-align: right;
 }
 
 .legacy_posts:hover {

@@ -24,6 +24,11 @@
 */
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/raleway.ttf");
+}
+
 .container {
   position: relative;
   width: 100%;
@@ -196,11 +201,12 @@ html {
 }
 
 body {
-  font-size: 1.6em;
+  font-size: 1.4em;
   /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.6;
   font-weight: 400;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
   color: #222;
 }
 
@@ -209,12 +215,12 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 1.5rem;
-  font-family: 'Play', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 400;
 }
 
 h1 {
-  font-size: 3.4rem;
+  font-size: 2.8rem;
   line-height: 1.2;
 }
 
