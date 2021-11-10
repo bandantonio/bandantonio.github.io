@@ -26,7 +26,7 @@
     float: none !important;
   }
 
-  img[alt$="profile_photo"] {
+  .profile_photo {
     width: 200px;
     display: block;
     margin: 0 auto 2%;

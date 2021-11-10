@@ -5,4 +5,4 @@ title: summary
 Welcome to my personal website.
 I'm a top-grade Technical Writer and practicing Javascript coder from Ukraine 🇺🇦
 
-[![profile_photo](images/avatar.webp)](images/avatar.jpg)
+<img class="profile_photo" src="images/avatar.webp" width="200" height="200">
