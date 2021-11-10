@@ -27,6 +27,7 @@
 @font-face {
   font-family: "Raleway";
   src: url("../fonts/raleway.ttf");
+  font-display: swap;
 }
 
 .container {
