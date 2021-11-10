@@ -5,4 +5,4 @@ title: summary
 Welcome to my personal website.
 I'm a top-grade Technical Writer and practicing Javascript coder from Ukraine 🇺🇦
 
-<img class="profile_photo" alt="profile_photo" src="images/avatar.jpg" width="200" height="200">
+![profile_photo](images/avatar.jpg)
