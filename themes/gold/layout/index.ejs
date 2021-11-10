@@ -14,8 +14,9 @@
 
 </div>
 
-<h3>Recent Posts</h3>
+<h1>Recent Posts</h1>
 
+<div class="recent_posts">
 <% site.posts.sort('date', 'desc').limit(theme.max_post).forEach(function(post){ %>
 <div class="row">
 
@@ -33,5 +34,6 @@
   </div>
 </div>
 <% }) %>
+</div>
 
-<h4> <a href="<%= config.root %>archives">All Posts</a></h4>
+<a id="all_posts" href="<%= config.root %>archives">All Posts</a>
