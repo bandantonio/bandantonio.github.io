@@ -9,7 +9,7 @@
   
   <link rel="canonical" href="https://mister-gold.pro/posts/custom-page-jinja/">
   
-  <meta name="description" content="Hi everyone! Today I want to tell you how to create your own custom page in Pelican using Jinja2 templating language. Introduction In my case, the goa">
+  <meta name="description" content="Hi everyone! Today I want to tell you how to create your own custom page in Pelican using Jinja2 templating language. Introduction¶ In my case, the go">
   
   
   <meta name="author" content="John Doe">
@@ -20,14 +20,14 @@
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Pelican Custom Page Using Jinja2" />
   
-  <meta property="og:description" content="Hi everyone! Today I want to tell you how to create your own custom page in Pelican using Jinja2 templating language. Introduction In my case, the goa">
+  <meta property="og:description" content="Hi everyone! Today I want to tell you how to create your own custom page in Pelican using Jinja2 templating language. Introduction¶ In my case, the go">
   
   <meta property="og:url" content="https://mister-gold.pro/posts/custom-page-jinja/" />
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Pelican Custom Page Using Jinja2">
   
-  <meta name="twitter:description" content="Hi everyone! Today I want to tell you how to create your own custom page in Pelican using Jinja2 templating language. Introduction In my case, the goa">
+  <meta name="twitter:description" content="Hi everyone! Today I want to tell you how to create your own custom page in Pelican using Jinja2 templating language. Introduction¶ In my case, the go">
   
   
   <meta name="twitter:image" content="https://mister-gold.proundefined">
@@ -196,9 +196,9 @@
   <p><img src="/images/2017/11/custom-page-jinja2-title.png" alt="Pelican Custom Page Using Jinja2"></p>
 <p>Hi everyone!</p>
 <p>Today I want to tell you how to create your own custom page in <a href="/posts/pelican-on-gitlab-pages/">Pelican</a> using Jinja2 templating language.</p>
-<h2 id="introduction">Introduction</h2>
+<h2 id="introduction">Introduction<a class="header-anchor" href="#introduction">¶</a></h2>
 <p>In my case, the goal behind this idea was to create a resume/cv page based on a custom template that I didn’t want to include as a part of the main theme. I wanted to have a separate page that somehow resembles that in Linkedin, but with extended information about my knowledge, skills, and portfolio. At the same time, I thought on the reduction of excessive and not quite relevant information about my working experience from the Linkedin page. In fact, the whole creation and transformation process turned out to be simpler than I thought at first.</p>
-<h2 id="create-a-new-page">Create a New Page</h2>
+<h2 id="create-a-new-page">Create a New Page<a class="header-anchor" href="#create-a-new-page">¶</a></h2>
 <p>First of all, create a new page called <code>cv.md</code> with the following contents:</p>
 <pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">Title</span><span class="token punctuation">:</span> CV Mister Gold
 <span class="token key atrule">Date</span><span class="token punctuation">:</span> 2017<span class="token punctuation">-</span>10<span class="token punctuation">-</span>31 00<span class="token punctuation">:</span><span class="token number">01</span>
@@ -211,7 +211,7 @@
 <span class="token key atrule">Save_as</span><span class="token punctuation">:</span> cv/mister<span class="token punctuation">-</span>gold.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>This page contains default metadata with some additional attributes: <code>template</code>, <code>url</code> and <code>save_as</code>.</p>
 <p>The first one defines a template that will be used to generate this particular page (the details on how to create a template are covered below). The second one is used to define a URL to access this page. The third one points where the generated page will be saved. The latter two parameters are similar to <code>PAGE_URL</code> and <code>PAGE_SAVE_AS</code> parameters in <code>pelicanconf.py</code>.</p>
-<h2 id="create-a-new-base-template">Create a New Base Template</h2>
+<h2 id="create-a-new-base-template">Create a New Base Template<a class="header-anchor" href="#create-a-new-base-template">¶</a></h2>
 <p>This is an optional step. Base template is responsible for all “shared” elements located outside the current page (e.g. header, footer, common blocks in the sidebar, etc). As my blog has a non-default theme, a new base template was required to get rid of navigation links (where some contact details and download buttons can be added later). If you don’t need to customize the basic structure of the resume page, you can skip this step. However, if there are some modifications required or you want to change some blocks, the steps below will be similar.</p>
 <p>Create a file called <code>cv-base.html</code>. It will inherit the code from the <code>base.html</code> file except for header links (navigation). My code looks as follows (only changed part is shown):</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
@@ -253,7 +253,7 @@
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>All the navigation links were previously located under the <code>nav pull-right top-menu</code> class, so I deleted them. The interesting part here is content located in <code>&#123;% ... %&#125;</code> blocks. This is where Jinja2 does its magic - outputs contents of a template for the cv page. I will create this template later, as well as the <code>cv.css</code> stylesheet file, defined in the head section.</p>
-<h2 id="create-a-new-template">Create a New Template</h2>
+<h2 id="create-a-new-template">Create a New Template<a class="header-anchor" href="#create-a-new-template">¶</a></h2>
 <p>We created a page earlier, but it refers to a non-existing (yet) template. So, let’s fix it. Create a file called <code>cv-template.html</code>. This file defines how the cv page will look like and what elements will be visible for visitors.</p>
 <pre class="line-numbers language-jinja" data-language="jinja"><code class="language-jinja">&#123;% extends &#39;cv-base.html&#39; %&#125;
 
@@ -286,7 +286,7 @@
 <p>If everything was done right with the templating, you should see something like this:</p>
 <p><img src="/images/2017/11/blank-cv-template.png" alt="Blank CV Template" title="Blank CV Template"></p>
 <p>Great! Everything is OK, so we keep going.</p>
-<h3 id="add-basic-information">Add basic information</h3>
+<h3 id="add-basic-information">Add basic information<a class="header-anchor" href="#add-basic-information">¶</a></h3>
 <p>Create a file called <code>cv.html</code> and place it somewhere in your theme’s directory. This file will be used to store the main resume information, like your working experience, skills, portfolio, etc.</p>
 <p>Start with something simple:</p>
 <pre class="line-numbers language-jinja" data-language="jinja"><code class="language-jinja">&#123;% if not CV_DATA %&#125;
@@ -325,7 +325,7 @@
 <p>The first Jinja2 line here indicates that we want to import the <code>CV_DATA</code> section from the <code>cv_html</code> file and after that, we just pull values of parameters that <code>CV_DATA</code> section contains. HTML code is a wrapper to organize the output within an unordered list.</p>
 <p>Save all the changes, build Pelican files and check how the cv page looks now:</p>
 <p><img src="/images/2017/11/basic-info-cv-template.png" alt="Basic Info" title="Basic Info CV Template"></p>
-<h3 id="add-working-experience">Add Working Experience</h3>
+<h3 id="add-working-experience">Add Working Experience<a class="header-anchor" href="#add-working-experience">¶</a></h3>
 <p>To add information about your working experience we can use similar code blocks as described above with minor improvements: cycles and if-else statements. First of all, add the corresponding section to the data file:</p>
 <pre class="line-numbers language-none"><code class="language-none">&#123;% if not CV_WORK %&#125;
 &#123;% set CV_WORK &#x3D; [&#123;
@@ -371,9 +371,9 @@
 <p>Check the updated cv page again:</p>
 <p><img src="/images/2017/11/cv-two-workplaces.png" alt="Two Workplaces" title="Two Workplaces"></p>
 <p>Great, it works again! Note that the defined <code>if-else</code> statement works as it displays the project for Apple job. To get a bit more familiar with the code you can add real data and new sections and then reorder them.</p>
-<h3 id="add-education-skills-portfolio-testimonials">Add Education, Skills, Portfolio, Testimonials</h3>
+<h3 id="add-education-skills-portfolio-testimonials">Add Education, Skills, Portfolio, Testimonials<a class="header-anchor" href="#add-education-skills-portfolio-testimonials">¶</a></h3>
 <p>All these sections can be added using cycle construction with the similar HTML structure. However, if you have only one item cycles can be redundant and it is better to use direct template references using <code>&#123;&#123; parameter.value &#125;&#125;</code> to simplify the final code.</p>
-<h3 id="add-styling">Add Styling</h3>
+<h3 id="add-styling">Add Styling<a class="header-anchor" href="#add-styling">¶</a></h3>
 <p>Once all basic sections completed, you can add visual styling. Create a file named <code>cv.css</code> and place it under the css folder of theme directory. As a quick start tip, you can use any HTML resume template styling that is available across the Internet and then make necessary customizations. My file looks as follows:</p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">body</span><span class="token punctuation">&#123;</span><span class="token property">background</span><span class="token punctuation">:</span>#f0f0f0<span class="token punctuation">;</span><span class="token property">margin</span><span class="token punctuation">:</span>0<span class="token punctuation">;</span><span class="token property">padding</span><span class="token punctuation">:</span>0<span class="token punctuation">;</span><span class="token property">font-family</span><span class="token punctuation">:</span><span class="token string">'Helvetica Neue'</span><span class="token punctuation">,</span>Helvetica<span class="token punctuation">,</span>Arial<span class="token punctuation">;</span><span class="token property">line-height</span><span class="token punctuation">:</span>18px<span class="token punctuation">;</span><span class="token property">font-size</span><span class="token punctuation">:</span>12px<span class="token punctuation">;</span><span class="token property">color</span><span class="token punctuation">:</span>#222<span class="token punctuation">&#125;</span>
 <span class="token selector">h1,h2,h3,h4</span><span class="token punctuation">&#123;</span><span class="token property">margin</span><span class="token punctuation">:</span>0 0 15px 0<span class="token punctuation">;</span><span class="token property">padding</span><span class="token punctuation">:</span>0<span class="token punctuation">&#125;</span>
@@ -812,7 +812,7 @@
 &#123;% endblock content %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </details>
 <br />
-<h2 id="final-thoughts">Final Thoughts</h2>
+<h2 id="final-thoughts">Final Thoughts<a class="header-anchor" href="#final-thoughts">¶</a></h2>
 <p>As I mentioned at the beginning of this article, creating a page using Jinja2 templating only seems to be hard. As my experiment showed, the page structure can be designed in just a couple of hours. The current approach lacks some style and elegance, however, this was my first experience with Jinja2 based on real-world needs. I will refactor and complement the code as soon as I come up with the most functional way of importing and using data for the template.</p>
 <p>I hope that this tutorial helped you with a basic understanding of Jinja2 code and you were able to make your own page (not necessarily a resume page) with a custom template and styling.</p>
 <p>That’s all Folks! See you in new articles!</p>
