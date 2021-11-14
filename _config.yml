@@ -66,14 +66,14 @@ markdown:
     quotes: '“”‘’'
   enable_rules:
   disable_rules:
-  plugins:
+  # plugins:
   anchors:
     level: 2
     collisionSuffix: ''
-    permalink: false
+    permalink: true
     permalinkClass: 'header-anchor'
     permalinkSide: 'right'
-    permalinkSymbol: '⚓'
+    permalinkSymbol: '¶'
     case: 1
     separator: '-'
     
