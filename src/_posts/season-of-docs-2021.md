@@ -14,15 +14,76 @@ In this article, I would like to share the results of my third consecutive year 
 ## Completed Work
 
 1. **Updated OpenAPI-CLI Overview page**
-  This update brought readers a more clear and concise overview of the OpenAPI-CLI tool and its main features.
+  
+    This update brought readers a more clear and concise overview of the OpenAPI-CLI tool and its main features.
 
-    * Revised the page to be more consistent and organized following DRY principle (DRY: Do not repeat yourself)
-    * Updated structure of the document to be more better oriented for the first-time readers
-    * Removed information about installation as redundant (this information was added to the full-fledged quick start guide)
+      * Revised the page to be more consistent and organized following DRY principle (DRY: Do not repeat yourself)
+      * Updated structure of the document to be better oriented for the first-time readers
+      * Removed information about installation as redundant (this information was added to the full-fledged quick start guide)
+
+    Links to PR: [PR#334](https://github.com/Redocly/openapi-cli/pull/334)
+    
+    Public links: [Redocly OpenAPI CLI](https://redoc.ly/docs/cli/)
 
 1. **Created installation guide**
-  This update brought a fully-revised page that outlines all the possible installation variants to make it easier for a complete newcomer to start working with the OpenAPI-CLI as quickly as possible. The guide now combines installation methods depending on their type (local or global) listing the recommended ones at the top of the page.
+  
+    This update brought a fully-revised page that outlines all the possible installation variants to make it easier for a complete newcomer to start working with the OpenAPI-CLI as quickly as possible. The guide now combines installation methods depending on their type (local or global) listing the recommended ones at the top of the page.
+
+    Links to PR: [PR#337](https://github.com/Redocly/openapi-cli/pull/337)
+
+    Public links: [Installing OpenAPI CLI](https://redoc.ly/docs/cli/installation/)
 
 1. **Created quick start guide**
-  This update brought a brand new page that inherits the structure from the template (p.3). This page outlines all the steps required for a bot maker to create a bot using the Hubot framework. The essence of the information was taken from two related repositories (one, two), consolidated into several sets of instructions based on the deployment platform (local machine, Docker containers) and supplemented with additional configuration capabilities. Tested the quick start guide instructions by deploying a local instance of the Hubot bot.
+  
+    This update brought a brand new page that guides a newcomer through a set of basic workflow, showing common use cases and usage of commands.
 
+    Links to PR: [PR#342](https://github.com/Redocly/openapi-cli/pull/342)
+
+    Public links: [Redocly OpenAPI CLI quickstart guide](https://redoc.ly/docs/cli/quickstart/)
+
+1. **Organized and unified OpenAPI CLI commands documentation**
+
+    This update brought a fully-revised section related to OpenAPI CLI commands.
+
+      * Revised all the pages to be more consistent and organized following DRY principle (DRY: Do not repeat yourself)
+      * Updated structure of the pages to provide more information about usage and available parameters
+      * Tested all the commands to reveal undocumented parameters, features, and use cases
+
+    Links to PR: [PR#345](https://github.com/Redocly/openapi-cli/pull/345), [PR#350](https://github.com/Redocly/openapi-cli/pull/350), [PR#351](https://github.com/Redocly/openapi-cli/pull/351), [PR#353](https://github.com/Redocly/openapi-cli/pull/353), [PR#360](https://github.com/Redocly/openapi-cli/pull/360), [PR#361](https://github.com/Redocly/openapi-cli/pull/361), [PR#383](https://github.com/Redocly/openapi-cli/pull/383), [PR#384](https://github.com/Redocly/openapi-cli/pull/384)
+
+    Public links: [Redocly OpenAPI CLI commands](https://redoc.ly/docs/cli/commands/), [`bundle`](https://redoc.ly/docs/cli/commands/bundle/), [`join`](https://redoc.ly/docs/cli/commands/join/), [`lint`](https://redoc.ly/docs/cli/commands/lint/), [`login`](https://redoc.ly/docs/cli/commands/login/), [`logout`](https://redoc.ly/docs/cli/commands/logout/), [`preview-docs`](https://redoc.ly/docs/cli/commands/preview-docs/), [`push`](https://github.com/Redocly/openapi-cli/pull/363), [`split`](https://redoc.ly/docs/cli/commands/split/), [`stats`](https://redoc.ly/docs/cli/commands/stats/)
+
+## Not Completed Work
+
+1. **OpenAPI CLI guides**
+    
+    **Reason:** big scope of work according to the proposal. Due to the huge number of activities described in the proposal, during one of the Fortnightly catch-up meeting, it was decided to de-prioritize updates to OpenAPI CLI guides and focus on ongoing activities instead.
+
+1. **OpenAPI CLI Resources**
+
+    **Reason:** due to the huge number of activities described in the proposal, during one of the Fortnightly catch-up meeting, it was decided to consider updating the Resources section as "out-of-scope" stage and take a closer look after the Google Season of Docs program.
+
+## Challenges, Achievements
+
+### Challenges
+
+1. Outdated and irrelevant documentation.
+
+    The problems mainly related to the following:
+
+      1. The documentation is open and everyone can contribute to it.
+      1. High load of in-house technical writers (and other dedicated persons) that leaves documentation tasks of low impact without proper attention.
+
+1. Overlapping documentation. Some documents were created in different parts of the website and had overlapping sections. For example, installation and configuration. There were also documents with redirects. All these aspects made documentation harder to read, understand, and find.
+1. No local environment for documentation. There was no way to deploy a local version of the documentation which complicated documentation development. The existing solution using the Development portal required additional configuration, copy-pasting between source and portal repositories, and it was not flexible enough to deal with minor documentation changes.
+1. Time zones. Redocly team members work from different locations across the globe which resulted in limited time slots for active communication and review processes. In some cases, this lack of time was making the documentation development process a bit nervous.
+
+### Achievements
+
+1. Creation of Quick Start Guide
+
+    It is one of the most valuable achievements during this season. Not only this single document brought order to chaos in terms of incomes and outcomes but also allowed to walk the reader through the basic usage of OpenAPI CLI and its main capabilities.
+
+1. Unification of OpenAPI CLI commands pages
+
+    All the commands pages were unified based on a single structure. With this update, users can get familiar with all the usage options faster, check examples, and common use cases.
