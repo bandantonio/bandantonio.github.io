@@ -9,9 +9,9 @@ max_post: 4
 theme_color: 03adfc
 theme_dark_color: fcbb17
 
-favicon_ico: images/favicon.ico
-favicon: images/favicon.png
-favicon_apple: images/apple-touch-icon.png
+favicon_ico: /favicon.ico
+favicon: /favicon.png
+favicon_apple: /apple-touch-icon.png
 # Define path to user css
 #(could be also located outside of theme)
 # Relative to source/ directory
