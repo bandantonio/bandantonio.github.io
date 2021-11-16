@@ -49,6 +49,15 @@
     margin-left: .3em;
     opacity: .3;
   }
+
+  .toc {
+    float: left;
+  }
+}
+
+.toc li, .toc-child {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .center {
@@ -313,5 +322,4 @@ img {
   #madewith {
     text-align: left;
   }
-
 }
