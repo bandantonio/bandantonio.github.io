@@ -302,7 +302,7 @@ img {
   text-align: center;
 }
 
-#madewith {
+#madewith, .social {
   text-align: center;
 }
 
@@ -321,5 +321,9 @@ img {
 
   #madewith {
     text-align: left;
+  }
+
+  .social {
+    text-align: right;
   }
 }
