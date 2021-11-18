@@ -1,6 +1,6 @@
 ---
 title: Google Season of Docs 2021 - Results
-date: 2021-11-10 23:00
+date: 2021-11-18 23:00
 tags:
 - google
 - season of docs
