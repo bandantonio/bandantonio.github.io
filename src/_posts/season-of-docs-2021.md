@@ -7,6 +7,8 @@ tags:
 - documentation
 ---
 
+![Season of Docs 2021](/images/2021/season-of-docs-logo.png)
+
 Hi everyone.
 
 In this article, I would like to share the results of my third consecutive year in Season of Docs. This time I was lucky enough to join the [Redocly](https://redoc.ly/gsod#technical-writer-hiring-update) team to work on the OpenAPI-CLI project.
