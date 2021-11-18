@@ -1,0 +1,50 @@
+# Companies
+
+- name: IT Svit
+  role: Technical Writer
+  start: Jun 2015
+  end: Dec 2016
+  description: 'I was responsible for producing high-quality, easily consumable, customer-focused online content, including user documentation and knowledge-base articles.
+  <br />
+  Work included:
+  <ul>
+  <li>creating, editing and proofreading technical documentation (step-by-step instructions, user manuals, FAQs, guidelines) for both internal and external customers in Wiki, Confluence, GitLab and other documentation publishing software;</li>
+  <li>managing the life cycle of technical documentation;</li>
+  <li>migrating content to more advanced and fully-featured documentation platforms;</li>
+  <li>planning and implementing the revision of the current documentation model and process to improve efficiency, availability and stakeholder engagement;</li>
+  <li>consulting development teams on the technical texts for grammar, user-friendliness, and overall consistency.</li>
+  </ul>
+  
+  Additional responsibilities:
+  <br />
+  - developing and managing content for corporate websites, blogs and social networks'
+
+- name: DDI Development
+  role: Copywriter [Freelance]
+  start: Jul 2015
+  end: Sep 2015
+  description: I wrote blog posts and marketing articles related to Web application frameworks and e-commerce. Some of the written articles are published in the DDI Development Corporate Blog (http://ddi-dev.com/blog/).
+
+- name: Eastern Peak Software
+  role: Copywriter [Freelance]
+  start: Dec 2013
+  end: Dec 2014
+  description: I wrote blog posts and marketing articles related to Quality Assurance and testing (both software and mobile). All the written articles are published in the Ubertesting Blog (http://blog.ubertesters.com/).
+
+- name: Softerra
+  role: Technical Writer
+  start: Feb 2014
+  end: Sep 2014
+  description: I was working on promotional articles and "How do I" help documents. Promotional articles were aimed at giving IT management a clear, simple and well-structured general overview of the product and its main features, whereas "How do I" documents provide IT administrators with step-by-step instructions on the whole functionality of the product.
+
+- name: Zoral
+  role: Technical Writer
+  start: Aug 2011
+  end: Jul 2013
+  description: I was responsible for vulnerability research and development of technical documentation. Work included searching and analyzing security bulletins, writing vulnerability tickets for further processing in the form of tests to check for existing security flaws on remote systems.
+
+- name: PJSC "TAS Insurance Group"
+  role: Senior IT Specialist
+  start: Jun 2010
+  end: Aug 2011
+  description: My responsibility was an installation, maintenance and support of Lotus Notes/Domino, Front-office subsystems and telecommunications in Regional Divisions. Work also included the installation of anti-virus software, ensuring information security and integrity, backup and restore of critical data
