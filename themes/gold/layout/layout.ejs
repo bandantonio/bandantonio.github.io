@@ -53,22 +53,6 @@
   <% } %>
   <meta property="og:url" content="<%= url.replace(/index\.html$/, '').replace(/index\.html$/, '') %>" />
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="<%= title %>">
-  <% if (is_page()){ %>
-  <meta name="twitter:description" content="<%= page.description %>">
-  <% } else if (page.content){ %>
-  <meta name="twitter:description" content="<%= strip_html(page.content).replace(/\n/g, " ").replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150) %>">
-  <% } else { %>
-  <meta name="twitter:description" content="<%= config.description %>">
-  <% } %>
-  <% if (is_post() || is_page()) { %>
-  <meta name="twitter:image" content="<%-config.url + page.thumbnail %>">
-  <% } else { %>
-  <meta name="twitter:image" content="<%-config.url + theme.thumbnail %>">
-  <% } %>
-  <meta name="twitter:url" content="<%= url.replace(/index\.html$/, '').replace(/index\.html$/, '') %>" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <%- css('css/normalize.css') %>
