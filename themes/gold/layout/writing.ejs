@@ -1,6 +1,0 @@
-<% site.data.work.forEach(function(place){ %>
-  <ul class="company_info">
-    <li><b><%= place.role %></b> at <%= place.name %> <%= workDuration(place.start, place.end) %> </li>
-    <li><%- place.description %></li>
-  </ul>
-<% }); %>
