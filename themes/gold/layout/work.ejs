@@ -1,0 +1,121 @@
+
+<div class="section">
+  <div class="section-title">Summary</div>
+  <div class="set">
+    <div class="item">
+      <h4 class="company-meta">
+        <span class="divider"></span>
+        <span class="company l"><%= site.data.work.summary.title %></span>	
+      </h4>
+      <div class="info">
+        <%- site.data.work.summary.general %>
+      </div>
+      <p><b>Core competencies include:</b></p>
+      <ul>
+        <% site.data.work.summary.competencies.forEach(function(competency){ %>
+        <li><%- competency %></li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>
+  <div class="section-title">Selected achievements</div>
+  <div class="set">
+    <div class="item">
+      <ul>
+        <% site.data.work.selected_achievements.forEach(function(achievement){ %>
+          <li><%- achievement %></li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>
+  <div class="section-title">Work experience</div>
+    <div class="set">
+      <div class="item">
+        <% site.data.work.work_experience.forEach(function(item){ %>
+          <h4 class="company-meta">
+            <span class="divider"></span>
+            <span class="company l"><%= item.company %></span>								
+            <span class="date r"><%= item.date %></span>
+          </h4>
+          <h3><span class="job_title"><%= item.job_title %></span></h3>
+          <div class="info">
+            <span class="job_details">Achievements:</span>
+            <ul>
+              <% item.achievements.forEach(function(achievement){ %>
+              <li><%- achievement %></li>
+              <% }) %>
+            </ul>
+            <span class="job_details">Main responsibilities:</span>
+            <ul>
+              <% item.responsibilities.forEach(function(responsibility){ %>
+              <li><%- responsibility %></li>
+              <% }) %>
+            </ul>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+    <div class="section-title">Earlier work experience</div>
+    <div class="set">
+      <div class="item">
+        <ul>
+          <% site.data.work.earlier_work_experience.forEach(function(experience){ %>
+            <li><%- experience %></li>
+          <% }) %>
+        </ul>
+      </div>
+    </div>
+    <div class="section-title">Open-source experience</div>
+    <div class="set">
+      <div class="item">
+        <ul>
+          <% site.data.work.open_source_experience.forEach(function(experience){ %>
+            <li><%- experience %></li>
+          <% }) %>
+        </ul>
+      </div>
+    </div>
+    <div class="section-title">Skills</div>
+    <div class="set">
+      <div class="item">
+        <ul>
+          <% site.data.work.skills.forEach(function(skill){ %>
+            <li><%- skill %></li>
+          <% }) %>
+        </ul>
+      </div>
+    </div>
+    <div class="section-title">Languages</div>
+    <div class="set">
+      <div class="item">
+        <ul>
+          <% site.data.work.languages.forEach(function(language){ %>
+            <li><%- language %></li>
+          <% }) %>
+        </ul>
+      </div>
+    </div>
+    <div class="section-title">Education Courses</div>
+    <div class="set">
+      <div class="item">
+        <ul>
+          <% site.data.work.education_courses.forEach(function(course){ %>
+            <li><%= course %></li>
+          <% }) %>
+        </ul>
+      </div>
+    </div>
+    <div class="section-title">Education</div>
+    <div class="set">
+      <div class="item">
+        <% site.data.work.education.forEach(function(education){ %>
+          <h4 class="company-meta">
+            <span class="divider"></span>
+            <span class="company l"><%= education.university %></span>
+            <span class="date r"><%= education.date %></span>
+          </h4>
+          <h3><span class="job_title"><%= education.degree %></span></h3>
+        <% }); %>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,102 @@
+# Companies
+work_experience:
+  - company: Namecheap, Inc
+    date: Dec 2016 - Present
+    job_title: Senior Technical Writer
+    achievements:
+      - Planned and <span class="keyword">defined</span> the <span class="keyword">company-wide documentation strategy</span>
+      - <span class="keyword">Enhanced</span> API documentation <span class="keyword">readability and usability</span> via the <span class="keyword">migration</span> to the <span class="keyword">OpenAPI 3.0</span> specification
+      - <span class="keyword">Reduced the time</span> required to create new documents in Confluence <span class="keyword">by 40%</span> via implementing the <span class="keyword">content re-usage</span> concept
+    responsibilities:
+      - <span class="keyword">Leading</span> the process of <span class="keyword">creating</span> product <span class="keyword">technical documentation</span> (including <span class="keyword">API</span> and <span class="keyword">SDK</span> reference) that is used to onboard internal teams and external partners
+			- <span class="keyword">Managing</span> the <span class="keyword">infrastructure</span> for the documentation
+
+  - company: IT Svit
+    date: Jun 2015 - Dec 2016
+    job_title: Senior Technical Writer
+    achievements:
+      - <span class="keyword">Achieved a 4-fold rise</span> in brand awareness and visibility in Google Search and Google Maps in <span class="keyword">3.5 months</span>
+      - <span class="keyword">Produced</span> marketing <span class="keyword">content</span> for 3 internal sites that <span class="keyword">blew up sales by 75% in 4 months</span>
+      - <span class="keyword">Enforced</span> the <span class="keyword">strategy</span> of storing all the technical documentation in a <span class="keyword">version control system</span>
+      - <span class="keyword">Developed automation scripts</span> to update documents using <span class="keyword">Confluence REST API</span>
+      - <span class="keyword">Reorganized</span> ~1.2 GB of the existing <span class="keyword">technical documentation</span> (created in .rtf and .doc formats) and converted it to <span class="keyword">Markdown</span>
+    responsibilities:
+      - <span class="keyword">Creating technical documentation</span> for internal and outsourcing projects
+
+  - company: Softerra Ltd
+    date: Feb 2014 - Sep 2014
+    job_title: Middle Technical Writer
+    achievements:
+      - <span class="keyword">Improved retention and engagement of users by 10%</span> via publishing product overviews on content sharing platforms
+    responsibilities:
+      - Writing promotional articles (overviews) and "How Do I" help documents for Adaxes product (AD Management and automation)
+      
+  - company: Zoral Labs
+    date: Aug 2011 - Aug 2013
+    job_title: Technical Writer
+    achievements:
+      - <span class="keyword">Reduced the time</span> required for a new vulnerability to be analyzed and added to the internal database of the vulnerability scanner by <span class="keyword">200%</span>
+      - <span class="keyword">Automated the process</span> of gathering information about new vulnerabilities
+    responsibilities:
+      - Vulnerability research and <span class="keyword">development of technical documentation</span>
+
+earlier_work_experience:
+  - Senior IT Specialist at TAS Insurance Group
+  - Copywriter, Rewriter [Freelance] at Eastern Peak Software and DDI Development
+  - <i>Additional details available upon request</i>
+
+open_source_experience:
+  - "<a href='https://developers.google.com/season-of-docs/docs/2019/participants'>Google Season of Docs 2021</a>: successful technical writing project with <a href='https://redoc.ly/'>Redocly</a>"
+  - "<a href='https://developers.google.com/season-of-docs/docs/2020/participants'>Google Season of Docs 2020</a>: successful technical writing project with <a href='https://www.electronjs.org/'>Electron</a>"
+  - "<a href='https://developers.google.com/season-of-docs/docs/2019/participants'>Google Season of Docs 2019</a>: successful technical writing project with <a href='https://rocket.chat/'>Rocket.Chat</a>"
+  - "Personal <span class='keyword'>open-source</span> project: <a href='https://github.com/bandantonio/tomaatti-timer'>Tomaatti Timer</a> - simple Pomodoro timer written in <span class='keyword'>JavaScript</span>"
+	- Contributor to the <span class='keyword'><a href='https://antora.org'>Antora documentation</a></span> and <span class='keyword'><a href='http://writethedocs.org'>Write The Docs</a></span> projects
+	- <span class='keyword'>Published a blog post on Medium</span> about my own experience with documentation tools
+
+skills:
+  - "<span class='keyword'>Markdown, AsciiDoc</span>, Sphinx"
+  - "RESTful API Documentation tools: <span class='keyword'>Swagger</span>, apiDoc, ReDoc"
+  - "BitBucket, JIRA, Confluence (incl. JIRA/Confluence REST API)"
+  - "Version Control Systems (VCS): <span class='keyword'>Git, GitHub, GitLab</span>"
+  - "Advanced knowledge of <span class='keyword'>HTML, CSS</span>"
+  - "Good knowledge of <span class='keyword'>JavaScript</span>"
+  - "Good knowledge of <span class='keyword'>Docker</span>"
+  - "Basic knowledge of <span class='keyword'>BPMN</span>, UML"
+
+languages:
+  - <span class='keyword'>English</span> (<span class='keyword'>C2 Proficient</span>. <a href='https://www.efset.org/cert/G9yQYp'>EF SET English Certificate</a>)
+	- French (Pre-Intermediate)
+
+education_courses:
+  - Internal Docker advanced course at Namecheap, Inc.
+  - Internal JavaScript advanced course at Namecheap, Inc.
+  - JavaScript development course at Lemon School (Graduation with a diploma)
+
+education:
+  - university: Kharkiv National University of Radio Electronics
+    date: Sep 2004 - Jun 2009
+    degree: Specialist's Degree in Computer Systems and Networks (SCSN)
+    qualification: <span class="keyword">Computer Systems Analyst</span></p>
+    faculty: Computer Engineering and Control (CEC)
+
+selected_achievements:
+  - Planned and defined the company-wide documentation strategy
+  - Enhanced API documentation readability and usability via the migration to the OpenAPI 3.0 specification
+  - Reduced the time required to create new documents in Confluence by 40% via implementing the content re-usage concept
+  - Achieved a 4-fold rise in brand awareness and visibility in Google Search and Google Maps in 3.5 months
+  - Produced marketing content for 3 internal sites that blew up sales by 75% in 4 months
+
+summary:
+  title: SCSN, Lead Technical Writer
+  general: >
+    <p>Self-organized technical writer with <span class="keyword">8+ years of work experience</span> and a proven ability to <span class="keyword">lead the process of creating documentation from the ground-up</span>.
+    Have <span class="keyword">implemented strategies that improved the quality</span> of documents and <span class="keyword">reduced delivery time by 30-60%</span>.</p>
+    <p>Respected team member with a <span class="keyword">strong technical mindset</span> and coding experience, able to produce <span class="keyword">content</span> that <span class="keyword">communicates</span> complex concepts <span class="keyword">clearly and concisely</span>.
+		<span class="keyword">Master new technologies and tools</span> to transform documentation chaos into a <span class="keyword">well-organized and structured masterpiece</span> in the most efficient way.</p>
+  competencies:
+    - Strategic planning
+    - Technology fluency
+    - Process redesign and supervision
+    - Improvement and optimization strategies
+    - Communication with SMEs and teammates
+    - Critical thinking
