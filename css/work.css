@@ -1,0 +1,12 @@
+.company-meta {margin:1% 0 2%;font-size: 1.5rem;}
+.item {margin-bottom:1em;padding:0;line-height:18px;font-size:14px;}
+.item .r {margin-top:0.8%;float:right;text-align:right}
+.item ul {margin:0;padding:10px 0 15px 25px;list-style-type:square}
+.section .set {float:left;width:70%}
+.section-title {float:left;text-transform:uppercase;font-size:70%;font-weight:700;word-wrap:break-word;padding:10px 6px;width:22%;margin-right:30px}
+.divider {display: inline-block;width: 30px;border: 4px solid;vertical-align: middle;margin: 0 10px 0 0;}
+.keyword {font-weight:400;}
+.job_title {font-size:90%;display:block;margin:5px 0}
+.job_details {font-weight:600;}
+.company-meta, .section-title {color: #f15043}
+.company, .date {text-transform:uppercase;font-size:70%;font-weight:700;}
