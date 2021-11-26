@@ -11,6 +11,7 @@
   --heart: #f00;
   --hexo: var(--main-color-light);
   --blockquote-color: var(--main-color-light);
+  --pre-color: var(--main-color-light);
   --work-resume-title: var(--main-color-light);
 }
 
@@ -30,6 +31,7 @@
   --heart: #ff4d4d;
   --hexo: var(--main-color-light);
   --blockquote-color: var(--main-color-dark);
+  --pre-color: var(--main-color-dark);
   --work-resume-title: var(--main-color-dark);
 }
 
@@ -97,4 +99,17 @@ select:focus {
 
 blockquote { border-left: 8px solid var(--blockquote-color); }
 
+.darkgold img {
+  filter: brightness(.7) contrast(1.1);
+}
+
 /* CODE BLOCKS */
+pre {
+  filter: brightness(.8) contrast(.9)
+}
+
+code {
+  color: var(--pre-color);
+  background: rgba(0, 0, 0, 50%);
+  padding: 2px
+}

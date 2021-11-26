@@ -90,7 +90,7 @@ All the navigation links were previously located under the `nav pull-right top-m
 
 We created a page earlier, but it refers to a non-existing (yet) template. So, let's fix it. Create a file called `cv-template.html`. This file defines how the cv page will look like and what elements will be visible for visitors.
 
-```jinja
+```jinja2
 {% extends 'cv-base.html' %}
 
 {% block title %}
@@ -136,7 +136,7 @@ Create a file called `cv.html` and place it somewhere in your theme's directory.
 
 Start with something simple:
 
-```jinja
+```jinja2
 {% if not CV_DATA %}
 {% set CV_DATA = {
     'photo':    'http://via.placeholder.com/200x300',
@@ -190,7 +190,7 @@ Save all the changes, build Pelican files and check how the cv page looks now:
 
 To add information about your working experience we can use similar code blocks as described above with minor improvements: cycles and if-else statements. First of all, add the corresponding section to the data file:
 
-```
+```jinja2
 {% if not CV_WORK %}
 {% set CV_WORK = [{
     'company': 'Apple',
@@ -294,7 +294,7 @@ Below in the example of the final CV page:
 
 <details> 
   <summary>folder structure</summary>
-```bash
+```shell
 .
 ├── content
 │   └── pages
@@ -378,7 +378,7 @@ Below in the example of the final CV page:
 <details> 
   <summary>cv.html</summary>
    
-  ```jinja
+  ```jinja2
   {% if not CV_DATA %}
   {% set CV_DATA = {
       'photo':    'http://via.placeholder.com/200x300',

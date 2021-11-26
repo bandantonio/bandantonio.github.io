@@ -22,10 +22,8 @@ OK, let's get to the point. By the end of this article, you will receive a fully
 
 ## Getting Started
 
-!!! info "Note"
-    For this guide I use Ubuntu 17.04, but those of you who work on Windows shouldn't have any troubles as well, everything is quite similar.
-    
-    If you think you need some help, feel free to contact me or leave a comment below this article.
+**NOTE:** For this guide I use Ubuntu 17.04, but those of you who work on Windows shouldn't have any troubles as well, everything is quite similar.
+If you think you need some help, feel free to contact me or leave a comment below this article.
 
 ### Prerequisites
 
@@ -37,7 +35,7 @@ Before proceeding with Pelican and GitLab, you need to install the following bas
 
 Use the command below to install these packages in bulk:
 
-```
+```shell
 sudo apt install python3.6 python-pip git -y
 ```
 
@@ -62,11 +60,11 @@ Choose a name wisely, as the associated address will be used in several places l
 
 Install `virtualenv`:
 
-```
+```shell
 pip install virtualenv
 ```
 
-```
+```shell
 Collecting virtualenv
   Downloading virtualenv-15.1.0-py2.py3-none-any.whl (1.8MB)
     100% |████████████████████████████████| 1.8MB 280kB/s
@@ -76,11 +74,11 @@ Successfully installed virtualenv-15.1.0
 
 Specify a path where you want to create a new environment for your website:
 
-```
+```shell
 virtualenv ~/env
 ```
 
-```
+```shell
 Running virtualenv with interpreter /usr/bin/python2
 New python executable in /home/gold/env/bin/python2
 Also creating executable in /home/gold/env/bin/python
@@ -89,14 +87,14 @@ Installing setuptools, pkg_resources, pip, wheel...done.
 
 Navigate to the folder and run the environment:
 
-```
+```shell
 cd env/
 source bin/activate
 ```
 
 Your terminal should indicate that `env` environment became active:
 
-```
+```shell
 (env) gold@gold-vb:~/env$
 ```
 
@@ -104,7 +102,7 @@ Your terminal should indicate that `env` environment became active:
 
 Once the environment created and activated, clone the previously created GitLab project in it:
 
-```
+```git
 git clone git@gitlab.com:<username>/mister-gold-test.git
 Cloning into 'mister-gold-test'...
 warning: You appear to have cloned an empty repository.
@@ -116,11 +114,11 @@ cd mister-gold-test
 
 After you have cloned the project repository into the virtual environment, proceed with the installation of Pelican.
 
-```
+```shell
 pip install pelican
 ```
 
-```
+```shell
 Collecting pelican
   Downloading pelican-3.7.1-py2.py3-none-any.whl (134kB)
     100% |████████████████████████████████| 143kB 1.2MB/s 
@@ -166,11 +164,11 @@ Successfully installed MarkupSafe-1.0 blinker-1.4 docutils-0.14 feedgenerator-1.
 
 In order to be able to write articles in Markdown, it is also necessary to install the appropriate package:
 
-```
+```shell
 pip install markdown
 ```
 
-```
+```shell
 Collecting markdown
   Downloading Markdown-2.6.9.tar.gz (271kB)
     100% |████████████████████████████████| 276kB 920kB/s
@@ -186,13 +184,13 @@ Successfully installed markdown-2.6.9
 
 Okay, Pelican has been installed and you can test it. Launch the `pelican-quickstart` command to create a basic skeleton website:
 
-```
+```shell
 pelican-quickstart
 ```
 
 This script asks you some questions about a website to be created and generates all the required files:
 
-```
+```shell
 Welcome to pelican-quickstart v3.7.1.
 
 This script will help you create a new Pelican-based website.
@@ -253,19 +251,19 @@ By default Pelican puts the generated files into `output` folder and this won't 
 
 To change the output folder, navigate to the project folder (`~/env/mister-gold-test`), find `pelicanconf.py` and `publishconf.py` files and then add the following line to these files:
 
-```
+```shell
 OUTPUT_PATH = 'public/'
 ```
 
 To do the same for local development, open the `Makefile` file and change this
 
-```
+```shell
 OUTPUTDIR=$(BASEDIR)/output
 ```
 
 to this
 
-```
+```shell
 OUTPUTDIR=$(BASEDIR)/public
 ```
 
@@ -273,12 +271,12 @@ These two manipulations will force Pelican to put all the generated files to the
 
 Once finished, you can convert your first article into HTML using either `pelican` command, specifying the path to your content, or `make` command:
 
-```
+```shell
 pelican content
 Done: Processed 1 article, 0 drafts, 0 pages and 0 hidden pages in 0.21 seconds.
 ```
 
-```
+```shell
 make html
 pelican /home/gold/env/mister-gold-test/content -o /home/gold/env/mister-gold-test/public -s /home/gold/env/mister-gold-test/pelicanconf.py 
 Done: Processed 1 article, 0 drafts, 0 pages and 0 hidden pages in 0.23 seconds.
@@ -290,7 +288,7 @@ All the generated static files will be located in `public` folder now.
 
 To preview the generated files, use `make serve` command:
 
-```
+```shell
 make serve
 cd /home/gold/env/mister-gold-test/public && python -m pelican.server
 ```
@@ -299,14 +297,14 @@ You can also navigate to the `public` folder and run a simple web server using P
 
 For Python 2.7.x:
 
-```
+```shell
 cd public
 python -m SimpleHTTPServer
 ```
 
 For Python 3.x:
 
-```
+```shell
 cd public
 python -m http.server
 ```
@@ -323,7 +321,7 @@ To properly configure GitLab to work with Pelican, you need to create 3 files: `
 
 Open your project folder (`~/env/mister-gold-test`) and create a `requirements.txt` file with the following contents:
 
-```
+```shell
 pelican
 markdown
 ```
@@ -334,7 +332,7 @@ This file contains a list of packages that should be installed when creating you
 
 `.gitlab-ci.yml` is a configuration file that will build and deploy your website to GitLab. Create a `.gitlab-ci.yml` file (with the leading dot) and add the following contents to it:
 
-```yml
+```yaml
 image: python:3.6-alpine
 
 pages:
@@ -376,7 +374,7 @@ To allow your project to trigger CI process, you need to enable Shared Runners. 
 
 The final step is publishing your website. To do this, simply commit and push the project folder to the repository.
 
-```
+```git
 git add .
 git status
 
@@ -402,7 +400,7 @@ But first, I advise you to check carefully the files that were modified in the w
 
 Everything is good, let's commit it:
 
-```
+```git
 git commit -m "Initial project state"
 
 [master (root-commit) c81bdd9] Initial project state
@@ -420,7 +418,7 @@ git commit -m "Initial project state"
 
 and push:
 
-```
+```git
 git push origin master
 
 Counting objects: 12, done.
@@ -440,7 +438,7 @@ After that you can check the status of the current build:
 
 and the CI Pipeline Build log:
 
-```
+```shell
 Running with gitlab-runner 10.1.0-rc.1 (946e835b)
   on docker-auto-scale (4e4528ca)
 Using Docker executor with image python:3.6-alpine ...
