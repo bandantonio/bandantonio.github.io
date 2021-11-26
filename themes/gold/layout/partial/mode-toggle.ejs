@@ -1,21 +1,16 @@
-<div onclick=setDarkMode(true) id="darkBtn"><i class="icon-<%- theme.switch_dark %>"></i></div>
-<div onclick=setDarkMode(false) id="lightBtn" class=hidden><i class="icon-<%- theme.switch_light %>"></i></div>
-<script >
-  if (localStorage.getItem('preferredTheme') == 'dark') {
-    setDarkMode(true)
+<div class="toggle-theme"><i class="icon-lightbulb"></i></div>
+
+<script>
+  if (localStorage.getItem('darkgold')) {
+    document.body.classList.add('darkgold', true);
   }
-  function setDarkMode(isDark) {
-    var darkBtn = document.getElementById('darkBtn')
-    var lightBtn = document.getElementById('lightBtn')
-    if (isDark) {
-      lightBtn.style.display = "block"
-      darkBtn.style.display = "none"
-      localStorage.setItem('preferredTheme', 'dark');
+let toggle = document.querySelector('.toggle-theme');
+  toggle.addEventListener('click', () => {
+    if (document.body.classList.contains('darkgold')) {
+      localStorage.removeItem('darkgold');
     } else {
-      lightBtn.style.display = "none"
-      darkBtn.style.display = "block"
-      localStorage.removeItem('preferredTheme');
+      localStorage.setItem('darkgold', true);
     }
-    document.body.classList.toggle("darkmode");
-  }
+    document.body.classList.toggle('darkgold');
+});
 </script>
