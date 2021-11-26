@@ -110,6 +110,10 @@ pre {
 
 code {
   color: var(--pre-color);
-  background: rgba(0, 0, 0, 50%);
+  background: rgba(187, 186, 186, 0.5);
   padding: 2px
+}
+
+.darkgold code {
+  background: rgba(0, 0, 0, 50%);
 }
