@@ -215,12 +215,12 @@ a.footer-link:focus {
 
 .icon-heart::before {
   content: '\e801';
-  color: #ff4d4d;
+  /* color: #ff4d4d; */
 }
 
 .icon-hexo::before {
   content: '\e800';
-  color: #03adfc;
+  /* color: #03adfc; */
 }
 
 .icon-github::before {
@@ -259,10 +259,10 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-body.darkmode {
+/* body.darkmode {
   background: rgb(34, 34, 38);
   color: rgb(230, 230, 230);
-}
+} */
 
 img {
   width: 100%;
