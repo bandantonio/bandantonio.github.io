@@ -181,7 +181,7 @@ let toggle = document.querySelector('.toggle-theme');
 <p>All the navigation links were previously located under the <code>nav pull-right top-menu</code> class, so I deleted them. The interesting part here is content located in <code>&#123;% ... %&#125;</code> blocks. This is where Jinja2 does its magic - outputs contents of a template for the cv page. I will create this template later, as well as the <code>cv.css</code> stylesheet file, defined in the head section.</p>
 <h2 id="create-a-new-template">Create a New Template<a class="header-anchor" href="#create-a-new-template">¶</a></h2>
 <p>We created a page earlier, but it refers to a non-existing (yet) template. So, let’s fix it. Create a file called <code>cv-template.html</code>. This file defines how the cv page will look like and what elements will be visible for visitors.</p>
-<pre class="line-numbers language-jinja" data-language="jinja"><code class="language-jinja">&#123;% extends &#39;cv-base.html&#39; %&#125;
+<pre class="line-numbers language-jinja2" data-language="jinja2"><code class="language-jinja2">&#123;% extends &#39;cv-base.html&#39; %&#125;
 
 &#123;% block title %&#125;
 &#123;&#123; page.title|striptags|e &#125;&#125; &#123;%if page.subtitle %&#125; - &#123;&#123; page.subtitle|striptags|e &#125;&#125; &#123;% endif %&#125; · &#123;&#123; super() &#125;&#125;
@@ -215,7 +215,7 @@ let toggle = document.querySelector('.toggle-theme');
 <h3 id="add-basic-information">Add basic information<a class="header-anchor" href="#add-basic-information">¶</a></h3>
 <p>Create a file called <code>cv.html</code> and place it somewhere in your theme’s directory. This file will be used to store the main resume information, like your working experience, skills, portfolio, etc.</p>
 <p>Start with something simple:</p>
-<pre class="line-numbers language-jinja" data-language="jinja"><code class="language-jinja">&#123;% if not CV_DATA %&#125;
+<pre class="line-numbers language-jinja2" data-language="jinja2"><code class="language-jinja2">&#123;% if not CV_DATA %&#125;
 &#123;% set CV_DATA &#x3D; &#123;
     &#39;photo&#39;:    &#39;http:&#x2F;&#x2F;via.placeholder.com&#x2F;200x300&#39;,
     &#39;name&#39;:     &#39;John Doe&#39;,
@@ -253,7 +253,7 @@ let toggle = document.querySelector('.toggle-theme');
 <p><img src="/images/2017/11/basic-info-cv-template.png" alt="Basic Info" title="Basic Info CV Template"></p>
 <h3 id="add-working-experience">Add Working Experience<a class="header-anchor" href="#add-working-experience">¶</a></h3>
 <p>To add information about your working experience we can use similar code blocks as described above with minor improvements: cycles and if-else statements. First of all, add the corresponding section to the data file:</p>
-<pre class="line-numbers language-none"><code class="language-none">&#123;% if not CV_WORK %&#125;
+<pre class="line-numbers language-jinja2" data-language="jinja2"><code class="language-jinja2">&#123;% if not CV_WORK %&#125;
 &#123;% set CV_WORK &#x3D; [&#123;
     &#39;company&#39;: &#39;Apple&#39;,
     &#39;url&#39;: &#39;https:&#x2F;&#x2F;www.apple.com&#x2F;&#39;,
@@ -334,7 +334,7 @@ let toggle = document.querySelector('.toggle-theme');
 <p>Below in the example of the final CV page:</p>
 <details> 
   <summary>folder structure</summary>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">.</span>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">.
 ├── content
 │   └── pages
 │       └── cv.md
@@ -406,7 +406,7 @@ let toggle = document.querySelector('.toggle-theme');
 </details>
 <details> 
   <summary>cv.html</summary>
-  <pre class="line-numbers language-jinja" data-language="jinja"><code class="language-jinja">&#123;% if not CV_DATA %&#125;
+  <pre class="line-numbers language-jinja2" data-language="jinja2"><code class="language-jinja2">&#123;% if not CV_DATA %&#125;
 &#123;% set CV_DATA &#x3D; &#123;
     &#39;photo&#39;:    &#39;http:&#x2F;&#x2F;via.placeholder.com&#x2F;200x300&#39;,
     &#39;name&#39;:     &#39;John Doe&#39;,
@@ -792,7 +792,6 @@ let toggle = document.querySelector('.toggle-theme');
     </div>
 
   </div>
-
 </body>
 
 </html>

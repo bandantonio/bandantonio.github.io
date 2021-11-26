@@ -126,10 +126,8 @@ let toggle = document.querySelector('.toggle-theme');
 <p>You may ask: “Why Pelican?” Well, the answer is pretty obvious. Nowadays the majority of websites (even the simplest ones) represent complex solutions based on PHP, MySQL, HTML, CSS, JavaScript and all these parts must work together to ensure seamless workflow and security. The thing here is that browsers still display HTML, CSS, and JavaScript that were downloaded from the server and it really doesn’t matter how these files were created/generated. Due to a multitude of components, all the modern CMSs are vulnerable to different cyber attacks aimed at compromising access credentials and disclosing private information. Pelican has nothing to hack, as there is no database and no files contain sensitive data. The server has only a web server serving static content, so there is no extra configuration or additional components. As the result, Pelican setup, as well as the generated website, is very lightweight. An incredible example of the KISS principle.</p>
 <p>OK, let’s get to the point. By the end of this article, you will receive a fully functional Pelican website on top of GiLab Pages and will be able to apply changes by pushing a new commit.</p>
 <h2 id="getting-started">Getting Started<a class="header-anchor" href="#getting-started">¶</a></h2>
-<div class="admonition info"><p class="admonition-title">Note
-</p><p>For this guide I use Ubuntu 17.04, but those of you who work on Windows shouldn't have any troubles as well, everything is quite similar.</p>
-<p>If you think you need some help, feel free to contact me or leave a comment below this article.</p>
-</div>
+<p><strong>NOTE:</strong> For this guide I use Ubuntu 17.04, but those of you who work on Windows shouldn’t have any troubles as well, everything is quite similar.
+If you think you need some help, feel free to contact me or leave a comment below this article.</p>
 <h3 id="prerequisites">Prerequisites<a class="header-anchor" href="#prerequisites">¶</a></h3>
 <p>Before proceeding with Pelican and GitLab, you need to install the following basic packages:</p>
 <ul>
@@ -138,7 +136,7 @@ let toggle = document.querySelector('.toggle-theme');
 <li><strong>git</strong>. Version control system. It will be used to work with GitLab.</li>
 </ul>
 <p>Use the command below to install these packages in bulk:</p>
-<pre class="line-numbers language-none"><code class="language-none">sudo apt install python3.6 python-pip git -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">sudo apt install python3.6 python-pip git -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>In my case, all the required Python packages were available out-of-the-box, so I just installed git.</p>
 <h2 id="gitlab-setup-a-project">GitLab: Setup a Project<a class="header-anchor" href="#gitlab-setup-a-project">¶</a></h2>
 <p>Create a new repository on GitLab. There are several considerations to keep in mind:</p>
@@ -152,34 +150,34 @@ let toggle = document.querySelector('.toggle-theme');
 <h2 id="virtualenv-installation">Virtualenv: Installation<a class="header-anchor" href="#virtualenv-installation">¶</a></h2>
 <p><code>virtualenv</code> is a tool to create isolated Python environments. It is recommended to install Pelican in an isolated environment to avoid possible permission problems and version conflicts when multiple python projects (or packages) require different versions of the same libraries to work.</p>
 <p>Install <code>virtualenv</code>:</p>
-<pre class="line-numbers language-none"><code class="language-none">pip install virtualenv<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-none"><code class="language-none">Collecting virtualenv
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pip install virtualenv<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">Collecting virtualenv
   Downloading virtualenv-15.1.0-py2.py3-none-any.whl (1.8MB)
     100% |████████████████████████████████| 1.8MB 280kB&#x2F;s
 Installing collected packages: virtualenv
 Successfully installed virtualenv-15.1.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>Specify a path where you want to create a new environment for your website:</p>
-<pre class="line-numbers language-none"><code class="language-none">virtualenv ~&#x2F;env<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-none"><code class="language-none">Running virtualenv with interpreter &#x2F;usr&#x2F;bin&#x2F;python2
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">virtualenv ~&#x2F;env<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">Running virtualenv with interpreter &#x2F;usr&#x2F;bin&#x2F;python2
 New python executable in &#x2F;home&#x2F;gold&#x2F;env&#x2F;bin&#x2F;python2
 Also creating executable in &#x2F;home&#x2F;gold&#x2F;env&#x2F;bin&#x2F;python
 Installing setuptools, pkg_resources, pip, wheel...done.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>Navigate to the folder and run the environment:</p>
-<pre class="line-numbers language-none"><code class="language-none">cd env&#x2F;
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cd env&#x2F;
 source bin&#x2F;activate<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>Your terminal should indicate that <code>env</code> environment became active:</p>
-<pre class="line-numbers language-none"><code class="language-none">(env) gold@gold-vb:~&#x2F;env$<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">(env) gold@gold-vb:~&#x2F;env$<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="clone-the-gitlab-project">Clone the GitLab Project<a class="header-anchor" href="#clone-the-gitlab-project">¶</a></h3>
 <p>Once the environment created and activated, clone the previously created GitLab project in it:</p>
-<pre class="line-numbers language-none"><code class="language-none">git clone git@gitlab.com:&lt;username&gt;&#x2F;mister-gold-test.git
-Cloning into &#39;mister-gold-test&#39;...
+<pre class="line-numbers language-git" data-language="git"><code class="language-git">git clone git@gitlab.com:&lt;username>/mister-gold-test.git
+Cloning into <span class="token string">'mister-gold-test'</span>...
 warning: You appear to have cloned an empty repository.
 
 cd mister-gold-test<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="install-pelican">Install Pelican<a class="header-anchor" href="#install-pelican">¶</a></h3>
 <p>After you have cloned the project repository into the virtual environment, proceed with the installation of Pelican.</p>
-<pre class="line-numbers language-none"><code class="language-none">pip install pelican<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-none"><code class="language-none">Collecting pelican
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pip install pelican<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">Collecting pelican
   Downloading pelican-3.7.1-py2.py3-none-any.whl (134kB)
     100% |████████████████████████████████| 143kB 1.2MB&#x2F;s 
 Collecting six&gt;&#x3D;1.4 (from pelican)
@@ -221,8 +219,8 @@ Successfully built blinker feedgenerator MarkupSafe
 Installing collected packages: six, unidecode, pytz, docutils, blinker, pygments, python-dateutil, feedgenerator, MarkupSafe, jinja2, pelican
 Successfully installed MarkupSafe-1.0 blinker-1.4 docutils-0.14 feedgenerator-1.9 jinja2-2.9.6 pelican-3.7.1 pygments-2.2.0 python-dateutil-2.6.1 pytz-2017.2 six-1.11.0 unidecode-0.4.21<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>In order to be able to write articles in Markdown, it is also necessary to install the appropriate package:</p>
-<pre class="line-numbers language-none"><code class="language-none">pip install markdown<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-none"><code class="language-none">Collecting markdown
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pip install markdown<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">Collecting markdown
   Downloading Markdown-2.6.9.tar.gz (271kB)
     100% |████████████████████████████████| 276kB 920kB&#x2F;s
 Building wheels for collected packages: markdown
@@ -233,9 +231,9 @@ Installing collected packages: markdown
 Successfully installed markdown-2.6.9<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="generate-a-basic-website">Generate a Basic Website<a class="header-anchor" href="#generate-a-basic-website">¶</a></h3>
 <p>Okay, Pelican has been installed and you can test it. Launch the <code>pelican-quickstart</code> command to create a basic skeleton website:</p>
-<pre class="line-numbers language-none"><code class="language-none">pelican-quickstart<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pelican-quickstart<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>This script asks you some questions about a website to be created and generates all the required files:</p>
-<pre class="line-numbers language-none"><code class="language-none">Welcome to pelican-quickstart v3.7.1.
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">Welcome to pelican-quickstart v3.7.1.
 
 This script will help you create a new Pelican-based website.
 
@@ -280,29 +278,29 @@ This is the content of my first article<span aria-hidden="true" class="line-numb
 <p><strong>Change the output folder</strong></p>
 <p>By default Pelican puts the generated files into <code>output</code> folder and this won’t work in GitLab because it requires static files to be located in <code>public</code> folder.</p>
 <p>To change the output folder, navigate to the project folder (<code>~/env/mister-gold-test</code>), find <code>pelicanconf.py</code> and <code>publishconf.py</code> files and then add the following line to these files:</p>
-<pre class="line-numbers language-none"><code class="language-none">OUTPUT_PATH &#x3D; &#39;public&#x2F;&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">OUTPUT_PATH &#x3D; &#39;public&#x2F;&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>To do the same for local development, open the <code>Makefile</code> file and change this</p>
-<pre class="line-numbers language-none"><code class="language-none">OUTPUTDIR&#x3D;$(BASEDIR)&#x2F;output<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">OUTPUTDIR&#x3D;$(BASEDIR)&#x2F;output<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>to this</p>
-<pre class="line-numbers language-none"><code class="language-none">OUTPUTDIR&#x3D;$(BASEDIR)&#x2F;public<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">OUTPUTDIR&#x3D;$(BASEDIR)&#x2F;public<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>These two manipulations will force Pelican to put all the generated files to the <code>public</code> folder. Now you can delete <code>output</code> folder, you are no longer need it.</p>
 <p>Once finished, you can convert your first article into HTML using either <code>pelican</code> command, specifying the path to your content, or <code>make</code> command:</p>
-<pre class="line-numbers language-none"><code class="language-none">pelican content
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pelican content
 Done: Processed 1 article, 0 drafts, 0 pages and 0 hidden pages in 0.21 seconds.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-none"><code class="language-none">make html
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">make html
 pelican &#x2F;home&#x2F;gold&#x2F;env&#x2F;mister-gold-test&#x2F;content -o &#x2F;home&#x2F;gold&#x2F;env&#x2F;mister-gold-test&#x2F;public -s &#x2F;home&#x2F;gold&#x2F;env&#x2F;mister-gold-test&#x2F;pelicanconf.py 
 Done: Processed 1 article, 0 drafts, 0 pages and 0 hidden pages in 0.23 seconds.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>All the generated static files will be located in <code>public</code> folder now.</p>
 <h3 id="view-the-generated-files">View the generated files<a class="header-anchor" href="#view-the-generated-files">¶</a></h3>
 <p>To preview the generated files, use <code>make serve</code> command:</p>
-<pre class="line-numbers language-none"><code class="language-none">make serve
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">make serve
 cd &#x2F;home&#x2F;gold&#x2F;env&#x2F;mister-gold-test&#x2F;public &amp;&amp; python -m pelican.server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>You can also navigate to the <code>public</code> folder and run a simple web server using Python. The command syntax depends on the version of Python you use:</p>
 <p>For Python 2.7.x:</p>
-<pre class="line-numbers language-none"><code class="language-none">cd public
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cd public
 python -m SimpleHTTPServer<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>For Python 3.x:</p>
-<pre class="line-numbers language-none"><code class="language-none">cd public
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cd public
 python -m http.server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>Once launched, open <code>http://localhost:8000</code> in your web browser:</p>
 <p><img src="/images/2017/10/first-launch-website.png" alt="First Launch" title="First Launch on Localhost"></p>
@@ -310,12 +308,12 @@ python -m http.server<span aria-hidden="true" class="line-numbers-rows"><span></
 <p>To properly configure GitLab to work with Pelican, you need to create 3 files: <code>requirements.txt</code>, <code>.gitlab-ci.yml</code>, <code>.gitignore</code>, and enable Shared Runners.</p>
 <p><strong>requirements.txt</strong></p>
 <p>Open your project folder (<code>~/env/mister-gold-test</code>) and create a <code>requirements.txt</code> file with the following contents:</p>
-<pre class="line-numbers language-none"><code class="language-none">pelican
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pelican
 markdown<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>This file contains a list of packages that should be installed when creating your website. These are the same commands that were executed inside the virtual environment.</p>
 <p><strong>.gitlab-ci.yml</strong></p>
 <p><code>.gitlab-ci.yml</code> is a configuration file that will build and deploy your website to GitLab. Create a <code>.gitlab-ci.yml</code> file (with the leading dot) and add the following contents to it:</p>
-<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml"><span class="token key atrule">image</span><span class="token punctuation">:</span> python<span class="token punctuation">:</span>3.6<span class="token punctuation">-</span>alpine
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">image</span><span class="token punctuation">:</span> python<span class="token punctuation">:</span>3.6<span class="token punctuation">-</span>alpine
 
 <span class="token key atrule">pages</span><span class="token punctuation">:</span>
   <span class="token key atrule">script</span><span class="token punctuation">:</span>
@@ -346,7 +344,7 @@ markdown<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
 <p><img src="/images/2017/10/enable-shared-runners.png" alt="Enable Shared Runners" title="Enable Shared Runners"></p>
 <h2 id="publish-on-gitlab">Publish on GitLab<a class="header-anchor" href="#publish-on-gitlab">¶</a></h2>
 <p>The final step is publishing your website. To do this, simply commit and push the project folder to the repository.</p>
-<pre class="line-numbers language-none"><code class="language-none">git add .
+<pre class="line-numbers language-git" data-language="git"><code class="language-git">git add .
 git status
 
 On branch master
@@ -354,12 +352,12 @@ On branch master
 Initial commit
 
 Changes to be committed:
-  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
+  (use <span class="token string">"git rm --cached &lt;file>..."</span> to unstage)
 
 	new file:   .gitignore
 	new file:   .gitlab-ci.yml
 	new file:   Makefile
-	new file:   content&#x2F;article.md
+	new file:   content/article.md
 	new file:   develop_server.sh
 	new file:   fabfile.py
 	new file:   pelicanconf.py
@@ -367,34 +365,34 @@ Changes to be committed:
 	new file:   requirements.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>But first, I advise you to check carefully the files that were modified in the working directory. Also notice that if you did everything right with <code>gitignore</code>, you shouldn’t see the <code>public</code> folder and any compiled python files here - they are ignored by git.</p>
 <p>Everything is good, let’s commit it:</p>
-<pre class="line-numbers language-none"><code class="language-none">git commit -m &quot;Initial project state&quot;
+<pre class="line-numbers language-git" data-language="git"><code class="language-git">git commit -m <span class="token string">"Initial project state"</span>
 
 [master (root-commit) c81bdd9] Initial project state
  9 files changed, 403 insertions(+)
  create mode 100644 .gitignore
  create mode 100644 .gitlab-ci.yml
  create mode 100644 Makefile
- create mode 100644 content&#x2F;article.md
+ create mode 100644 content/article.md
  create mode 100755 develop_server.sh
  create mode 100644 fabfile.py
  create mode 100644 pelicanconf.py
  create mode 100644 publishconf.py
  create mode 100644 requirements.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>and push:</p>
-<pre class="line-numbers language-none"><code class="language-none">git push origin master
+<pre class="line-numbers language-git" data-language="git"><code class="language-git">git push origin master
 
 Counting objects: 12, done.
 Delta compression using up to 2 threads.
-Compressing objects: 100% (9&#x2F;9), done.
-Writing objects: 100% (12&#x2F;12), 4.98 KiB | 0 bytes&#x2F;s, done.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (12/12), 4.98 KiB | 0 bytes/s, done.
 Total 12 (delta 0), reused 0 (delta 0)
-To gitlab.com:&lt;username&gt;&#x2F;mister-gold-test.git
- * [new branch]      master -&gt; master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+To gitlab.com:&lt;username>/mister-gold-test.git
+ * [new branch]      master -> master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>After that you can check the status of the current build:</p>
 <p><img src="/images/2017/10/build-running.png" alt="Build is Running" title="Build is Running"></p>
 <p><img src="/images/2017/10/build-passed.png" alt="Build Passed" title="Build Passed"></p>
 <p>and the CI Pipeline Build log:</p>
-<pre class="line-numbers language-none"><code class="language-none">Running with gitlab-runner 10.1.0-rc.1 (946e835b)
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">Running with gitlab-runner 10.1.0-rc.1 (946e835b)
   on docker-auto-scale (4e4528ca)
 Using Docker executor with image python:3.6-alpine ...
 Using docker image sha256:ae26e16b7a5e8895ff9ad2f72d3a505394d06b94012b6bd623a46d5268f43c92 for predefined container...
@@ -525,7 +523,6 @@ Job succeeded<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
     </div>
 
   </div>
-
 </body>
 
 </html>
