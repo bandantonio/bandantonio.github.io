@@ -44,7 +44,7 @@ AsciiDoc is deprived of the shortcomings I mentioned above for Markdown. In addi
 
 AsciiDoc allows you to add "live" code snippets directly from source files. With this kind of inclusion, you don't have to worry about outdated examples in documentation as they will be updated automatically once the source code is changed. For example:
 
-```
+```asciidoc
 include::source_code.js []
 ```
 
@@ -61,7 +61,7 @@ function multiply(num1,num2) {
 
 and then include this section using `include` directive:
 
-```
+```asciidoc
 include::source_code.js[tag=code_example]
 ```
 
@@ -69,7 +69,7 @@ include::source_code.js[tag=code_example]
 
 Attributes are used to enable internal features or hold replacement content like variables. For example:
 
-```
+```asciidoc
 [options="header,footer,autowidth"]
 |===
 | Cell A | Cell B
@@ -80,14 +80,14 @@ The example above shows three defined attributes for a table. More details about
 
 Another example:
 
-```
+```asciidoc
 :toc: right
 :document_version: 1.1.0
 ```
 
 The first attribute displays Table of Contents on the right-hand side of the main content, whereas the second one includes a dynamic value of the document version within the content:
 
-```
+```asciidoc
 The current document version is {document_version}.
 ```
 
@@ -98,7 +98,8 @@ In AsciiDoc, each element has its own set of attributes that allows you to flexi
 Attributes are the key to another cool AsciiDoc feature: conditional content inclusion. With special directives `ifdef`, `ifndef`, and `ifeval` you can control what content should be displayed depending on certain conditions are met.
 
 Use `ifdef` directive to show content if the specified attribute is set:
-```
+
+```asciidoc
 ifdef::github[]
 This content will be displayed for GitHub users only.
 endif::[]
@@ -106,7 +107,7 @@ endif::[]
 
 Conversely, `ifndef` directive is used to hide content if the specified attribute is not set:
 
-```
+```asciidoc
 ifdef::github[]
 This content will not be displayed for GitHub users.
 endif::[]
@@ -114,7 +115,7 @@ endif::[]
 
 `ifeval` directive shows content if the expression inside the square brackets evaluates to `true`. This may be helpful to show instructions only for particular versions of documentation:
 
-```
+```asciidoc
 ifeval::[{api_version} < 2.0.0]
 If you want to use API methods available in version {api_version}, use the following endpoint: `https://example.com/api/v1/
 endif::[]
@@ -126,7 +127,7 @@ Building blocks are special components to include non-paragraph text, such as co
 
 For example, you can add a listing block like this:
 
-```
+```asciidoc
 ----
 This is an example of a _listing block_.
 The content inside is displayed as <pre> text.
@@ -135,7 +136,7 @@ The content inside is displayed as <pre> text.
 
 or like this by adding callouts for additional information right in the sample:
 
-```ruby
+```asciidoc
 [source,ruby]
 ----
 require 'asciidoctor'  # <1>
@@ -150,7 +151,7 @@ Asciidoctor.convert_file 'mysample.adoc'  # <2>
 
 Another powerful block is an _open block_. It can act as any other block and contain any information you want. This may be useful as a non-intrusive way of including content. For example:
 
-```
+```asciidoc
 [sidebar]
 .Related information
 --
@@ -172,7 +173,7 @@ For example:
 
 ID for a paragraph
 
-```
+```asciidoc
 [[notice]]
 This paragraph gets a lot of attention.
 
@@ -184,13 +185,13 @@ This paragraph gets a lot of attention.
 
 Furthermore, classes and additional attributes are available for links. The base syntax looks as follows:
 
-```
+```asciidoc
 link:url[optional link text, optional target attribute, optional role attribute]
 ```
 
 So, you can write something like that:
 
-```
+```asciidoc
 Mister Gold Blog was created by https://mister-gold.pro/[*Antonio*^, role="green"].
 ```
 
@@ -206,7 +207,7 @@ Some examples:
 
 **Different table width**
 
-```
+```asciidoc
 [cols="50,20,30"]
 |===
 |Cell in column 1, row 1
@@ -223,7 +224,7 @@ Some examples:
 
 **Spanned rows**
 
-```
+```asciidoc
 |===
 
 |Cell in column 1, row 1 |Cell in column 2, row 1 |Cell in column 3, row 1
@@ -242,7 +243,7 @@ Some examples:
 
 **Nested table**
 
-```
+```asciidoc
 [cols="1,2a"]
 |===
 | Col 1 | Col 2
