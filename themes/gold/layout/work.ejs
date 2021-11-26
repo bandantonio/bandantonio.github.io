@@ -59,10 +59,11 @@
     <div class="set">
       <div class="item">
         <ul>
-          <% site.data.work.earlier_work_experience.forEach(function(experience){ %>
-            <li><%- experience %></li>
+          <% site.data.work.earlier_work_experience.jobs.forEach(function(job){ %>
+            <li><%- job %></li>
           <% }) %>
         </ul>
+        <p><%- site.data.work.earlier_work_experience.summary %></p>
       </div>
     </div>
     <div class="section-title">Open-source experience</div>

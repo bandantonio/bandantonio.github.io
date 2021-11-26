@@ -41,9 +41,11 @@ work_experience:
       - Vulnerability research and <span class="keyword">development of technical documentation</span>
 
 earlier_work_experience:
-  - Senior IT Specialist at TAS Insurance Group
-  - Copywriter, Rewriter [Freelance] at Eastern Peak Software and DDI Development
-  - <i>Additional details available upon request</i>
+  summary: <i>Additional details available upon request</i>
+  jobs:
+    - Senior IT Specialist at TAS Insurance Group
+    - Copywriter, Rewriter [Freelance] at Eastern Peak Software and DDI Development
+  
 
 open_source_experience:
   - "<a href='https://developers.google.com/season-of-docs/docs/2019/participants'>Google Season of Docs 2021</a>: successful technical writing project with <a href='https://redoc.ly/'>Redocly</a>"
