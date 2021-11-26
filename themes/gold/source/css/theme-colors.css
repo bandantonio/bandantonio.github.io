@@ -11,6 +11,7 @@
   --heart: #f00;
   --hexo: var(--main-color-light);
   --blockquote-color: var(--main-color-light);
+  --work-resume-title: var(--main-color-light);
 }
 
 .darkgold {
@@ -29,6 +30,7 @@
   --heart: #ff4d4d;
   --hexo: var(--main-color-light);
   --blockquote-color: var(--main-color-dark);
+  --work-resume-title: var(--main-color-dark);
 }
 
 /* GENERAL */

@@ -8,5 +8,5 @@
 .keyword {font-weight:400;}
 .job_title {font-size:90%;display:block;margin:5px 0}
 .job_details {font-weight:600;}
-.company-meta, .section-title {color: #f15043}
+.company-meta, .section-title {color: var(--work-resume-title)}
 .company, .date {text-transform:uppercase;font-size:70%;font-weight:700;}
