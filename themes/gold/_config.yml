@@ -17,6 +17,7 @@ favicon_apple: /apple-touch-icon.png
 #(could be also located outside of theme)
 # Relative to source/ directory
 usercss: css/user.css
+google_analytics: UA-213715410-1
 
 footer: true
 github: bandantonio
