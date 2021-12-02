@@ -112,6 +112,8 @@ In this article, I would like to share the results of my third consecutive year 
 
   This was my **third** consecutive Season of Docs with a great open-source organization and only one proposal sent. During this season, Redocly showed me that even a carefully-crafted proposal is only a plan. Real-world priorities can switch your focus to a small set of issues that bring 80% of success when resolved. This time, the season was unique in terms of writing experience, styling, and consistency. Technical aspects were covered by the Redocly team so it was easier for me to concentrate on creating valuable documents. And again, knowledge sharing, building community contacts, learning from each other, understanding the problems of open-source organizations, as well as seeing smiles on faces of the team members when they are telling you that "This is exactly that kind of documentation improvements we were looking for" is a truly priceless experience.
 
+  **Interesting fact:** Redocly team also released a [case study report on their experience with Google Season of Docs](https://redoc.ly/gsod-casestudy/). They have done an incredible job of making the writers' experience as smooth as possible and reducing unforeseen issues. As a result, the numbers in the Metrics section clearly show how huge an impact that simple and consistent documentation has. I'm strongly confident that the Redocly team fully deserves such documentation for their products.
+
 ### Lessons
 
 1. Open-source organizations are in need of good documentation no less or even more than commercial organizations.
