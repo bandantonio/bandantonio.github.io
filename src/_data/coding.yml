@@ -1,0 +1,8 @@
+projects:
+  - name: Antmarky
+    description: Antmarky is a static-site generator for Markdown based on Node.js/EJS
+    technologies:
+      - js
+      - node-js
+    link: https://mister-gold.pro/antmarky
+    code: https://github.com/bandantonio/antmarky
