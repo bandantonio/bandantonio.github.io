@@ -4,6 +4,7 @@ summary: "👨‍💻 Coding - 🗺️ Travelling - 🏂 Snowboarding - 📚 Rea
 menu:
   About: pages/about
   Work: pages/work
+  Projects: pages/projects
 
 max_post: 4
 

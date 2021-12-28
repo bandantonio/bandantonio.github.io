@@ -1,0 +1,24 @@
+<div class="projects-grid">
+  <% site.data.coding.projects.forEach(function(project){ %>
+    <div class="card card-wrapper">
+      <div class="card card-header">
+        <div class="card-title">
+          <span class="divider"></span>
+          <%= project.name %>
+        </div>
+        <div class="card card-technologies">
+          <% project.technologies.forEach(function(tech){ %>
+            <i class="icon-<%= tech %>"></i>
+          <% }) %>
+        </div>
+      </div>
+      <div class="card card-body">
+        <p class="card card-description"><%= project.description %></p>
+      </div>
+        <div class="card card-footer">
+          <div class="link-live"><a href="<%= project.link %>">Project page</a></div>
+          <div class="link-code"><a href="<%= project.code %>">Project on GitHub</a></div>
+        </div>
+    </div>
+  <% }) %>
+</div>
