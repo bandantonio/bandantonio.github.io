@@ -13,6 +13,7 @@
   --blockquote-color: var(--main-color-light);
   --pre-color: var(--main-color-light);
   --work-resume-title: var(--main-color-light);
+  --projects-accent-color: var(--main-color-light);
 }
 
 .darkgold {
@@ -33,6 +34,7 @@
   --blockquote-color: var(--main-color-dark);
   --pre-color: var(--main-color-dark);
   --work-resume-title: var(--main-color-dark);
+  --projects-accent-color: var(--main-color-dark);
 }
 
 /* GENERAL */

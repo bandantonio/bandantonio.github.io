@@ -1,0 +1,13 @@
+.projects-grid {display:flex;flex-flow:row wrap;justify-content:space-around;align-items:center;gap:1em 1em;margin-bottom:2em;}
+.card-wrapper {width:45%;border:1px dashed var(--projects-accent-color);padding:1em;}
+.card-header {display:flex;flex-flow:row nowrap;align-items:center;}
+.card-title, .card-technologies {width:50%;}
+.card-technologies {text-align:right;}
+.card-title, .card-footer {text-transform:uppercase;font-weight:700;}
+.card-title {font-size:70%;}
+.card-body {margin:1em 0;}
+.card-footer {font-size:40%;display:flex;flex-flow:row nowrap;align-items:center;}
+.card-title, .card-technologies, .card-footer {color:var(--projects-accent-color);}
+.link-live, .link-code {width:50%;}
+.link-live {text-align:left;}
+.link-code {text-align:right;}
