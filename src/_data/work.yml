@@ -1,7 +1,16 @@
 # Companies
 work_experience:
   - company: Namecheap, Inc
-    date: Dec 2016 - Present
+    date: May 2021 - Present
+    job_title: Lead Technical Writer
+    achievements:
+      - <i>Achievements are not a subject of public disclosure atm</i>
+    responsibilities:
+			- <span class="keyword">Building and populating a documentation culture company-wide</span>
+      - <span class="keyword">Leading and inspiring</span> a team of Technical Writers
+
+  - company: Namecheap, Inc
+    date: Dec 2016 - May 2021
     job_title: Senior Technical Writer
     achievements:
       - Planned and <span class="keyword">defined</span> the <span class="keyword">company-wide documentation strategy</span>
@@ -48,9 +57,10 @@ earlier_work_experience:
   
 
 open_source_experience:
-  - "<a href='https://developers.google.com/season-of-docs/docs/2019/participants'>Google Season of Docs 2021</a>: successful technical writing project with <a href='https://redoc.ly/'>Redocly</a>"
-  - "<a href='https://developers.google.com/season-of-docs/docs/2020/participants'>Google Season of Docs 2020</a>: successful technical writing project with <a href='https://www.electronjs.org/'>Electron</a>"
-  - "<a href='https://developers.google.com/season-of-docs/docs/2019/participants'>Google Season of Docs 2019</a>: successful technical writing project with <a href='https://rocket.chat/'>Rocket.Chat</a>"
+  - "<a href='https://developers.google.com/season-of-docs/docs/2019/participants'>Google Season of Docs 2021</a>: successful technical writing project with <i class='icon-redocly'></i> <a href='https://redoc.ly/'>Redocly</a>"
+  - "<a href='https://developers.google.com/season-of-docs/docs/2020/participants'>Google Season of Docs 2020</a>: successful technical writing project with <i class='icon-electron-js'></i> <a href='https://www.electronjs.org/'>Electron</a>"
+  - "<a href='https://developers.google.com/season-of-docs/docs/2019/participants'>Google Season of Docs 2019</a>: successful technical writing project with <i class='icon-rocket-chat'></i> <a href='https://rocket.chat/'>Rocket.Chat</a>"
+  - "Personal <span class='keyword'>open-source</span> project: <a href='https://github.com/bandantonio/antmarky'>Antmarky</a> - <span class='keyword'>static-site generator</span> for Markdown based on Node.js/EJS"
   - "Personal <span class='keyword'>open-source</span> project: <a href='https://github.com/bandantonio/tomaatti-timer'>Tomaatti Timer</a> - simple Pomodoro timer written in <span class='keyword'>JavaScript</span>"
 	- Contributor to the <span class='keyword'><a href='https://antora.org'>Antora documentation</a></span> and <span class='keyword'><a href='http://writethedocs.org'>Write The Docs</a></span> projects
 	- <span class='keyword'>Published a blog post on Medium</span> about my own experience with documentation tools
