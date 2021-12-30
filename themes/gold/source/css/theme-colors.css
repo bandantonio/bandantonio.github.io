@@ -9,6 +9,7 @@
   --button-color: var(--main-color-light);
   --button-border-color: var(--main-color-light);
   --heart: #f00;
+  --electron: #20515b;
   --hexo: var(--main-color-light);
   --blockquote-color: var(--main-color-light);
   --pre-color: var(--main-color-light);
@@ -30,6 +31,7 @@
   --button-color: var(--main-color-dark);
   --button-border-color: var(--main-color-dark);
   --heart: #ff4d4d;
+  --electron: #9feaf9;
   --hexo: var(--main-color-light);
   --blockquote-color: var(--main-color-dark);
   --pre-color: var(--main-color-dark);
@@ -55,6 +57,10 @@ body {
 
 .icon-hexo::before {
   color: var(--hexo);
+}
+
+.icon-electron-js::before {
+  color: var(--electron);
 }
 
 a:not(.icon) {
