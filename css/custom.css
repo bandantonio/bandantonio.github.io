@@ -241,6 +241,20 @@ a.footer-link:focus {
   color: #797979;
 }
 
+.icon-redocly::before {
+  content: '\e807';
+  color: #0044D4;
+}
+
+.icon-electron-js::before {
+  content: '\e806';
+}
+
+.icon-rocket-chat::before {
+  content: '\e808';
+  color: #f5455c;
+}
+
 html {
   overflow: auto;
 }
