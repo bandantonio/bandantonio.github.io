@@ -11,3 +11,7 @@
 .link-live, .link-code {width:50%;}
 .link-live {text-align:left;}
 .link-code {text-align:right;}
+
+@media (max-width: 550px) {
+  .card-wrapper {width:100%;}
+}
