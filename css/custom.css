@@ -255,6 +255,14 @@ a.footer-link:focus {
   color: #f5455c;
 }
 
+.icon-js::before {
+  color: #ffd600;
+}
+
+.icon-docker::before {
+  color: #0db7ed;
+}
+
 html {
   overflow: auto;
 }
