@@ -80,9 +80,9 @@ languages:
 	- French (Pre-Intermediate)
 
 education_courses:
-  - Internal Docker advanced course at Namecheap, Inc.
-  - Internal JavaScript advanced course at Namecheap, Inc.
-  - JavaScript development course at Lemon School (Graduation with a diploma)
+  - <i class='icon-docker'></i> Internal Docker advanced course at Namecheap, Inc.
+  - <i class='icon-js'></i> Internal JavaScript advanced course at Namecheap, Inc.
+  - <i class='icon-js'></i> JavaScript development course at Lemon School (Graduation with a diploma)
 
 education:
   - university: Kharkiv National University of Radio Electronics
