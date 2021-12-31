@@ -26,8 +26,7 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 @font-face {
   font-family: "Raleway";
-  src: url("../fonts/raleway.ttf");
-  font-display: swap;
+  src: url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,400;0,500;0,600;0,700;1,200;1,400;1,500;1,700&display=swap');
 }
 
 .container {
@@ -205,7 +204,6 @@ body {
   font-size: 1.4em;
   /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.6;
-  font-weight: 400;
   font-family: 'Raleway', sans-serif;
   font-weight: 200;
 }
