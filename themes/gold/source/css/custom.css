@@ -70,7 +70,7 @@
 
 .lit {
   font-size: 1.5rem;
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .little-svg {
@@ -261,6 +261,10 @@ a.footer-link:focus {
 
 .icon-docker::before {
   color: #0db7ed;
+}
+
+.icon-python::before {
+  color: #306998;
 }
 
 html {
