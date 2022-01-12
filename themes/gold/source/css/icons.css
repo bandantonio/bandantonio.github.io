@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'icons';
-  src: url('../fonts/mister-gold-icons.svg?32668026#mister-gold-icons') format('svg'),
-       url('../fonts/mister-gold-icons.woff2?32668026') format('woff2');
+  src: url('../fonts/mister-gold-icons.svg?3760512#mister-gold-icons') format('svg'),
+       url('../fonts/mister-gold-icons.woff2?3760512') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
@@ -38,3 +38,5 @@
 .icon-rocket-chat:before { content: '\e808'; } /* '' */
 .icon-docker:before { content: '\e805'; } /* '' */
 .icon-python:before { content: '\e80a'; } /* '' */
+.icon-rubik-cube:before { content: '\e809'; } /* '' */
+.icon-write-the-docs:before { content: '\e80c'; } /* '' */
