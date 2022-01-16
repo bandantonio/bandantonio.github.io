@@ -346,3 +346,19 @@ img {
     text-align: right;
   }
 }
+
+@media (max-width: 550px) { 
+  .top-menu {
+    width: 100%;
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 1em;
+  }
+
+  img[alt$="profile_photo"] {
+    width: 70%;
+    display: block;
+    margin: 0 auto 2%;
+    border-radius: 50%;
+  }
+}
