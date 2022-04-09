@@ -3,7 +3,7 @@
   "description": "Personal website of Anton Zolotukhin",
   "homepage": "https://mister-gold.pro",
   "version": "0.0.0",
-  "author": "Anton Zolotukhin"
+  "author": "Anton Zolotukhin",
   "private": true,
   "scripts": {
     "build": "hexo generate",
