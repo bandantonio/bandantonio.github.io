@@ -73,7 +73,7 @@
     gtag('config', 'UA-213715410-1');
   </script>
 
-<meta name="generator" content="Hexo 6.1.0"></head>
+<meta name="generator" content="Hexo 6.2.0"></head>
 
 <body>
   <div class="container">
@@ -156,7 +156,7 @@ let toggle = document.querySelector('.toggle-theme');
 <h2 id="create-a-new-base-template">Create a New Base Template<a class="header-anchor" href="#create-a-new-base-template">¶</a></h2>
 <p>This is an optional step. Base template is responsible for all “shared” elements located outside the current page (e.g. header, footer, common blocks in the sidebar, etc). As my blog has a non-default theme, a new base template was required to get rid of navigation links (where some contact details and download buttons can be added later). If you don’t need to customize the basic structure of the resume page, you can skip this step. However, if there are some modifications required or you want to change some blocks, the steps below will be similar.</p>
 <p>Create a file called <code>cv-base.html</code>. It will inherit the code from the <code>base.html</code> file except for header links (navigation). My code looks as follows (only changed part is shown):</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en-US<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;&#123; SITEURL &#125;&#125;/theme/css/cv.css<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
@@ -197,31 +197,31 @@ let toggle = document.querySelector('.toggle-theme');
 <p>All the navigation links were previously located under the <code>nav pull-right top-menu</code> class, so I deleted them. The interesting part here is content located in <code>&#123;% ... %&#125;</code> blocks. This is where Jinja2 does its magic - outputs contents of a template for the cv page. I will create this template later, as well as the <code>cv.css</code> stylesheet file, defined in the head section.</p>
 <h2 id="create-a-new-template">Create a New Template<a class="header-anchor" href="#create-a-new-template">¶</a></h2>
 <p>We created a page earlier, but it refers to a non-existing (yet) template. So, let’s fix it. Create a file called <code>cv-template.html</code>. This file defines how the cv page will look like and what elements will be visible for visitors.</p>
-<pre class="line-numbers language-jinja2" data-language="jinja2"><code class="language-jinja2">&#123;% extends &#39;cv-base.html&#39; %&#125;
+<pre class="line-numbers language-django" data-language="django"><code class="language-django"><span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">extends</span> <span class="token string">'cv-base.html'</span> <span class="token delimiter punctuation">%&#125;</span></span>
 
-&#123;% block title %&#125;
-&#123;&#123; page.title|striptags|e &#125;&#125; &#123;%if page.subtitle %&#125; - &#123;&#123; page.subtitle|striptags|e &#125;&#125; &#123;% endif %&#125; · &#123;&#123; super() &#125;&#125;
-&#123;% endblock title %&#125;
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">block</span> <span class="token variable">title</span> <span class="token delimiter punctuation">%&#125;</span></span>
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;&#123;</span> <span class="token variable">page</span><span class="token punctuation">.</span><span class="token variable">title</span><span class="token operator">|</span><span class="token filter function">striptags</span><span class="token operator">|</span><span class="token filter function">e</span> <span class="token delimiter punctuation">&#125;&#125;</span></span> <span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span><span class="token tag keyword">if</span> <span class="token variable">page</span><span class="token punctuation">.</span><span class="token variable">subtitle</span> <span class="token delimiter punctuation">%&#125;</span></span> - <span class="token django language-django"><span class="token delimiter punctuation">&#123;&#123;</span> <span class="token variable">page</span><span class="token punctuation">.</span><span class="token variable">subtitle</span><span class="token operator">|</span><span class="token filter function">striptags</span><span class="token operator">|</span><span class="token filter function">e</span> <span class="token delimiter punctuation">&#125;&#125;</span></span> <span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">endif</span> <span class="token delimiter punctuation">%&#125;</span></span> · <span class="token django language-django"><span class="token delimiter punctuation">&#123;&#123;</span> <span class="token function">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token delimiter punctuation">&#125;&#125;</span></span>
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">endblock</span> <span class="token variable">title</span> <span class="token delimiter punctuation">%&#125;</span></span>
 
-&#123;% block head_description %&#125;
-&#123;% if page.summary %&#125;
-&#123;&#123; page.summary|striptags|e &#125;&#125;
-&#123;% endif %&#125;
-&#123;% endblock head_description %&#125;
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">block</span> <span class="token variable">head_description</span> <span class="token delimiter punctuation">%&#125;</span></span>
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">if</span> <span class="token variable">page</span><span class="token punctuation">.</span><span class="token variable">summary</span> <span class="token delimiter punctuation">%&#125;</span></span>
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;&#123;</span> <span class="token variable">page</span><span class="token punctuation">.</span><span class="token variable">summary</span><span class="token operator">|</span><span class="token filter function">striptags</span><span class="token operator">|</span><span class="token filter function">e</span> <span class="token delimiter punctuation">&#125;&#125;</span></span>
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">endif</span> <span class="token delimiter punctuation">%&#125;</span></span>
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">endblock</span> <span class="token variable">head_description</span> <span class="token delimiter punctuation">%&#125;</span></span>
 
-&#123;% block meta_tags_in_head %&#125;
-&#123;&#123; super() &#125;&#125;
-&#123;% if page.keywords %&#125;
-&lt;meta name&#x3D;&quot;keywords&quot; content&#x3D;&quot;&#123;&#123; page.keywords &#125;&#125;&quot; &#x2F;&gt;
-&#123;% endif %&#125;
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">block</span> <span class="token variable">meta_tags_in_head</span> <span class="token delimiter punctuation">%&#125;</span></span>
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;&#123;</span> <span class="token function">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token delimiter punctuation">&#125;&#125;</span></span>
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">if</span> <span class="token variable">page</span><span class="token punctuation">.</span><span class="token variable">keywords</span> <span class="token delimiter punctuation">%&#125;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>keywords<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token django language-django"><span class="token delimiter punctuation">&#123;&#123;</span> <span class="token variable">page</span><span class="token punctuation">.</span><span class="token variable">keywords</span> <span class="token delimiter punctuation">&#125;&#125;</span></span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">endif</span> <span class="token delimiter punctuation">%&#125;</span></span>
 
-&#123;% from &#39;_includes&#x2F;smo_metadata.html&#39; import smo_metadata with context %&#125;
-&#123;&#123; smo_metadata(page) &#125;&#125;
-&#123;% endblock meta_tags_in_head %&#125;
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">from</span> <span class="token string">'_includes/smo_metadata.html'</span> <span class="token keyword">import</span> <span class="token variable">smo_metadata</span> <span class="token keyword">with</span> <span class="token variable">context</span> <span class="token delimiter punctuation">%&#125;</span></span>
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;&#123;</span> <span class="token function">smo_metadata</span><span class="token punctuation">(</span><span class="token variable">page</span><span class="token punctuation">)</span> <span class="token delimiter punctuation">&#125;&#125;</span></span>
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">endblock</span> <span class="token variable">meta_tags_in_head</span> <span class="token delimiter punctuation">%&#125;</span></span>
 
-&#123;% block content %&#125;
-&lt;p&gt;HTML Resume Template&lt;&#x2F;p&gt;
-&#123;% endblock content %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">block</span> <span class="token variable">content</span> <span class="token delimiter punctuation">%&#125;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>HTML Resume Template<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">endblock</span> <span class="token variable">content</span> <span class="token delimiter punctuation">%&#125;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>This file starts with the <code>&#123;% extends 'cv-base.html' %&#125;</code> line that indicates that the current template will act as a child for <code>cv-base.html</code> (in other words, cv-template extends the cv-base template), so here we can define only blocks that should be overwritten. Actually, there is only one: <code>content</code>. Other four blocks just contain metadata and required information to be included in the <code>&lt;head&gt;</code> section. You may have noticed that <code>smo_metadata.html</code> is imported using <code>from</code> construction - that’s because it is located in a separate file. The <code>&#123;&#123; super() &#125;&#125;</code> block is used to display the contents of the parent block.</p>
 <p>To shorten the template I deliberately hardcoded one paragraph <code>&lt;p&gt;HTML Resume Template&lt;/p&gt;</code> in the content block. I will replace it by the HTML template and modify with a bit of Jinja2 code later.</p>
 <p>So, at this point, you should have 3 template files and one new page. Let’s test how everything works together. Build pelican content and then navigate to the address that you specified in the <code>cv.md</code> file under the <code>url</code> parameter. In my case, it was <code>http://localhost:8000/cv/mister-gold</code>. NOTE: This page was created for demonstration purposes. The real page is still under development and will be available later.</p>
@@ -231,25 +231,25 @@ let toggle = document.querySelector('.toggle-theme');
 <h3 id="add-basic-information">Add basic information<a class="header-anchor" href="#add-basic-information">¶</a></h3>
 <p>Create a file called <code>cv.html</code> and place it somewhere in your theme’s directory. This file will be used to store the main resume information, like your working experience, skills, portfolio, etc.</p>
 <p>Start with something simple:</p>
-<pre class="line-numbers language-jinja2" data-language="jinja2"><code class="language-jinja2">&#123;% if not CV_DATA %&#125;
-&#123;% set CV_DATA &#x3D; &#123;
-    &#39;photo&#39;:    &#39;http:&#x2F;&#x2F;via.placeholder.com&#x2F;200x300&#39;,
-    &#39;name&#39;:     &#39;John Doe&#39;,
-    &#39;headline&#39;: &#39;Strong headline to impress everyone who reads it&#39;,
-    &#39;summary&#39;:  &#39;Sumary of what you are strong in&#39;,
-    &#39;email&#39;:    &#39;email@example.com&#39;,
-    &#39;website&#39;:  &#39;https:&#x2F;&#x2F;example.com&#39;,
-    &#39;phone&#39;:    &#39;123-456-789-0&#39;,
-    &#39;linkedin&#39;: &#39;#&#39;
-&#125;
-%&#125;
-&#123;% endif %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-django" data-language="django"><code class="language-django"><span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">if</span> <span class="token keyword">not</span> <span class="token variable">CV_DATA</span> <span class="token delimiter punctuation">%&#125;</span></span>
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">set</span> <span class="token variable">CV_DATA</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">'photo'</span><span class="token punctuation">:</span>    <span class="token string">'http://via.placeholder.com/200x300'</span><span class="token punctuation">,</span>
+    <span class="token string">'name'</span><span class="token punctuation">:</span>     <span class="token string">'John Doe'</span><span class="token punctuation">,</span>
+    <span class="token string">'headline'</span><span class="token punctuation">:</span> <span class="token string">'Strong headline to impress everyone who reads it'</span><span class="token punctuation">,</span>
+    <span class="token string">'summary'</span><span class="token punctuation">:</span>  <span class="token string">'Sumary of what you are strong in'</span><span class="token punctuation">,</span>
+    <span class="token string">'email'</span><span class="token punctuation">:</span>    <span class="token string">'email@example.com'</span><span class="token punctuation">,</span>
+    <span class="token string">'website'</span><span class="token punctuation">:</span>  <span class="token string">'https://example.com'</span><span class="token punctuation">,</span>
+    <span class="token string">'phone'</span><span class="token punctuation">:</span>    <span class="token string">'123-456-789-0'</span><span class="token punctuation">,</span>
+    <span class="token string">'linkedin'</span><span class="token punctuation">:</span> <span class="token string">'#'</span>
+<span class="token punctuation">&#125;</span>
+<span class="token delimiter punctuation">%&#125;</span></span>
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">endif</span> <span class="token delimiter punctuation">%&#125;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>This block indicates that if the CV_DATA parameter is used somewhere in templates but was not defined in <code>pelicanconf.py</code> file, the default set of values will be used for this parameter. You can then access these values by passing <code>CV_DATA.parameter</code> in the template.</p>
 <p>Why should you add the information that way? The only reason is that you can easily reuse it later. Imagine you add some information about your skills directly in the template in several places. Later on, you decided to change these skills and add new ones. But to do this, you should search across these places again and modify all the occurrences of the text. This is a time-consuming and boring activity.</p>
 <p>Instead, having a file containing all the information is a step forward, as the only thing you need to do in the template is to write several lines of Jinja2 code to include the necessary section. After that this section will be always up-to-date with the changes you make in the <code>cv.html</code> file, no matter how scattered the places with skills section are.</p>
 <p>Okay, we added the information, let’s show it in the cv page.</p>
 <p>Open the <code>cv-template.html</code> file and replace the dummy paragraph within the content block with the following code:</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>main<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>main<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 &#123;% from '_includes/cv.html' import CV_DATA with context %&#125;
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>photo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;&#123; CV_DATA.photo &#125;&#125;<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
@@ -269,26 +269,26 @@ let toggle = document.querySelector('.toggle-theme');
 <p><img src="/images/2017/11/basic-info-cv-template.png" alt="Basic Info" title="Basic Info CV Template"></p>
 <h3 id="add-working-experience">Add Working Experience<a class="header-anchor" href="#add-working-experience">¶</a></h3>
 <p>To add information about your working experience we can use similar code blocks as described above with minor improvements: cycles and if-else statements. First of all, add the corresponding section to the data file:</p>
-<pre class="line-numbers language-jinja2" data-language="jinja2"><code class="language-jinja2">&#123;% if not CV_WORK %&#125;
-&#123;% set CV_WORK &#x3D; [&#123;
-    &#39;company&#39;: &#39;Apple&#39;,
-    &#39;url&#39;: &#39;https:&#x2F;&#x2F;www.apple.com&#x2F;&#39;,
-    &#39;project&#39;: &#39;iPhone&#39;,
-    &#39;position&#39;: &#39;Mobile Developer&#39;,
-    &#39;description&#39;: &#39;Lorem Ipsum&#39;,
-    &#39;from&#39;: &#39;2015&#39;,
-    &#39;till&#39;: &#39;Present&#39;
-&#125;,&#123;
-    &#39;company&#39;: &#39;Google&#39;,
-    &#39;url&#39;: &#39;https:&#x2F;&#x2F;www.google.com&#x2F;&#39;,
-    &#39;position&#39;: &#39;Developer&#39;,
-    &#39;description&#39;: &#39;Lorem Ipsum&#39;,
-    &#39;from&#39;: &#39;2013&#39;,
-    &#39;till&#39;: &#39;2015&#39;
-&#125;]
-%&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-django" data-language="django"><code class="language-django"><span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">if</span> <span class="token keyword">not</span> <span class="token variable">CV_WORK</span> <span class="token delimiter punctuation">%&#125;</span></span>
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">set</span> <span class="token variable">CV_WORK</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">&#123;</span>
+    <span class="token string">'company'</span><span class="token punctuation">:</span> <span class="token string">'Apple'</span><span class="token punctuation">,</span>
+    <span class="token string">'url'</span><span class="token punctuation">:</span> <span class="token string">'https://www.apple.com/'</span><span class="token punctuation">,</span>
+    <span class="token string">'project'</span><span class="token punctuation">:</span> <span class="token string">'iPhone'</span><span class="token punctuation">,</span>
+    <span class="token string">'position'</span><span class="token punctuation">:</span> <span class="token string">'Mobile Developer'</span><span class="token punctuation">,</span>
+    <span class="token string">'description'</span><span class="token punctuation">:</span> <span class="token string">'Lorem Ipsum'</span><span class="token punctuation">,</span>
+    <span class="token string">'from'</span><span class="token punctuation">:</span> <span class="token string">'2015'</span><span class="token punctuation">,</span>
+    <span class="token string">'till'</span><span class="token punctuation">:</span> <span class="token string">'Present'</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token punctuation">&#123;</span>
+    <span class="token string">'company'</span><span class="token punctuation">:</span> <span class="token string">'Google'</span><span class="token punctuation">,</span>
+    <span class="token string">'url'</span><span class="token punctuation">:</span> <span class="token string">'https://www.google.com/'</span><span class="token punctuation">,</span>
+    <span class="token string">'position'</span><span class="token punctuation">:</span> <span class="token string">'Developer'</span><span class="token punctuation">,</span>
+    <span class="token string">'description'</span><span class="token punctuation">:</span> <span class="token string">'Lorem Ipsum'</span><span class="token punctuation">,</span>
+    <span class="token string">'from'</span><span class="token punctuation">:</span> <span class="token string">'2013'</span><span class="token punctuation">,</span>
+    <span class="token string">'till'</span><span class="token punctuation">:</span> <span class="token string">'2015'</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">]</span>
+<span class="token delimiter punctuation">%&#125;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>and update the <code>cv-template.html</code> respectively:</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>section section-work<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>section section-work<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Work experience<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>set<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
         &#123;% from '_includes/cv.html' import CV_WORK with context %&#125;
@@ -350,7 +350,7 @@ let toggle = document.querySelector('.toggle-theme');
 <p>Below in the example of the final CV page:</p>
 <details> 
   <summary>folder structure</summary>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">.
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">.</span>
 ├── content
 │   └── pages
 │       └── cv.md
@@ -422,100 +422,100 @@ let toggle = document.querySelector('.toggle-theme');
 </details>
 <details> 
   <summary>cv.html</summary>
-  <pre class="line-numbers language-jinja2" data-language="jinja2"><code class="language-jinja2">&#123;% if not CV_DATA %&#125;
-&#123;% set CV_DATA &#x3D; &#123;
-    &#39;photo&#39;:    &#39;http:&#x2F;&#x2F;via.placeholder.com&#x2F;200x300&#39;,
-    &#39;name&#39;:     &#39;John Doe&#39;,
-    &#39;headline&#39;: &#39;Strong headline to impress everyone who reads it&#39;,
-    &#39;summary&#39;: &#39;Sumary of what you are strong in&#39;,
-    &#39;email&#39;:    &#39;email@example.com&#39;,
-    &#39;website&#39;:  &#39;https:&#x2F;&#x2F;example.com&#39;,
-    &#39;phone&#39;:    &#39;123-456-789-0&#39;,
-    &#39;linkedin&#39;: &#39;#&#39;
-&#125;
-%&#125;
-&#123;% endif %&#125;  
+  <pre class="line-numbers language-django" data-language="django"><code class="language-django"><span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">if</span> <span class="token keyword">not</span> <span class="token variable">CV_DATA</span> <span class="token delimiter punctuation">%&#125;</span></span>
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">set</span> <span class="token variable">CV_DATA</span> <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token string">'photo'</span><span class="token punctuation">:</span>    <span class="token string">'http://via.placeholder.com/200x300'</span><span class="token punctuation">,</span>
+    <span class="token string">'name'</span><span class="token punctuation">:</span>     <span class="token string">'John Doe'</span><span class="token punctuation">,</span>
+    <span class="token string">'headline'</span><span class="token punctuation">:</span> <span class="token string">'Strong headline to impress everyone who reads it'</span><span class="token punctuation">,</span>
+    <span class="token string">'summary'</span><span class="token punctuation">:</span> <span class="token string">'Sumary of what you are strong in'</span><span class="token punctuation">,</span>
+    <span class="token string">'email'</span><span class="token punctuation">:</span>    <span class="token string">'email@example.com'</span><span class="token punctuation">,</span>
+    <span class="token string">'website'</span><span class="token punctuation">:</span>  <span class="token string">'https://example.com'</span><span class="token punctuation">,</span>
+    <span class="token string">'phone'</span><span class="token punctuation">:</span>    <span class="token string">'123-456-789-0'</span><span class="token punctuation">,</span>
+    <span class="token string">'linkedin'</span><span class="token punctuation">:</span> <span class="token string">'#'</span>
+<span class="token punctuation">&#125;</span>
+<span class="token delimiter punctuation">%&#125;</span></span>
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">endif</span> <span class="token delimiter punctuation">%&#125;</span></span>  
 
-&#123;% if not CV_SKILLS %&#125;
-&#123;% set CV_SKILLS &#x3D; [&#123;
-    &#39;00&#39;: &#39;Donec porttitor dictum tristique. Suspendisse vehicula, nibh vel consequat lacinia&#39;,
-    &#39;01&#39;: &#39;lorem mauris egestas massa, et facilisis ipsum erat in magna&#39;,
-    &#39;02&#39;: &#39;Morbi vestibulum ligula vel felis pulvinar, id auctor sapien rutrum&#39;,
-    &#39;03&#39;: &#39;Etiam quis scelerisque metus, et imperdiet leo&#39;,
-    &#39;04&#39;: &#39;Aenean condimentum quis massa et mattis&#39;,
-    &#39;05&#39;: &#39;Donec sed vulputate erat, ac scelerisque nuncю Quisque aliquet condimentum ex, et lacinia massa porttitor nec&#39;
-&#125;]
-%&#125;
-&#123;% endif %&#125;
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">if</span> <span class="token keyword">not</span> <span class="token variable">CV_SKILLS</span> <span class="token delimiter punctuation">%&#125;</span></span>
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">set</span> <span class="token variable">CV_SKILLS</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">&#123;</span>
+    <span class="token string">'00'</span><span class="token punctuation">:</span> <span class="token string">'Donec porttitor dictum tristique. Suspendisse vehicula, nibh vel consequat lacinia'</span><span class="token punctuation">,</span>
+    <span class="token string">'01'</span><span class="token punctuation">:</span> <span class="token string">'lorem mauris egestas massa, et facilisis ipsum erat in magna'</span><span class="token punctuation">,</span>
+    <span class="token string">'02'</span><span class="token punctuation">:</span> <span class="token string">'Morbi vestibulum ligula vel felis pulvinar, id auctor sapien rutrum'</span><span class="token punctuation">,</span>
+    <span class="token string">'03'</span><span class="token punctuation">:</span> <span class="token string">'Etiam quis scelerisque metus, et imperdiet leo'</span><span class="token punctuation">,</span>
+    <span class="token string">'04'</span><span class="token punctuation">:</span> <span class="token string">'Aenean condimentum quis massa et mattis'</span><span class="token punctuation">,</span>
+    <span class="token string">'05'</span><span class="token punctuation">:</span> <span class="token string">'Donec sed vulputate erat, ac scelerisque nuncю Quisque aliquet condimentum ex, et lacinia massa porttitor nec'</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">]</span>
+<span class="token delimiter punctuation">%&#125;</span></span>
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">endif</span> <span class="token delimiter punctuation">%&#125;</span></span>
 
-&#123;% if not CV_WORK %&#125;
-&#123;% set CV_WORK &#x3D; [&#123;
-    &#39;company&#39;: &#39;Apple&#39;,
-    &#39;url&#39;: &#39;https:&#x2F;&#x2F;www.apple.com&#x2F;&#39;,
-    &#39;project&#39;: &#39;iPhone&#39;,
-    &#39;position&#39;: &#39;Mobile Developer&#39;,
-    &#39;description&#39;: &#39;Vestibulum varius lacus et nisi dictum iaculis. Proin faucibus ut risus ac sagittis. Cras rutrum condimentum laoreet. Aliquam ac erat nec justo scelerisque sodales. Fusce sed ex tempor, tempor turpis quis, luctus lectus. Aenean in lobortis dolor. Nullam tristique vel velit ut facilisis. Sed nec scelerisque nisl. Sed eu faucibus tellus. Nulla quis sollicitudin enim. Vivamus pharetra auctor convallis. Morbi quis semper turpis.&#39;,
-    &#39;from&#39;: &#39;2015&#39;,
-    &#39;till&#39;: &#39;Present&#39;
-&#125;,&#123;
-    &#39;company&#39;: &#39;Google&#39;,
-    &#39;url&#39;: &#39;https:&#x2F;&#x2F;www.google.com&#x2F;&#39;,
-    &#39;position&#39;: &#39;Developer&#39;,
-    &#39;description&#39;: &#39;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin leo sem, sagittis eu nisl et, feugiat interdum ex. Fusce tempus velit sit amet vehicula porta. Proin accumsan feugiat sagittis. Pellentesque laoreet auctor viverra. Sed feugiat metus quis ligula gravida rhoncus. Praesent in lectus venenatis, ullamcorper nunc vitae, venenatis diam. Vestibulum semper finibus sapien, vel convallis leo varius non.&#39;,
-    &#39;from&#39;: &#39;2013&#39;,
-    &#39;till&#39;: &#39;2015&#39;
-&#125;]
-%&#125;
-&#123;% endif %&#125;
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">if</span> <span class="token keyword">not</span> <span class="token variable">CV_WORK</span> <span class="token delimiter punctuation">%&#125;</span></span>
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">set</span> <span class="token variable">CV_WORK</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">&#123;</span>
+    <span class="token string">'company'</span><span class="token punctuation">:</span> <span class="token string">'Apple'</span><span class="token punctuation">,</span>
+    <span class="token string">'url'</span><span class="token punctuation">:</span> <span class="token string">'https://www.apple.com/'</span><span class="token punctuation">,</span>
+    <span class="token string">'project'</span><span class="token punctuation">:</span> <span class="token string">'iPhone'</span><span class="token punctuation">,</span>
+    <span class="token string">'position'</span><span class="token punctuation">:</span> <span class="token string">'Mobile Developer'</span><span class="token punctuation">,</span>
+    <span class="token string">'description'</span><span class="token punctuation">:</span> <span class="token string">'Vestibulum varius lacus et nisi dictum iaculis. Proin faucibus ut risus ac sagittis. Cras rutrum condimentum laoreet. Aliquam ac erat nec justo scelerisque sodales. Fusce sed ex tempor, tempor turpis quis, luctus lectus. Aenean in lobortis dolor. Nullam tristique vel velit ut facilisis. Sed nec scelerisque nisl. Sed eu faucibus tellus. Nulla quis sollicitudin enim. Vivamus pharetra auctor convallis. Morbi quis semper turpis.'</span><span class="token punctuation">,</span>
+    <span class="token string">'from'</span><span class="token punctuation">:</span> <span class="token string">'2015'</span><span class="token punctuation">,</span>
+    <span class="token string">'till'</span><span class="token punctuation">:</span> <span class="token string">'Present'</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token punctuation">&#123;</span>
+    <span class="token string">'company'</span><span class="token punctuation">:</span> <span class="token string">'Google'</span><span class="token punctuation">,</span>
+    <span class="token string">'url'</span><span class="token punctuation">:</span> <span class="token string">'https://www.google.com/'</span><span class="token punctuation">,</span>
+    <span class="token string">'position'</span><span class="token punctuation">:</span> <span class="token string">'Developer'</span><span class="token punctuation">,</span>
+    <span class="token string">'description'</span><span class="token punctuation">:</span> <span class="token string">'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin leo sem, sagittis eu nisl et, feugiat interdum ex. Fusce tempus velit sit amet vehicula porta. Proin accumsan feugiat sagittis. Pellentesque laoreet auctor viverra. Sed feugiat metus quis ligula gravida rhoncus. Praesent in lectus venenatis, ullamcorper nunc vitae, venenatis diam. Vestibulum semper finibus sapien, vel convallis leo varius non.'</span><span class="token punctuation">,</span>
+    <span class="token string">'from'</span><span class="token punctuation">:</span> <span class="token string">'2013'</span><span class="token punctuation">,</span>
+    <span class="token string">'till'</span><span class="token punctuation">:</span> <span class="token string">'2015'</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">]</span>
+<span class="token delimiter punctuation">%&#125;</span></span>
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">endif</span> <span class="token delimiter punctuation">%&#125;</span></span>
 
-&#123;% if not CV_TESTIMONIALS %&#125;
-&#123;% set CV_TESTIMONIALS &#x3D; [&#123;
-    &#39;name&#39;: &#39;Joe Doe&#39;,
-    &#39;linked_company&#39;: &#39;Google&#39;,
-    &#39;date&#39;: &#39;April 25, 2014&#39;,
-    &#39;text&#39;: &#39;Etiam eget bibendum mauris. Ut pretium lorem ac ligula vestibulum porta. Proin dapibus aliquam dictum. In nec tellus enim. Morbi pharetra nisi tortor, sit amet pretium odio vulputate et. Cras ac nunc ipsum. Nunc ornare commodo luctus. Nunc nec eleifend neque. Integer eget neque faucibus, blandit velit eu, ultricies sapien. Fusce eget vestibulum ante, et imperdiet tortor. Sed in libero maximus, placerat lectus id, finibus massa. Sed egestas ligula a augue tincidunt cursus. Proin eleifend nec ante sed eleifend.&#39;
-&#125;,&#123;
-    &#39;name&#39;: &#39;Steve Wozniak&#39;,
-    &#39;linked_company&#39;: &#39;Apple&#39;,
-    &#39;date&#39;: &#39;November 2016&#39;,
-    &#39;text&#39;: &#39;Etiam eget bibendum mauris. Ut pretium lorem ac ligula vestibulum porta. Proin dapibus aliquam dictum. In nec tellus enim. Morbi pharetra nisi tortor, sit amet pretium odio vulputate et. Cras ac nunc ipsum. Nunc ornare commodo luctus. Nunc nec eleifend neque. Integer eget neque faucibus, blandit velit eu, ultricies sapien. Fusce eget vestibulum ante, et imperdiet tortor. Sed in libero maximus, placerat lectus id, finibus massa. Sed egestas ligula a augue tincidunt cursus. Proin eleifend nec ante sed eleifend.&#39;
-&#125;]
-%&#125;
-&#123;% endif %&#125;
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">if</span> <span class="token keyword">not</span> <span class="token variable">CV_TESTIMONIALS</span> <span class="token delimiter punctuation">%&#125;</span></span>
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">set</span> <span class="token variable">CV_TESTIMONIALS</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">&#123;</span>
+    <span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'Joe Doe'</span><span class="token punctuation">,</span>
+    <span class="token string">'linked_company'</span><span class="token punctuation">:</span> <span class="token string">'Google'</span><span class="token punctuation">,</span>
+    <span class="token string">'date'</span><span class="token punctuation">:</span> <span class="token string">'April 25, 2014'</span><span class="token punctuation">,</span>
+    <span class="token string">'text'</span><span class="token punctuation">:</span> <span class="token string">'Etiam eget bibendum mauris. Ut pretium lorem ac ligula vestibulum porta. Proin dapibus aliquam dictum. In nec tellus enim. Morbi pharetra nisi tortor, sit amet pretium odio vulputate et. Cras ac nunc ipsum. Nunc ornare commodo luctus. Nunc nec eleifend neque. Integer eget neque faucibus, blandit velit eu, ultricies sapien. Fusce eget vestibulum ante, et imperdiet tortor. Sed in libero maximus, placerat lectus id, finibus massa. Sed egestas ligula a augue tincidunt cursus. Proin eleifend nec ante sed eleifend.'</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token punctuation">&#123;</span>
+    <span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'Steve Wozniak'</span><span class="token punctuation">,</span>
+    <span class="token string">'linked_company'</span><span class="token punctuation">:</span> <span class="token string">'Apple'</span><span class="token punctuation">,</span>
+    <span class="token string">'date'</span><span class="token punctuation">:</span> <span class="token string">'November 2016'</span><span class="token punctuation">,</span>
+    <span class="token string">'text'</span><span class="token punctuation">:</span> <span class="token string">'Etiam eget bibendum mauris. Ut pretium lorem ac ligula vestibulum porta. Proin dapibus aliquam dictum. In nec tellus enim. Morbi pharetra nisi tortor, sit amet pretium odio vulputate et. Cras ac nunc ipsum. Nunc ornare commodo luctus. Nunc nec eleifend neque. Integer eget neque faucibus, blandit velit eu, ultricies sapien. Fusce eget vestibulum ante, et imperdiet tortor. Sed in libero maximus, placerat lectus id, finibus massa. Sed egestas ligula a augue tincidunt cursus. Proin eleifend nec ante sed eleifend.'</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">]</span>
+<span class="token delimiter punctuation">%&#125;</span></span>
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">endif</span> <span class="token delimiter punctuation">%&#125;</span></span>
 
-&#123;% if not CV_PORTFOLIO %&#125;
-&#123;% set CV_PORTFOLIO &#x3D; [&#123;
-    &#39;item&#39;: &#39;item #1&#39;,
-    &#39;description&#39;: &#39;Nam tempus elementum semper.&#39;,
-    &#39;image&#39;: &#39;&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;http:&#x2F;&#x2F;via.placeholder.com&#x2F;100x100&quot;&gt;&lt;&#x2F;a&gt;&#39;
-&#125;,&#123;
-    &#39;item&#39;: &#39;item #1&#39;,
-    &#39;description&#39;: &#39;Nam tempus elementum semper.&#39;,
-    &#39;image&#39;: &#39;&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;http:&#x2F;&#x2F;via.placeholder.com&#x2F;100x100&quot;&gt;&lt;&#x2F;a&gt;&#39;
-&#125;,&#123;
-    &#39;item&#39;: &#39;item #1&#39;,
-    &#39;description&#39;: &#39;Nam tempus elementum semper.&#39;,
-    &#39;image&#39;: &#39;&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;http:&#x2F;&#x2F;via.placeholder.com&#x2F;100x100&quot;&gt;&lt;&#x2F;a&gt;&#39;
-&#125;]
-%&#125;
-&#123;% endif %&#125;
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">if</span> <span class="token keyword">not</span> <span class="token variable">CV_PORTFOLIO</span> <span class="token delimiter punctuation">%&#125;</span></span>
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">set</span> <span class="token variable">CV_PORTFOLIO</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">&#123;</span>
+    <span class="token string">'item'</span><span class="token punctuation">:</span> <span class="token string">'item #1'</span><span class="token punctuation">,</span>
+    <span class="token string">'description'</span><span class="token punctuation">:</span> <span class="token string">'Nam tempus elementum semper.'</span><span class="token punctuation">,</span>
+    <span class="token string">'image'</span><span class="token punctuation">:</span> <span class="token string">'&lt;a href="#">&lt;img src="http://via.placeholder.com/100x100">&lt;/a>'</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token punctuation">&#123;</span>
+    <span class="token string">'item'</span><span class="token punctuation">:</span> <span class="token string">'item #1'</span><span class="token punctuation">,</span>
+    <span class="token string">'description'</span><span class="token punctuation">:</span> <span class="token string">'Nam tempus elementum semper.'</span><span class="token punctuation">,</span>
+    <span class="token string">'image'</span><span class="token punctuation">:</span> <span class="token string">'&lt;a href="#">&lt;img src="http://via.placeholder.com/100x100">&lt;/a>'</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token punctuation">&#123;</span>
+    <span class="token string">'item'</span><span class="token punctuation">:</span> <span class="token string">'item #1'</span><span class="token punctuation">,</span>
+    <span class="token string">'description'</span><span class="token punctuation">:</span> <span class="token string">'Nam tempus elementum semper.'</span><span class="token punctuation">,</span>
+    <span class="token string">'image'</span><span class="token punctuation">:</span> <span class="token string">'&lt;a href="#">&lt;img src="http://via.placeholder.com/100x100">&lt;/a>'</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">]</span>
+<span class="token delimiter punctuation">%&#125;</span></span>
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">endif</span> <span class="token delimiter punctuation">%&#125;</span></span>
 
-&#123;% if not CV_EDUCATION %&#125;
-&#123;% set CV_EDUCATION &#x3D; [&#123;
-    &#39;university&#39;: &#39;Harvard&#39;,
-    &#39;faculty&#39;: &#39;&#39;,
-    &#39;major&#39;: &#39;&#39;,
-    &#39;qualification&#39;: &#39;&#39;,
-    &#39;degree&#39;: &#39;&#39;,
-    &#39;from&#39;: &#39;2009&#39;,
-    &#39;till&#39;: &#39;2013&#39;
-&#125;]
-%&#125;
-&#123;% endif %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">if</span> <span class="token keyword">not</span> <span class="token variable">CV_EDUCATION</span> <span class="token delimiter punctuation">%&#125;</span></span>
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">set</span> <span class="token variable">CV_EDUCATION</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">&#123;</span>
+    <span class="token string">'university'</span><span class="token punctuation">:</span> <span class="token string">'Harvard'</span><span class="token punctuation">,</span>
+    <span class="token string">'faculty'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    <span class="token string">'major'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    <span class="token string">'qualification'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    <span class="token string">'degree'</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    <span class="token string">'from'</span><span class="token punctuation">:</span> <span class="token string">'2009'</span><span class="token punctuation">,</span>
+    <span class="token string">'till'</span><span class="token punctuation">:</span> <span class="token string">'2013'</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">]</span>
+<span class="token delimiter punctuation">%&#125;</span></span>
+<span class="token django language-django"><span class="token delimiter punctuation">&#123;%</span> <span class="token tag keyword">endif</span> <span class="token delimiter punctuation">%&#125;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </details>
 <details> 
   <summary>cv-base.html</summary>
-  <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+  <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en-US<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> 
@@ -621,7 +621,7 @@ let toggle = document.querySelector('.toggle-theme');
 </details>
 <details> 
   <summary>cv-template.html</summary>
-  <pre class="line-numbers language-html" data-language="html"><code class="language-html">&#123;% extends 'cv-base.html' %&#125;
+  <pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">&#123;% extends 'cv-base.html' %&#125;
 
 &#123;% block title %&#125;
 &#123;&#123; page.title|striptags|e &#125;&#125; &#123;%if page.subtitle %&#125; - &#123;&#123; page.subtitle|striptags|e &#125;&#125; &#123;% endif %&#125; · &#123;&#123; super() &#125;&#125;

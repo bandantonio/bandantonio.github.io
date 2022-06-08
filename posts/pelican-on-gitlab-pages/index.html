@@ -73,7 +73,7 @@
     gtag('config', 'UA-213715410-1');
   </script>
 
-<meta name="generator" content="Hexo 6.1.0"></head>
+<meta name="generator" content="Hexo 6.2.0"></head>
 
 <body>
   <div class="container">
@@ -152,7 +152,7 @@ If you think you need some help, feel free to contact me or leave a comment belo
 <li><strong>git</strong>. Version control system. It will be used to work with GitLab.</li>
 </ul>
 <p>Use the command below to install these packages in bulk:</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">sudo apt install python3.6 python-pip git -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> python3.6 python-pip <span class="token function">git</span> -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>In my case, all the required Python packages were available out-of-the-box, so I just installed git.</p>
 <h2 id="gitlab-setup-a-project">GitLab: Setup a Project<a class="header-anchor" href="#gitlab-setup-a-project">¶</a></h2>
 <p>Create a new repository on GitLab. There are several considerations to keep in mind:</p>
@@ -166,23 +166,23 @@ If you think you need some help, feel free to contact me or leave a comment belo
 <h2 id="virtualenv-installation">Virtualenv: Installation<a class="header-anchor" href="#virtualenv-installation">¶</a></h2>
 <p><code>virtualenv</code> is a tool to create isolated Python environments. It is recommended to install Pelican in an isolated environment to avoid possible permission problems and version conflicts when multiple python projects (or packages) require different versions of the same libraries to work.</p>
 <p>Install <code>virtualenv</code>:</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pip install virtualenv<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">Collecting virtualenv
-  Downloading virtualenv-15.1.0-py2.py3-none-any.whl (1.8MB)
-    100% |████████████████████████████████| 1.8MB 280kB&#x2F;s
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip <span class="token function">install</span> virtualenv<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Collecting virtualenv
+  Downloading virtualenv-15.1.0-py2.py3-none-any.whl <span class="token punctuation">(</span><span class="token number">1</span>.8MB<span class="token punctuation">)</span>
+    <span class="token number">100</span>% <span class="token operator">|</span>████████████████████████████████<span class="token operator">|</span> <span class="token number">1</span>.8MB 280kB/s
 Installing collected packages: virtualenv
 Successfully installed virtualenv-15.1.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>Specify a path where you want to create a new environment for your website:</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">virtualenv ~&#x2F;env<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">Running virtualenv with interpreter &#x2F;usr&#x2F;bin&#x2F;python2
-New python executable in &#x2F;home&#x2F;gold&#x2F;env&#x2F;bin&#x2F;python2
-Also creating executable in &#x2F;home&#x2F;gold&#x2F;env&#x2F;bin&#x2F;python
-Installing setuptools, pkg_resources, pip, wheel...done.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">virtualenv ~/env<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Running virtualenv with interpreter /usr/bin/python2
+New python executable <span class="token keyword">in</span> /home/gold/env/bin/python2
+Also creating executable <span class="token keyword">in</span> /home/gold/env/bin/python
+Installing setuptools, pkg_resources, pip, wheel<span class="token punctuation">..</span>.done.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>Navigate to the folder and run the environment:</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cd env&#x2F;
-source bin&#x2F;activate<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> env/
+<span class="token builtin class-name">source</span> bin/activate<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>Your terminal should indicate that <code>env</code> environment became active:</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">(env) gold@gold-vb:~&#x2F;env$<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">(</span>env<span class="token punctuation">)</span> gold@gold-vb:~/env$<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="clone-the-gitlab-project">Clone the GitLab Project<a class="header-anchor" href="#clone-the-gitlab-project">¶</a></h3>
 <p>Once the environment created and activated, clone the previously created GitLab project in it:</p>
 <pre class="line-numbers language-git" data-language="git"><code class="language-git">git clone git@gitlab.com:&lt;username>/mister-gold-test.git
@@ -192,88 +192,88 @@ warning: You appear to have cloned an empty repository.
 cd mister-gold-test<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="install-pelican">Install Pelican<a class="header-anchor" href="#install-pelican">¶</a></h3>
 <p>After you have cloned the project repository into the virtual environment, proceed with the installation of Pelican.</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pip install pelican<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">Collecting pelican
-  Downloading pelican-3.7.1-py2.py3-none-any.whl (134kB)
-    100% |████████████████████████████████| 143kB 1.2MB&#x2F;s 
-Collecting six&gt;&#x3D;1.4 (from pelican)
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip <span class="token function">install</span> pelican<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Collecting pelican
+  Downloading pelican-3.7.1-py2.py3-none-any.whl <span class="token punctuation">(</span>134kB<span class="token punctuation">)</span>
+    <span class="token number">100</span>% <span class="token operator">|</span>████████████████████████████████<span class="token operator">|</span> 143kB <span class="token number">1</span>.2MB/s 
+Collecting six<span class="token operator">>=</span><span class="token number">1.4</span> <span class="token punctuation">(</span>from pelican<span class="token punctuation">)</span>
   Downloading six-1.11.0-py2.py3-none-any.whl
-Collecting unidecode (from pelican)
-  Downloading Unidecode-0.04.21-py2.py3-none-any.whl (228kB)
-    100% |████████████████████████████████| 235kB 1.5MB&#x2F;s 
-Collecting pytz&gt;&#x3D;0a (from pelican)
-  Downloading pytz-2017.2-py2.py3-none-any.whl (484kB)
-    100% |████████████████████████████████| 491kB 1.0MB&#x2F;s 
-Collecting docutils (from pelican)
-  Downloading docutils-0.14-py2-none-any.whl (543kB)
-    100% |████████████████████████████████| 552kB 827kB&#x2F;s 
-Collecting blinker (from pelican)
-  Downloading blinker-1.4.tar.gz (111kB)
-    100% |████████████████████████████████| 112kB 3.3MB&#x2F;s 
-Collecting pygments (from pelican)
-  Downloading Pygments-2.2.0-py2.py3-none-any.whl (841kB)
-    100% |████████████████████████████████| 849kB 696kB&#x2F;s 
-Collecting python-dateutil (from pelican)
-  Downloading python_dateutil-2.6.1-py2.py3-none-any.whl (194kB)
-    100% |████████████████████████████████| 194kB 2.2MB&#x2F;s 
-Collecting feedgenerator&gt;&#x3D;1.9 (from pelican)
-  Downloading feedgenerator-1.9.tar.gz (4.1MB)
-    100% |████████████████████████████████| 4.1MB 183kB&#x2F;s 
-Collecting jinja2&gt;&#x3D;2.7 (from pelican)
-  Downloading Jinja2-2.9.6-py2.py3-none-any.whl (340kB)
-    100% |████████████████████████████████| 348kB 2.2MB&#x2F;s 
-Collecting MarkupSafe&gt;&#x3D;0.23 (from jinja2&gt;&#x3D;2.7-&gt;pelican)
+Collecting unidecode <span class="token punctuation">(</span>from pelican<span class="token punctuation">)</span>
+  Downloading Unidecode-0.04.21-py2.py3-none-any.whl <span class="token punctuation">(</span>228kB<span class="token punctuation">)</span>
+    <span class="token number">100</span>% <span class="token operator">|</span>████████████████████████████████<span class="token operator">|</span> 235kB <span class="token number">1</span>.5MB/s 
+Collecting pytz<span class="token operator">>=</span>0a <span class="token punctuation">(</span>from pelican<span class="token punctuation">)</span>
+  Downloading pytz-2017.2-py2.py3-none-any.whl <span class="token punctuation">(</span>484kB<span class="token punctuation">)</span>
+    <span class="token number">100</span>% <span class="token operator">|</span>████████████████████████████████<span class="token operator">|</span> 491kB <span class="token number">1</span>.0MB/s 
+Collecting docutils <span class="token punctuation">(</span>from pelican<span class="token punctuation">)</span>
+  Downloading docutils-0.14-py2-none-any.whl <span class="token punctuation">(</span>543kB<span class="token punctuation">)</span>
+    <span class="token number">100</span>% <span class="token operator">|</span>████████████████████████████████<span class="token operator">|</span> 552kB 827kB/s 
+Collecting blinker <span class="token punctuation">(</span>from pelican<span class="token punctuation">)</span>
+  Downloading blinker-1.4.tar.gz <span class="token punctuation">(</span>111kB<span class="token punctuation">)</span>
+    <span class="token number">100</span>% <span class="token operator">|</span>████████████████████████████████<span class="token operator">|</span> 112kB <span class="token number">3</span>.3MB/s 
+Collecting pygments <span class="token punctuation">(</span>from pelican<span class="token punctuation">)</span>
+  Downloading Pygments-2.2.0-py2.py3-none-any.whl <span class="token punctuation">(</span>841kB<span class="token punctuation">)</span>
+    <span class="token number">100</span>% <span class="token operator">|</span>████████████████████████████████<span class="token operator">|</span> 849kB 696kB/s 
+Collecting python-dateutil <span class="token punctuation">(</span>from pelican<span class="token punctuation">)</span>
+  Downloading python_dateutil-2.6.1-py2.py3-none-any.whl <span class="token punctuation">(</span>194kB<span class="token punctuation">)</span>
+    <span class="token number">100</span>% <span class="token operator">|</span>████████████████████████████████<span class="token operator">|</span> 194kB <span class="token number">2</span>.2MB/s 
+Collecting feedgenerator<span class="token operator">>=</span><span class="token number">1.9</span> <span class="token punctuation">(</span>from pelican<span class="token punctuation">)</span>
+  Downloading feedgenerator-1.9.tar.gz <span class="token punctuation">(</span><span class="token number">4</span>.1MB<span class="token punctuation">)</span>
+    <span class="token number">100</span>% <span class="token operator">|</span>████████████████████████████████<span class="token operator">|</span> <span class="token number">4</span>.1MB 183kB/s 
+Collecting jinja<span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token operator">=</span><span class="token number">2.7</span> <span class="token punctuation">(</span>from pelican<span class="token punctuation">)</span>
+  Downloading Jinja2-2.9.6-py2.py3-none-any.whl <span class="token punctuation">(</span>340kB<span class="token punctuation">)</span>
+    <span class="token number">100</span>% <span class="token operator">|</span>████████████████████████████████<span class="token operator">|</span> 348kB <span class="token number">2</span>.2MB/s 
+Collecting MarkupSafe<span class="token operator">>=</span><span class="token number">0.23</span> <span class="token punctuation">(</span>from jinja<span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token operator">=</span><span class="token number">2.7</span>-<span class="token operator">></span>pelican<span class="token punctuation">)</span>
   Downloading MarkupSafe-1.0.tar.gz
-Building wheels for collected packages: blinker, feedgenerator, MarkupSafe
-  Running setup.py bdist_wheel for blinker ... done
-  Stored in directory: &#x2F;home&#x2F;gold&#x2F;.cache&#x2F;pip&#x2F;wheels&#x2F;7b&#x2F;8a&#x2F;eb&#x2F;5a4f4444f366c515073db8a129c92d4727ad945e5e64b9e8bd
-  Running setup.py bdist_wheel for feedgenerator ... done
-  Stored in directory: &#x2F;home&#x2F;gold&#x2F;.cache&#x2F;pip&#x2F;wheels&#x2F;6a&#x2F;7e&#x2F;41&#x2F;7ed20833c4cae3d36c5e373ac5d8d9eee58546b87c1b9505fe
-  Running setup.py bdist_wheel for MarkupSafe ... done
-  Stored in directory: &#x2F;home&#x2F;gold&#x2F;.cache&#x2F;pip&#x2F;wheels&#x2F;88&#x2F;a7&#x2F;30&#x2F;e39a54a87bcbe25308fa3ca64e8ddc75d9b3e5afa21ee32d57
+Building wheels <span class="token keyword">for</span> collected packages: blinker, feedgenerator, MarkupSafe
+  Running setup.py bdist_wheel <span class="token keyword">for</span> blinker <span class="token punctuation">..</span>. <span class="token keyword">done</span>
+  Stored <span class="token keyword">in</span> directory: /home/gold/.cache/pip/wheels/7b/8a/eb/5a4f4444f366c515073db8a129c92d4727ad945e5e64b9e8bd
+  Running setup.py bdist_wheel <span class="token keyword">for</span> feedgenerator <span class="token punctuation">..</span>. <span class="token keyword">done</span>
+  Stored <span class="token keyword">in</span> directory: /home/gold/.cache/pip/wheels/6a/7e/41/7ed20833c4cae3d36c5e373ac5d8d9eee58546b87c1b9505fe
+  Running setup.py bdist_wheel <span class="token keyword">for</span> MarkupSafe <span class="token punctuation">..</span>. <span class="token keyword">done</span>
+  Stored <span class="token keyword">in</span> directory: /home/gold/.cache/pip/wheels/88/a7/30/e39a54a87bcbe25308fa3ca64e8ddc75d9b3e5afa21ee32d57
 Successfully built blinker feedgenerator MarkupSafe
 Installing collected packages: six, unidecode, pytz, docutils, blinker, pygments, python-dateutil, feedgenerator, MarkupSafe, jinja2, pelican
 Successfully installed MarkupSafe-1.0 blinker-1.4 docutils-0.14 feedgenerator-1.9 jinja2-2.9.6 pelican-3.7.1 pygments-2.2.0 python-dateutil-2.6.1 pytz-2017.2 six-1.11.0 unidecode-0.4.21<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>In order to be able to write articles in Markdown, it is also necessary to install the appropriate package:</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pip install markdown<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">Collecting markdown
-  Downloading Markdown-2.6.9.tar.gz (271kB)
-    100% |████████████████████████████████| 276kB 920kB&#x2F;s
-Building wheels for collected packages: markdown
-  Running setup.py bdist_wheel for markdown ... done
-  Stored in directory: &#x2F;home&#x2F;gold&#x2F;.cache&#x2F;pip&#x2F;wheels&#x2F;bf&#x2F;46&#x2F;10&#x2F;c93e17ae86ae3b3a919c7b39dad3b5ccf09aeb066419e5c1e5
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip <span class="token function">install</span> markdown<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Collecting markdown
+  Downloading Markdown-2.6.9.tar.gz <span class="token punctuation">(</span>271kB<span class="token punctuation">)</span>
+    <span class="token number">100</span>% <span class="token operator">|</span>████████████████████████████████<span class="token operator">|</span> 276kB 920kB/s
+Building wheels <span class="token keyword">for</span> collected packages: markdown
+  Running setup.py bdist_wheel <span class="token keyword">for</span> markdown <span class="token punctuation">..</span>. <span class="token keyword">done</span>
+  Stored <span class="token keyword">in</span> directory: /home/gold/.cache/pip/wheels/bf/46/10/c93e17ae86ae3b3a919c7b39dad3b5ccf09aeb066419e5c1e5
 Successfully built markdown
 Installing collected packages: markdown
 Successfully installed markdown-2.6.9<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="generate-a-basic-website">Generate a Basic Website<a class="header-anchor" href="#generate-a-basic-website">¶</a></h3>
 <p>Okay, Pelican has been installed and you can test it. Launch the <code>pelican-quickstart</code> command to create a basic skeleton website:</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pelican-quickstart<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pelican-quickstart<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>This script asks you some questions about a website to be created and generates all the required files:</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">Welcome to pelican-quickstart v3.7.1.
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Welcome to pelican-quickstart v3.7.1.
 
-This script will help you create a new Pelican-based website.
+This script will <span class="token builtin class-name">help</span> you create a new Pelican-based website.
 
 Please answer the following questions so this script can generate the files
 needed by Pelican.
 
-&gt; Where do you want to create your new web site? [.]
-&gt; What will be the title of this web site? Mister Gold Test
-&gt; Who will be the author of this web site? Antonio
-&gt; What will be the default language of this web site? [en]
-&gt; Do you want to specify a URL prefix? e.g., http:&#x2F;&#x2F;example.com   (Y&#x2F;n)
-&gt; What is your URL prefix? (see above example; no trailing slash) https:&#x2F;&#x2F;&lt;username&gt;.gitlab.io&#x2F;mister-gold-test
-&gt; Do you want to enable article pagination? (Y&#x2F;n)
-&gt; How many articles per page do you want? [10]
-&gt; What is your time zone? [Europe&#x2F;Paris]
-&gt; Do you want to generate a Fabfile&#x2F;Makefile to automate generation and publishing? (Y&#x2F;n)
-&gt; Do you want an auto-reload &amp; simpleHTTP script to assist with theme and site development? (Y&#x2F;n)
-&gt; Do you want to upload your website using FTP? (y&#x2F;N)
-&gt; Do you want to upload your website using SSH? (y&#x2F;N)
-&gt; Do you want to upload your website using Dropbox? (y&#x2F;N)
-&gt; Do you want to upload your website using S3? (y&#x2F;N)
-&gt; Do you want to upload your website using Rackspace Cloud Files? (y&#x2F;N)
-&gt; Do you want to upload your website using GitHub Pages? (y&#x2F;N)
-Done. Your new project is available at &#x2F;home&#x2F;gold&#x2F;env&#x2F;mister-gold-test<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token operator">></span> Where <span class="token keyword">do</span> you want to create your new web site? <span class="token punctuation">[</span>.<span class="token punctuation">]</span>
+<span class="token operator">></span> What will be the title of this web site? Mister Gold Test
+<span class="token operator">></span> Who will be the author of this web site? Antonio
+<span class="token operator">></span> What will be the default language of this web site? <span class="token punctuation">[</span>en<span class="token punctuation">]</span>
+<span class="token operator">></span> Do you want to specify a URL prefix? e.g., http://example.com   <span class="token punctuation">(</span>Y/n<span class="token punctuation">)</span>
+<span class="token operator">></span> What is your URL prefix? <span class="token punctuation">(</span>see above example<span class="token punctuation">;</span> no trailing slash<span class="token punctuation">)</span> https://<span class="token operator">&lt;</span>username<span class="token operator">></span>.gitlab.io/mister-gold-test
+<span class="token operator">></span> Do you want to <span class="token builtin class-name">enable</span> article pagination? <span class="token punctuation">(</span>Y/n<span class="token punctuation">)</span>
+<span class="token operator">></span> How many articles per page <span class="token keyword">do</span> you want? <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span>
+<span class="token operator">></span> What is your <span class="token function">time</span> zone? <span class="token punctuation">[</span>Europe/Paris<span class="token punctuation">]</span>
+<span class="token operator">></span> Do you want to generate a Fabfile/Makefile to automate generation and publishing? <span class="token punctuation">(</span>Y/n<span class="token punctuation">)</span>
+<span class="token operator">></span> Do you want an auto-reload <span class="token operator">&amp;</span> simpleHTTP script to assist with theme and site development? <span class="token punctuation">(</span>Y/n<span class="token punctuation">)</span>
+<span class="token operator">></span> Do you want to upload your website using FTP? <span class="token punctuation">(</span>y/N<span class="token punctuation">)</span>
+<span class="token operator">></span> Do you want to upload your website using SSH? <span class="token punctuation">(</span>y/N<span class="token punctuation">)</span>
+<span class="token operator">></span> Do you want to upload your website using Dropbox? <span class="token punctuation">(</span>y/N<span class="token punctuation">)</span>
+<span class="token operator">></span> Do you want to upload your website using S3? <span class="token punctuation">(</span>y/N<span class="token punctuation">)</span>
+<span class="token operator">></span> Do you want to upload your website using Rackspace Cloud Files? <span class="token punctuation">(</span>y/N<span class="token punctuation">)</span>
+<span class="token operator">></span> Do you want to upload your website using GitHub Pages? <span class="token punctuation">(</span>y/N<span class="token punctuation">)</span>
+Done. Your new project is available at /home/gold/env/mister-gold-test<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>Pay attention to a URL prefix - this is an address to your website you got after creating your project in GitLab (That I recommended you to choose wisely). The rest of questions you can leave in their defaults. Default values are capitalized (Y/n or y/N).</p>
 <h3 id="add-an-article">Add an article<a class="header-anchor" href="#add-an-article">¶</a></h3>
 <p><code>pelican-quickstart</code> generates the base Pelican structure that allows you to extend it and customize according to your needs, but all articles should be added manually.</p>
@@ -294,29 +294,29 @@ This is the content of my first article<span aria-hidden="true" class="line-numb
 <p><strong>Change the output folder</strong></p>
 <p>By default Pelican puts the generated files into <code>output</code> folder and this won’t work in GitLab because it requires static files to be located in <code>public</code> folder.</p>
 <p>To change the output folder, navigate to the project folder (<code>~/env/mister-gold-test</code>), find <code>pelicanconf.py</code> and <code>publishconf.py</code> files and then add the following line to these files:</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">OUTPUT_PATH &#x3D; &#39;public&#x2F;&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">OUTPUT_PATH <span class="token operator">=</span> <span class="token string">'public/'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>To do the same for local development, open the <code>Makefile</code> file and change this</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">OUTPUTDIR&#x3D;$(BASEDIR)&#x2F;output<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token assign-left variable">OUTPUTDIR</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>BASEDIR<span class="token variable">)</span></span>/output<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>to this</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">OUTPUTDIR&#x3D;$(BASEDIR)&#x2F;public<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token assign-left variable">OUTPUTDIR</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>BASEDIR<span class="token variable">)</span></span>/public<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>These two manipulations will force Pelican to put all the generated files to the <code>public</code> folder. Now you can delete <code>output</code> folder, you are no longer need it.</p>
 <p>Once finished, you can convert your first article into HTML using either <code>pelican</code> command, specifying the path to your content, or <code>make</code> command:</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pelican content
-Done: Processed 1 article, 0 drafts, 0 pages and 0 hidden pages in 0.21 seconds.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">make html
-pelican &#x2F;home&#x2F;gold&#x2F;env&#x2F;mister-gold-test&#x2F;content -o &#x2F;home&#x2F;gold&#x2F;env&#x2F;mister-gold-test&#x2F;public -s &#x2F;home&#x2F;gold&#x2F;env&#x2F;mister-gold-test&#x2F;pelicanconf.py 
-Done: Processed 1 article, 0 drafts, 0 pages and 0 hidden pages in 0.23 seconds.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pelican content
+Done: Processed <span class="token number">1</span> article, <span class="token number">0</span> drafts, <span class="token number">0</span> pages and <span class="token number">0</span> hidden pages <span class="token keyword">in</span> <span class="token number">0.21</span> seconds.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">make</span> html
+pelican /home/gold/env/mister-gold-test/content -o /home/gold/env/mister-gold-test/public -s /home/gold/env/mister-gold-test/pelicanconf.py 
+Done: Processed <span class="token number">1</span> article, <span class="token number">0</span> drafts, <span class="token number">0</span> pages and <span class="token number">0</span> hidden pages <span class="token keyword">in</span> <span class="token number">0.23</span> seconds.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>All the generated static files will be located in <code>public</code> folder now.</p>
 <h3 id="view-the-generated-files">View the generated files<a class="header-anchor" href="#view-the-generated-files">¶</a></h3>
 <p>To preview the generated files, use <code>make serve</code> command:</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">make serve
-cd &#x2F;home&#x2F;gold&#x2F;env&#x2F;mister-gold-test&#x2F;public &amp;&amp; python -m pelican.server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">make</span> serve
+<span class="token builtin class-name">cd</span> /home/gold/env/mister-gold-test/public <span class="token operator">&amp;&amp;</span> python -m pelican.server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>You can also navigate to the <code>public</code> folder and run a simple web server using Python. The command syntax depends on the version of Python you use:</p>
 <p>For Python 2.7.x:</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cd public
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> public
 python -m SimpleHTTPServer<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>For Python 3.x:</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cd public
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> public
 python -m http.server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>Once launched, open <code>http://localhost:8000</code> in your web browser:</p>
 <p><img src="/images/2017/10/first-launch-website.png" alt="First Launch" title="First Launch on Localhost"></p>
@@ -324,7 +324,7 @@ python -m http.server<span aria-hidden="true" class="line-numbers-rows"><span></
 <p>To properly configure GitLab to work with Pelican, you need to create 3 files: <code>requirements.txt</code>, <code>.gitlab-ci.yml</code>, <code>.gitignore</code>, and enable Shared Runners.</p>
 <p><strong>requirements.txt</strong></p>
 <p>Open your project folder (<code>~/env/mister-gold-test</code>) and create a <code>requirements.txt</code> file with the following contents:</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pelican
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pelican
 markdown<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>This file contains a list of packages that should be installed when creating your website. These are the same commands that were executed inside the virtual environment.</p>
 <p><strong>.gitlab-ci.yml</strong></p>
@@ -408,64 +408,64 @@ To gitlab.com:&lt;username>/mister-gold-test.git
 <p><img src="/images/2017/10/build-running.png" alt="Build is Running" title="Build is Running"></p>
 <p><img src="/images/2017/10/build-passed.png" alt="Build Passed" title="Build Passed"></p>
 <p>and the CI Pipeline Build log:</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">Running with gitlab-runner 10.1.0-rc.1 (946e835b)
-  on docker-auto-scale (4e4528ca)
-Using Docker executor with image python:3.6-alpine ...
-Using docker image sha256:ae26e16b7a5e8895ff9ad2f72d3a505394d06b94012b6bd623a46d5268f43c92 for predefined container...
-Pulling docker image python:3.6-alpine ...
-Using docker image python:3.6-alpine ID&#x3D;sha256:d26cf7d4701d0c82caabe7f58164a372c5cc1c3dde5ec9c29d1eaeb75075cc95 for build container...
-Running on runner-4e4528ca-project-4393246-concurrent-0 via runner-4e4528ca-srm-1508088671-157c532f...
-Cloning repository...
-Cloning into &#39;&#x2F;builds&#x2F;&lt;username&gt;&#x2F;mister-gold-test&#39;...
-Checking out c81bdd9c as master...
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Running with gitlab-runner <span class="token number">10.1</span>.0-rc.1 <span class="token punctuation">(</span>946e835b<span class="token punctuation">)</span>
+  on docker-auto-scale <span class="token punctuation">(</span>4e4528ca<span class="token punctuation">)</span>
+Using Docker executor with image python:3.6-alpine <span class="token punctuation">..</span>.
+Using <span class="token function">docker</span> image sha256:ae26e16b7a5e8895ff9ad2f72d3a505394d06b94012b6bd623a46d5268f43c92 <span class="token keyword">for</span> predefined container<span class="token punctuation">..</span>.
+Pulling <span class="token function">docker</span> image python:3.6-alpine <span class="token punctuation">..</span>.
+Using <span class="token function">docker</span> image python:3.6-alpine <span class="token assign-left variable">ID</span><span class="token operator">=</span>sha256:d26cf7d4701d0c82caabe7f58164a372c5cc1c3dde5ec9c29d1eaeb75075cc95 <span class="token keyword">for</span> build container<span class="token punctuation">..</span>.
+Running on runner-4e4528ca-project-4393246-concurrent-0 via runner-4e4528ca-srm-1508088671-157c532f<span class="token punctuation">..</span>.
+Cloning repository<span class="token punctuation">..</span>.
+Cloning into <span class="token string">'/builds/&lt;username>/mister-gold-test'</span><span class="token punctuation">..</span>.
+Checking out c81bdd9c as master<span class="token punctuation">..</span>.
 Skipping Git submodules setup
-$ pip install -r requirements.txt
-Collecting pelican (from -r requirements.txt (line 1))
-  Downloading pelican-3.7.1-py2.py3-none-any.whl (134kB)
-Collecting markdown (from -r requirements.txt (line 2))
-  Downloading Markdown-2.6.9.tar.gz (271kB)
-Collecting jinja2&gt;&#x3D;2.7 (from pelican-&gt;-r requirements.txt (line 1))
-  Downloading Jinja2-2.9.6-py2.py3-none-any.whl (340kB)
-Collecting docutils (from pelican-&gt;-r requirements.txt (line 1))
-  Downloading docutils-0.14-py3-none-any.whl (543kB)
-Collecting pygments (from pelican-&gt;-r requirements.txt (line 1))
-  Downloading Pygments-2.2.0-py2.py3-none-any.whl (841kB)
-Collecting python-dateutil (from pelican-&gt;-r requirements.txt (line 1))
-  Downloading python_dateutil-2.6.1-py2.py3-none-any.whl (194kB)
-Collecting unidecode (from pelican-&gt;-r requirements.txt (line 1))
-  Downloading Unidecode-0.04.21-py2.py3-none-any.whl (228kB)
-Collecting blinker (from pelican-&gt;-r requirements.txt (line 1))
-  Downloading blinker-1.4.tar.gz (111kB)
-Collecting feedgenerator&gt;&#x3D;1.9 (from pelican-&gt;-r requirements.txt (line 1))
-  Downloading feedgenerator-1.9.tar.gz (4.1MB)
-Collecting six&gt;&#x3D;1.4 (from pelican-&gt;-r requirements.txt (line 1))
+$ pip <span class="token function">install</span> -r requirements.txt
+Collecting pelican <span class="token punctuation">(</span>from -r requirements.txt <span class="token punctuation">(</span>line <span class="token number">1</span><span class="token punctuation">))</span>
+  Downloading pelican-3.7.1-py2.py3-none-any.whl <span class="token punctuation">(</span>134kB<span class="token punctuation">)</span>
+Collecting markdown <span class="token punctuation">(</span>from -r requirements.txt <span class="token punctuation">(</span>line <span class="token number">2</span><span class="token punctuation">))</span>
+  Downloading Markdown-2.6.9.tar.gz <span class="token punctuation">(</span>271kB<span class="token punctuation">)</span>
+Collecting jinja<span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token operator">=</span><span class="token number">2.7</span> <span class="token punctuation">(</span>from pelican-<span class="token operator">></span>-r requirements.txt <span class="token punctuation">(</span>line <span class="token number">1</span><span class="token punctuation">))</span>
+  Downloading Jinja2-2.9.6-py2.py3-none-any.whl <span class="token punctuation">(</span>340kB<span class="token punctuation">)</span>
+Collecting docutils <span class="token punctuation">(</span>from pelican-<span class="token operator">></span>-r requirements.txt <span class="token punctuation">(</span>line <span class="token number">1</span><span class="token punctuation">))</span>
+  Downloading docutils-0.14-py3-none-any.whl <span class="token punctuation">(</span>543kB<span class="token punctuation">)</span>
+Collecting pygments <span class="token punctuation">(</span>from pelican-<span class="token operator">></span>-r requirements.txt <span class="token punctuation">(</span>line <span class="token number">1</span><span class="token punctuation">))</span>
+  Downloading Pygments-2.2.0-py2.py3-none-any.whl <span class="token punctuation">(</span>841kB<span class="token punctuation">)</span>
+Collecting python-dateutil <span class="token punctuation">(</span>from pelican-<span class="token operator">></span>-r requirements.txt <span class="token punctuation">(</span>line <span class="token number">1</span><span class="token punctuation">))</span>
+  Downloading python_dateutil-2.6.1-py2.py3-none-any.whl <span class="token punctuation">(</span>194kB<span class="token punctuation">)</span>
+Collecting unidecode <span class="token punctuation">(</span>from pelican-<span class="token operator">></span>-r requirements.txt <span class="token punctuation">(</span>line <span class="token number">1</span><span class="token punctuation">))</span>
+  Downloading Unidecode-0.04.21-py2.py3-none-any.whl <span class="token punctuation">(</span>228kB<span class="token punctuation">)</span>
+Collecting blinker <span class="token punctuation">(</span>from pelican-<span class="token operator">></span>-r requirements.txt <span class="token punctuation">(</span>line <span class="token number">1</span><span class="token punctuation">))</span>
+  Downloading blinker-1.4.tar.gz <span class="token punctuation">(</span>111kB<span class="token punctuation">)</span>
+Collecting feedgenerator<span class="token operator">>=</span><span class="token number">1.9</span> <span class="token punctuation">(</span>from pelican-<span class="token operator">></span>-r requirements.txt <span class="token punctuation">(</span>line <span class="token number">1</span><span class="token punctuation">))</span>
+  Downloading feedgenerator-1.9.tar.gz <span class="token punctuation">(</span><span class="token number">4</span>.1MB<span class="token punctuation">)</span>
+Collecting six<span class="token operator">>=</span><span class="token number">1.4</span> <span class="token punctuation">(</span>from pelican-<span class="token operator">></span>-r requirements.txt <span class="token punctuation">(</span>line <span class="token number">1</span><span class="token punctuation">))</span>
   Downloading six-1.11.0-py2.py3-none-any.whl
-Collecting pytz&gt;&#x3D;0a (from pelican-&gt;-r requirements.txt (line 1))
-  Downloading pytz-2017.2-py2.py3-none-any.whl (484kB)
-Collecting MarkupSafe&gt;&#x3D;0.23 (from jinja2&gt;&#x3D;2.7-&gt;pelican-&gt;-r requirements.txt (line 1))
+Collecting pytz<span class="token operator">>=</span>0a <span class="token punctuation">(</span>from pelican-<span class="token operator">></span>-r requirements.txt <span class="token punctuation">(</span>line <span class="token number">1</span><span class="token punctuation">))</span>
+  Downloading pytz-2017.2-py2.py3-none-any.whl <span class="token punctuation">(</span>484kB<span class="token punctuation">)</span>
+Collecting MarkupSafe<span class="token operator">>=</span><span class="token number">0.23</span> <span class="token punctuation">(</span>from jinja<span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token operator">=</span><span class="token number">2.7</span>-<span class="token operator">></span>pelican-<span class="token operator">></span>-r requirements.txt <span class="token punctuation">(</span>line <span class="token number">1</span><span class="token punctuation">))</span>
   Downloading MarkupSafe-1.0.tar.gz
-Building wheels for collected packages: markdown, blinker, feedgenerator, MarkupSafe
-  Running setup.py bdist_wheel for markdown: started
-  Running setup.py bdist_wheel for markdown: finished with status &#39;done&#39;
-  Stored in directory: &#x2F;root&#x2F;.cache&#x2F;pip&#x2F;wheels&#x2F;bf&#x2F;46&#x2F;10&#x2F;c93e17ae86ae3b3a919c7b39dad3b5ccf09aeb066419e5c1e5
-  Running setup.py bdist_wheel for blinker: started
-  Running setup.py bdist_wheel for blinker: finished with status &#39;done&#39;
-  Stored in directory: &#x2F;root&#x2F;.cache&#x2F;pip&#x2F;wheels&#x2F;7b&#x2F;8a&#x2F;eb&#x2F;5a4f4444f366c515073db8a129c92d4727ad945e5e64b9e8bd
-  Running setup.py bdist_wheel for feedgenerator: started
-  Running setup.py bdist_wheel for feedgenerator: finished with status &#39;done&#39;
-  Stored in directory: &#x2F;root&#x2F;.cache&#x2F;pip&#x2F;wheels&#x2F;6a&#x2F;7e&#x2F;41&#x2F;7ed20833c4cae3d36c5e373ac5d8d9eee58546b87c1b9505fe
-  Running setup.py bdist_wheel for MarkupSafe: started
-  Running setup.py bdist_wheel for MarkupSafe: finished with status &#39;done&#39;
-  Stored in directory: &#x2F;root&#x2F;.cache&#x2F;pip&#x2F;wheels&#x2F;88&#x2F;a7&#x2F;30&#x2F;e39a54a87bcbe25308fa3ca64e8ddc75d9b3e5afa21ee32d57
+Building wheels <span class="token keyword">for</span> collected packages: markdown, blinker, feedgenerator, MarkupSafe
+  Running setup.py bdist_wheel <span class="token keyword">for</span> markdown: started
+  Running setup.py bdist_wheel <span class="token keyword">for</span> markdown: finished with status <span class="token string">'done'</span>
+  Stored <span class="token keyword">in</span> directory: /root/.cache/pip/wheels/bf/46/10/c93e17ae86ae3b3a919c7b39dad3b5ccf09aeb066419e5c1e5
+  Running setup.py bdist_wheel <span class="token keyword">for</span> blinker: started
+  Running setup.py bdist_wheel <span class="token keyword">for</span> blinker: finished with status <span class="token string">'done'</span>
+  Stored <span class="token keyword">in</span> directory: /root/.cache/pip/wheels/7b/8a/eb/5a4f4444f366c515073db8a129c92d4727ad945e5e64b9e8bd
+  Running setup.py bdist_wheel <span class="token keyword">for</span> feedgenerator: started
+  Running setup.py bdist_wheel <span class="token keyword">for</span> feedgenerator: finished with status <span class="token string">'done'</span>
+  Stored <span class="token keyword">in</span> directory: /root/.cache/pip/wheels/6a/7e/41/7ed20833c4cae3d36c5e373ac5d8d9eee58546b87c1b9505fe
+  Running setup.py bdist_wheel <span class="token keyword">for</span> MarkupSafe: started
+  Running setup.py bdist_wheel <span class="token keyword">for</span> MarkupSafe: finished with status <span class="token string">'done'</span>
+  Stored <span class="token keyword">in</span> directory: /root/.cache/pip/wheels/88/a7/30/e39a54a87bcbe25308fa3ca64e8ddc75d9b3e5afa21ee32d57
 Successfully built markdown blinker feedgenerator MarkupSafe
 Installing collected packages: MarkupSafe, jinja2, docutils, pygments, six, python-dateutil, unidecode, blinker, pytz, feedgenerator, pelican, markdown
 Successfully installed MarkupSafe-1.0 blinker-1.4 docutils-0.14 feedgenerator-1.9 jinja2-2.9.6 markdown-2.6.9 pelican-3.7.1 pygments-2.2.0 python-dateutil-2.6.1 pytz-2017.2 six-1.11.0 unidecode-0.4.21
 $ pelican -s publishconf.py
-WARNING: Feeds generated without SITEURL set properly may not be valid
-Done: Processed 1 article, 0 drafts, 0 pages and 0 hidden pages in 0.28 seconds.
-Uploading artifacts...
-public: found 46 matching files
-Uploading artifacts to coordinator... ok            id&#x3D;36292241 responseStatus&#x3D;201 Created token&#x3D;tEvi_fb_
+WARNING: Feeds generated without SITEURL <span class="token builtin class-name">set</span> properly may not be valid
+Done: Processed <span class="token number">1</span> article, <span class="token number">0</span> drafts, <span class="token number">0</span> pages and <span class="token number">0</span> hidden pages <span class="token keyword">in</span> <span class="token number">0.28</span> seconds.
+Uploading artifacts<span class="token punctuation">..</span>.
+public: found <span class="token number">46</span> matching files
+Uploading artifacts to coordinator<span class="token punctuation">..</span>. ok            <span class="token assign-left variable">id</span><span class="token operator">=</span><span class="token number">36292241</span> <span class="token assign-left variable">responseStatus</span><span class="token operator">=</span><span class="token number">201</span> Created <span class="token assign-left variable">token</span><span class="token operator">=</span>tEvi_fb_
 Job succeeded<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>You can see that GitLab CI logic is straightforward and it did the same operations that we performed after activating the virtual environment.</p>
 <p>Once both jobs completed successfully, you can open <code>https://&lt;username&gt;.gitlab.io/mister-gold-test</code> and check your website. You can also see this URL by navigating to GitLab <strong>Settings &gt; Pages</strong>:</p>
