@@ -8,6 +8,7 @@ work_experience:
     responsibilities:
 			- <span class="keyword">Building and populating a documentation culture company-wide</span>
       - <span class="keyword">Leading and inspiring</span> a team of Technical Writers
+      - <span class="keyword">Helping</span> development teams in <span class="keyword">achieving</span> their documentation goals
 
   - company: Namecheap, Inc
     date: Dec 2016 - May 2021
@@ -77,7 +78,7 @@ skills:
 
 languages:
   - <span class='keyword'>English</span> (<span class='keyword'>C2 Proficient</span>. <a href='https://www.efset.org/cert/G9yQYp'>EF SET English Certificate</a>)
-	- French (Pre-Intermediate)
+	- French (Elementary)
 
 education_courses:
   - <i class='icon-docker'></i> Internal Docker advanced course at Namecheap, Inc.
