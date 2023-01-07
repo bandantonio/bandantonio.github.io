@@ -73,7 +73,7 @@
     gtag('config', 'UA-213715410-1');
   </script>
 
-<meta name="generator" content="Hexo 6.2.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
   <div class="container">
@@ -134,9 +134,9 @@ let toggle = document.querySelector('.toggle-theme');
 
         <div class="trans">
           <h2>Deploy Pelican on GitLab Pages</h2>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#introduction-3"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#getting-started"><span class="toc-text">Getting Started</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#prerequisites"><span class="toc-text">Prerequisites</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gitlab-setup-a-project"><span class="toc-text">GitLab: Setup a Project</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#virtualenv-installation"><span class="toc-text">Virtualenv: Installation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#clone-the-gitlab-project"><span class="toc-text">Clone the GitLab Project</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#install-pelican"><span class="toc-text">Install Pelican</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#generate-a-basic-website"><span class="toc-text">Generate a Basic Website</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#add-an-article"><span class="toc-text">Add an article</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#generate-html-output"><span class="toc-text">Generate HTML output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#view-the-generated-files"><span class="toc-text">View the generated files</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#configuration-for-gitlab"><span class="toc-text">Configuration for GitLab</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#publish-on-gitlab"><span class="toc-text">Publish on GitLab</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#references"><span class="toc-text">References</span></a></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#getting-started"><span class="toc-text">Getting Started</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#prerequisites"><span class="toc-text">Prerequisites</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gitlab-setup-a-project"><span class="toc-text">GitLab: Setup a Project</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#virtualenv-installation"><span class="toc-text">Virtualenv: Installation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#clone-the-gitlab-project"><span class="toc-text">Clone the GitLab Project</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#install-pelican"><span class="toc-text">Install Pelican</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#generate-a-basic-website"><span class="toc-text">Generate a Basic Website</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#add-an-article"><span class="toc-text">Add an article</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#generate-html-output"><span class="toc-text">Generate HTML output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#view-the-generated-files"><span class="toc-text">View the generated files</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#configuration-for-gitlab"><span class="toc-text">Configuration for GitLab</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#publish-on-gitlab"><span class="toc-text">Publish on GitLab</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#references"><span class="toc-text">References</span></a></li></ol>
 <p><img src="/images/2017/10/pelican-on-gitlab-title.png" alt="Pelican on Gitlab Pages" title="Pelican on Gitlab Pages"></p>
-<h2 id="introduction-3">Introduction<a class="header-anchor" href="#introduction-3">¶</a></h2>
+<h2 id="introduction">Introduction<a class="header-anchor" href="#introduction">¶</a></h2>
 <p>I moved my blog to Pelican - a static site generator, in the middle of 2017. Pelican has Python in its core and doesn’t require a database or server-side logic to work. Pelican grabs content, merges it with the defined templates and outputs the result as HTML, CSS, JS, along with other static files (e.g. graphics or plain text files). All these files can then be uploaded to a server and literally, that’s it! The only thing that you should have on your server is a web server, like Apache or Nginx.</p>
 <p>You can write content in your favorite text editor or IDE using reStructuredText, Markdown or AsciiDoc - simple, easy to read and understand formats. The best thing I like here is a process - you write something, save it, check the generated article, update the text again, save, check. It makes writing a pleasure, as you can see your changes immediately, so you want to repeat the process again and again. Lovely magic.</p>
 <p>You may ask: “Why Pelican?” Well, the answer is pretty obvious. Nowadays the majority of websites (even the simplest ones) represent complex solutions based on PHP, MySQL, HTML, CSS, JavaScript and all these parts must work together to ensure seamless workflow and security. The thing here is that browsers still display HTML, CSS, and JavaScript that were downloaded from the server and it really doesn’t matter how these files were created/generated. Due to a multitude of components, all the modern CMSs are vulnerable to different cyber attacks aimed at compromising access credentials and disclosing private information. Pelican has nothing to hack, as there is no database and no files contain sensitive data. The server has only a web server serving static content, so there is no extra configuration or additional components. As the result, Pelican setup, as well as the generated website, is very lightweight. An incredible example of the KISS principle.</p>
@@ -152,7 +152,7 @@ If you think you need some help, feel free to contact me or leave a comment belo
 <li><strong>git</strong>. Version control system. It will be used to work with GitLab.</li>
 </ul>
 <p>Use the command below to install these packages in bulk:</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> python3.6 python-pip <span class="token function">git</span> -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> python3.6 python-pip <span class="token function">git</span> <span class="token parameter variable">-y</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>In my case, all the required Python packages were available out-of-the-box, so I just installed git.</p>
 <h2 id="gitlab-setup-a-project">GitLab: Setup a Project<a class="header-anchor" href="#gitlab-setup-a-project">¶</a></h2>
 <p>Create a new repository on GitLab. There are several considerations to keep in mind:</p>
@@ -304,20 +304,20 @@ This is the content of my first article<span aria-hidden="true" class="line-numb
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pelican content
 Done: Processed <span class="token number">1</span> article, <span class="token number">0</span> drafts, <span class="token number">0</span> pages and <span class="token number">0</span> hidden pages <span class="token keyword">in</span> <span class="token number">0.21</span> seconds.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">make</span> html
-pelican /home/gold/env/mister-gold-test/content -o /home/gold/env/mister-gold-test/public -s /home/gold/env/mister-gold-test/pelicanconf.py 
+pelican /home/gold/env/mister-gold-test/content <span class="token parameter variable">-o</span> /home/gold/env/mister-gold-test/public <span class="token parameter variable">-s</span> /home/gold/env/mister-gold-test/pelicanconf.py 
 Done: Processed <span class="token number">1</span> article, <span class="token number">0</span> drafts, <span class="token number">0</span> pages and <span class="token number">0</span> hidden pages <span class="token keyword">in</span> <span class="token number">0.23</span> seconds.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>All the generated static files will be located in <code>public</code> folder now.</p>
 <h3 id="view-the-generated-files">View the generated files<a class="header-anchor" href="#view-the-generated-files">¶</a></h3>
 <p>To preview the generated files, use <code>make serve</code> command:</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">make</span> serve
-<span class="token builtin class-name">cd</span> /home/gold/env/mister-gold-test/public <span class="token operator">&amp;&amp;</span> python -m pelican.server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<span class="token builtin class-name">cd</span> /home/gold/env/mister-gold-test/public <span class="token operator">&amp;&amp;</span> python <span class="token parameter variable">-m</span> pelican.server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>You can also navigate to the <code>public</code> folder and run a simple web server using Python. The command syntax depends on the version of Python you use:</p>
 <p>For Python 2.7.x:</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> public
-python -m SimpleHTTPServer<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+python <span class="token parameter variable">-m</span> SimpleHTTPServer<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>For Python 3.x:</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> public
-python -m http.server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+python <span class="token parameter variable">-m</span> http.server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>Once launched, open <code>http://localhost:8000</code> in your web browser:</p>
 <p><img src="/images/2017/10/first-launch-website.png" alt="First Launch" title="First Launch on Localhost"></p>
 <h2 id="configuration-for-gitlab">Configuration for GitLab<a class="header-anchor" href="#configuration-for-gitlab">¶</a></h2>
@@ -419,10 +419,10 @@ Cloning repository<span class="token punctuation">..</span>.
 Cloning into <span class="token string">'/builds/&lt;username>/mister-gold-test'</span><span class="token punctuation">..</span>.
 Checking out c81bdd9c as master<span class="token punctuation">..</span>.
 Skipping Git submodules setup
-$ pip <span class="token function">install</span> -r requirements.txt
-Collecting pelican <span class="token punctuation">(</span>from -r requirements.txt <span class="token punctuation">(</span>line <span class="token number">1</span><span class="token punctuation">))</span>
+$ pip <span class="token function">install</span> <span class="token parameter variable">-r</span> requirements.txt
+Collecting pelican <span class="token punctuation">(</span>from <span class="token parameter variable">-r</span> requirements.txt <span class="token punctuation">(</span>line <span class="token number">1</span><span class="token punctuation">))</span>
   Downloading pelican-3.7.1-py2.py3-none-any.whl <span class="token punctuation">(</span>134kB<span class="token punctuation">)</span>
-Collecting markdown <span class="token punctuation">(</span>from -r requirements.txt <span class="token punctuation">(</span>line <span class="token number">2</span><span class="token punctuation">))</span>
+Collecting markdown <span class="token punctuation">(</span>from <span class="token parameter variable">-r</span> requirements.txt <span class="token punctuation">(</span>line <span class="token number">2</span><span class="token punctuation">))</span>
   Downloading Markdown-2.6.9.tar.gz <span class="token punctuation">(</span>271kB<span class="token punctuation">)</span>
 Collecting jinja<span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token operator">=</span><span class="token number">2.7</span> <span class="token punctuation">(</span>from pelican-<span class="token operator">></span>-r requirements.txt <span class="token punctuation">(</span>line <span class="token number">1</span><span class="token punctuation">))</span>
   Downloading Jinja2-2.9.6-py2.py3-none-any.whl <span class="token punctuation">(</span>340kB<span class="token punctuation">)</span>
@@ -460,7 +460,7 @@ Building wheels <span class="token keyword">for</span> collected packages: markd
 Successfully built markdown blinker feedgenerator MarkupSafe
 Installing collected packages: MarkupSafe, jinja2, docutils, pygments, six, python-dateutil, unidecode, blinker, pytz, feedgenerator, pelican, markdown
 Successfully installed MarkupSafe-1.0 blinker-1.4 docutils-0.14 feedgenerator-1.9 jinja2-2.9.6 markdown-2.6.9 pelican-3.7.1 pygments-2.2.0 python-dateutil-2.6.1 pytz-2017.2 six-1.11.0 unidecode-0.4.21
-$ pelican -s publishconf.py
+$ pelican <span class="token parameter variable">-s</span> publishconf.py
 WARNING: Feeds generated without SITEURL <span class="token builtin class-name">set</span> properly may not be valid
 Done: Processed <span class="token number">1</span> article, <span class="token number">0</span> drafts, <span class="token number">0</span> pages and <span class="token number">0</span> hidden pages <span class="token keyword">in</span> <span class="token number">0.28</span> seconds.
 Uploading artifacts<span class="token punctuation">..</span>.

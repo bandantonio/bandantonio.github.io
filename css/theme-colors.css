@@ -10,6 +10,7 @@
   --button-border-color: var(--main-color-light);
   --heart: #f00;
   --electron: #20515b;
+  --typescript: #3178c6;
   --hexo: var(--main-color-light);
   --blockquote-color: var(--main-color-light);
   --pre-color: var(--main-color-light);
@@ -61,6 +62,10 @@ body {
 
 .icon-electron-js::before {
   color: var(--electron);
+}
+
+.icon-ts::before {
+  color: var(--typescript);
 }
 
 a:not(.icon) {

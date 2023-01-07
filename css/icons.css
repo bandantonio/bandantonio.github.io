@@ -1,7 +1,8 @@
 @font-face {
   font-family: 'icons';
-  src: url('../fonts/mister-gold-icons.svg?3760512#mister-gold-icons') format('svg'),
-       url('../fonts/mister-gold-icons.woff2?3760512') format('woff2');
+  
+  src: url('../fonts/mister-gold-icons.svg?64292304#mister-gold-icons') format('svg'),
+       url('../fonts/mister-gold-icons.woff2?64292304') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
@@ -32,6 +33,7 @@
 .icon-stackoverflow:before { content: '\f16c'; } /* '' */
 .icon-medium:before { content: '\f23a'; } /* '' */
 .icon-js:before { content: '\e802'; } /* '' */
+.icon-ts:before { content: '\e80b'; } /* '' */
 .icon-node-js:before { content: '\e803'; } /* '' */
 .icon-electron-js:before { content: '\e806'; } /* '' */
 .icon-redocly:before { content: '\e807'; } /* '' */
