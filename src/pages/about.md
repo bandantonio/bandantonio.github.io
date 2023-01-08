@@ -10,7 +10,7 @@ Hello there.
 ## Short facts
 
 * 💁‍♂️ I am a left-handed person
-* 🎓 I'm currently learning <i class='icon-ts'></i> TypeScript
+* 🎓 I'm currently learning <i class='icon-ts'></i> TypeScript and <img src="https://avatars.githubusercontent.com/u/26872990?s=200&v=4" style="width:14px;margin-bottom:0;"></img> Preact
 * 🎮 My favorite PC games: DOOM, Need for Speed, SimCity
 * 📚 My favorite book is "[The unknown Kimi Raikkonen](https://www.amazon.com/Kimi-Raikkonen-Kari-Hotakainen-author/dp/1471177661)" by Kari Hotakainen
 * <i class="icon-write-the-docs"></i> Write the Docs: Participant at two conferences: 🇱🇹 [Vilnius][wtd-vilnius-2019] and 🇨🇿 [Prague][wtd-prague-2019]
