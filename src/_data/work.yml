@@ -62,7 +62,7 @@ open_source_experience:
   - "<a href='https://developers.google.com/season-of-docs/docs/2020/participants'>Google Season of Docs 2020</a>: successful technical writing project with <i class='icon-electron-js'></i> <a href='https://www.electronjs.org/'>Electron</a>"
   - "<a href='https://developers.google.com/season-of-docs/docs/2019/participants'>Google Season of Docs 2019</a>: successful technical writing project with <i class='icon-rocket-chat'></i> <a href='https://rocket.chat/'>Rocket.Chat</a>"
   - "Personal <span class='keyword'>open-source</span> project: <a href='https://github.com/bandantonio/antmarky'>Antmarky</a> - <span class='keyword'>static-site generator</span> for <span class='keyword'>Asciidoctor</span> based on TypeScript/Node.js/EJS"
-  - "Personal <span class='keyword'>open-source</span> project: <a href='https://github.com/bandantonio/tomaatti-timer'>Tomaatti Timer</a> - simple Pomodoro timer written in <span class='keyword'>JavaScript</span> (temporary suspended)"
+  - "Personal <span class='keyword'>open-source</span> project: <a href='https://github.com/bandantonio/tomaatti-timer'>Tomaatti Timer</a> - simple Pomodoro timer written in <span class='keyword'>JavaScript</span> (temporarily suspended)"
 	- Contributor to the <span class='keyword'><a href='https://antora.org'>Antora documentation</a></span> and <span class='keyword'><a href='http://writethedocs.org'>Write The Docs</a></span> projects
 	- <span class='keyword'>Published a blog post on Medium</span> about my own experience with documentation tools
 
