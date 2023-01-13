@@ -10,7 +10,16 @@ My personal website built with [Hexo](https://hexo.io), [EJS](https://ejs.co), a
 
 ## Lighthouse Score
 
-[![Lighthouse](https://img.shields.io/badge/-Performance:87-white?style=flat&logo=Lighthouse&logoColor=red)][Lighthouse]
+### Desktop
+
+[![Lighthouse](https://img.shields.io/badge/-Performance:98-white?style=flat&logo=Lighthouse&logoColor=red)][Lighthouse]
+[![Lighthouse](https://img.shields.io/badge/-Accessibility:100-white?style=flat&logo=Lighthouse&logoColor=red)][Lighthouse]
+[![Lighthouse](https://img.shields.io/badge/-Best%20Practices:100-white?style=flat&logo=Lighthouse&logoColor=red)][Lighthouse]
+[![Lighthouse](https://img.shields.io/badge/-SEO:100-white?style=flat&logo=Lighthouse&logoColor=red)][Lighthouse]
+
+### Mobile
+
+[![Lighthouse](https://img.shields.io/badge/-Performance:98-white?style=flat&logo=Lighthouse&logoColor=red)][Lighthouse]
 [![Lighthouse](https://img.shields.io/badge/-Accessibility:100-white?style=flat&logo=Lighthouse&logoColor=red)][Lighthouse]
 [![Lighthouse](https://img.shields.io/badge/-Best%20Practices:100-white?style=flat&logo=Lighthouse&logoColor=red)][Lighthouse]
 [![Lighthouse](https://img.shields.io/badge/-SEO:100-white?style=flat&logo=Lighthouse&logoColor=red)][Lighthouse]
