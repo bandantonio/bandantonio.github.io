@@ -4,8 +4,10 @@ import BlogPostCard from '@components/BlogPostCard.astro';
 import GoHomeArrow from '@components/GoHomeArrow.astro';
 
 let posts = await Astro.glob('../pages/posts/*md');
-posts = posts.sort((a, b): -1 | 1 =>
-	a.frontmatter.date > b.frontmatter.date ? -1 : 1
+posts = posts
+	.filter(post => !post.frontmatter.draft)
+	.sort((a, b): -1 | 1 =>
+		a.frontmatter.date > b.frontmatter.date ? -1 : 1
 );
 ---
 
