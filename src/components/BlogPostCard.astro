@@ -1,0 +1,18 @@
+---
+import { formatDate } from '@utils';
+
+const { post } = Astro.props;
+---
+
+<a href={post.url}>
+	<div
+		class="mx-auto mb-2 flex items-center justify-between border-l-2 border-slate-400 p-4 shadow-sm hover:border-l-mg-accent hover:text-mg-accent focus:ring [&>p]:hover:bg-mg-accent [&>p]:hover:font-bold [&>p]:hover:text-black"
+	>
+		<h2>{post.frontmatter.title}</h2>
+		<p
+			class="ml-4 hidden whitespace-nowrap rounded-sm p-2 text-xs text-slate-400 lg:inline"
+		>
+			{formatDate(post.frontmatter.date)}
+		</p>
+	</div>
+</a>

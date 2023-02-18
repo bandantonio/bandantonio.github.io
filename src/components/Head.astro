@@ -1,0 +1,48 @@
+---
+export interface Props {
+	title: string;
+	defaultTitle: string;
+}
+
+const { title, defaultTitle } = Astro.props as Props;
+---
+
+<head>
+	<meta charset="UTF-8" />
+	<link
+		rel="icon"
+		href="/favicon.ico"
+		sizes="any"
+	/>
+	<link
+		rel="icon"
+		href="/favicon.svg"
+		type="image/svg+xml"
+	/>
+	<meta
+		http-equiv="X-UA-Compatible"
+		content="IE=edge"
+	/>
+	<meta
+		name="viewport"
+		content="width=device-width, initial-scale=1.0"
+	/>
+	<meta
+		name="description"
+		content={defaultTitle}
+	/>
+	<link
+		rel="preconnect"
+		href="https://fonts.googleapis.com"
+	/>
+	<link
+		rel="preconnect"
+		href="https://fonts.gstatic.com"
+		crossorigin
+	/>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap"
+		rel="stylesheet"
+	/>
+	<title>{title} | Mister Gold</title>
+</head>

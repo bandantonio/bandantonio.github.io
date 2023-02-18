@@ -1,0 +1,17 @@
+---
+export interface Props {
+	getBackTo: string;
+	title: string;
+}
+
+const { getBackTo, title } = Astro.props as Props;
+---
+
+<h1 class="my-4 px-14 py-2 text-center text-3xl font-bold">
+	<a
+		class="before:content-['←'] hover:text-mg-accent"
+		href={getBackTo}
+	>
+		{title}</a
+	>
+</h1>
