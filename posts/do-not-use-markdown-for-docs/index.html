@@ -1,151 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+	<meta charset="UTF-8">
+	<link rel="icon" href="/favicon.ico" sizes="any">
+	<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Personal website of Anton Zolotukhin">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
+	<title>Stop Using Markdown For Documentation | Mister Gold</title>
+<link rel="stylesheet" href="/_astro/about.570cb5ce.css" /></head>
+	<body class="bg-mg-primary text-slate-400">
+		<div class="m-6 text-center">
+		<h1 class="my-4 px-14 py-2 text-center text-3xl font-bold">
+	<a class="before:content-['←'] hover:text-mg-accent" href="/blog">
+		Stop Using Markdown For Documentation</a>
+</h1>
+		<small class="text-slate-400">Written by Antonio • Apr 24, 2018</small>
+		<hr class="my-6 mx-auto w-20 border-t-2 border-mg-accent">
 
-<head>
-  <meta charset="utf-8">
-
-  
-  <title>Stop Using Markdown For Documentation</title>
-  
-  <link rel="canonical" href="https://mister-gold.pro/posts/do-not-use-markdown-for-docs/">
-  
-  <meta name="description" content="Introduction¶ Hi everyone! Today I want to explain why Markdown is a poor writing tool that you should avoid using in your documentation. Markdown is ">
-  
-  
-  <meta name="author" content="Anton Zolotukhin">
-  
-  <meta property="og:image" content="https://mister-gold.proundefined">
-  
-  <meta property="og:site_name" content="Mister Gold | Personal website of Anton Zolotukhin" />
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="Stop Using Markdown For Documentation" />
-  
-  <meta property="og:description" content="Introduction¶ Hi everyone! Today I want to explain why Markdown is a poor writing tool that you should avoid using in your documentation. Markdown is ">
-  
-  <meta property="og:url" content="https://mister-gold.pro/posts/do-not-use-markdown-for-docs/" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-<link rel="stylesheet" href="/css/normalize.css">
-
-  
-<link rel="stylesheet" href="/css/skeleton.css">
-
-  
-<link rel="stylesheet" href="/css/custom.css">
-
-  
-<link rel="stylesheet" href="/css/icons.css">
-
-  
-<link rel="stylesheet" href="/css/prism-okaidia.css">
-
-  
-<link rel="stylesheet" href="/css/prism-line-numbers.css">
-
-  
-<link rel="stylesheet" href="/css/work.css">
-
-  
-<link rel="stylesheet" href="/css/projects.css">
-
-  
-<link rel="stylesheet" href="/css/theme-colors.css">
-
-  <!-- User css -->
-  
-  
-<link rel="stylesheet" href="/css/user.css">
-
-  
-
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" href="/favicon.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-213715410-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-213715410-1');
-  </script>
-
-<meta name="generator" content="Hexo 6.3.0"></head>
-
-<body>
-  <div class="container">
-    <div class="row">
-      <div>
-
-        <div class="row">
-  <div class="two columns" style="max-width: 50px">
-    <h1 class="mt-2 mode">
-      <div class="toggle-theme"><i class="icon-lightbulb"></i></div>
-
-<script>
-  if (localStorage.getItem('darkgold')) {
-    document.body.classList.add('darkgold', true);
-  }
-let toggle = document.querySelector('.toggle-theme');
-  toggle.addEventListener('click', () => {
-    if (document.body.classList.contains('darkgold')) {
-      localStorage.removeItem('darkgold');
-    } else {
-      localStorage.setItem('darkgold', true);
-    }
-    document.body.classList.toggle('darkgold');
-});
-</script>
-    </h1>
-  </div>
-
-  <div class="six columns ml-1">
-    <h1 class="mt-2">
-      Hi, I&#39;m Anton
-    </h1>
-  </div>
-
-  <div class="twelve columns">
-    <div class="row top-menu">
-      <div class="nine columns left">
-        <a href="/">Home</a>
-        
-          
-          <a href="/about" class="ml">About</a>
-          
-        
-          
-          <a href="/work" class="ml">Work</a>
-          
-        
-          
-          <a href="/projects" class="ml">Projects</a>
-          
-        
-        
-      </div>
-    </div>
-    <hr style="margin-bottom: 2.6rem">
-  </div>
-</div>
-
-        <div class="trans">
-          <h2>Stop Using Markdown For Documentation</h2>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#why-does-markdown-fail"><span class="toc-text">Why does Markdown fail?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#any-alternatives"><span class="toc-text">Any alternatives?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#why-does-asciidoc-succeed"><span class="toc-text">Why does AsciiDoc succeed?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#code-blocks"><span class="toc-text">Code Blocks</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#attributes"><span class="toc-text">Attributes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#conditional-directives"><span class="toc-text">Conditional directives</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#building-blocks"><span class="toc-text">Building Blocks</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#admonitions"><span class="toc-text">Admonitions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ids-anchors-and-classes"><span class="toc-text">IDs, anchors, and classes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tables"><span class="toc-text">Tables</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#other"><span class="toc-text">Other</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#conclusion"><span class="toc-text">Conclusion</span></a></li></ol>
-<p><img src="/images/2018/04/stop-using-markdown-title.png" alt="Stop Using Markdown Title" title="Stop Using Markdown Title"></p>
-<h2 id="introduction">Introduction<a class="header-anchor" href="#introduction">¶</a></h2>
+		<img class="mx-auto my-4 max-w-md" src="/images/do-not-use-markdown-for-docs/stop-using-markdown-title.png" alt="image">
+	</div><article class="prose
+		prose-invert
+		max-w-md
+		mx-auto
+		mb-12
+		prose-headings:text-mg-accent
+		prose-a:text-mg-blue
+		prose-a:no-underline
+		hover:prose-a:underline
+		prose-code:text-mg-red
+		prose-blockquote:border-sky-700
+		prose-img:rounded-lg
+		prose-img:mx-auto
+		md:max-w-lg
+		lg:max-w-2xl
+		">
+		<h2 id="introduction">Introduction</h2>
 <p>Hi everyone!</p>
 <p>Today I want to explain why Markdown is a poor writing tool that you should avoid using in your documentation.</p>
-<p>Markdown is the most renowned lightweight markup language on the Internet. It is used in readme documents, introduction guides, wiki pages, blog posts, comments. Its popularity is based on simplicity and low writing threshold. You can learn all the syntax in <a target="_blank" rel="noopener" href="http://commonmark.org/help/">60 seconds</a> and start writing your first document with your favorite IDE almost in no time. This is especially good when composing quick notes to describe what the product does and basic usage commands. GitHub and <a href="/posts/pelican-on-gitlab-pages/">GitLab</a> even allow developers to automatically initiate new repositories with <a target="_blank" rel="noopener" href="http://README.md">README.md</a> file, though both projects support a multitude of languages, including Asciidoc and reStructuredText.</p>
+<p>Markdown is the most renowned lightweight markup language on the Internet. It is used in readme documents, introduction guides, wiki pages, blog posts, comments. Its popularity is based on simplicity and low writing threshold. You can learn all the syntax in <a href="http://commonmark.org/help/">60 seconds</a> and start writing your first document with your favorite IDE almost in no time. This is especially good when composing quick notes to describe what the product does and basic usage commands. GitHub and <a href="/posts/pelican-on-gitlab-pages/">GitLab</a> even allow developers to automatically initiate new repositories with README.md file, though both projects support a multitude of languages, including Asciidoc and reStructuredText.</p>
 <p>Let me guess your question - how can such a popular tool be so bad? Does it really have many drawbacks? In fact, there are more of them than you might imagine.</p>
-<h2 id="why-does-markdown-fail">Why does Markdown fail?<a class="header-anchor" href="#why-does-markdown-fail">¶</a></h2>
+<h2 id="why-does-markdown-fail">Why does Markdown fail?</h2>
 <p>I would like to outline the most annoying and frustrating limitations that may turn your experience when writing technical documentation with Markdown into a nightmare.</p>
 <ol>
-<li><strong>Lack of specification</strong>. Since its launch in 2004, Markdown has had no technical specification except for that defined by John Gruber in his <a target="_blank" rel="noopener" href="https://daringfireball.net/projects/markdown/">blog post</a>. The absence of strong guidelines forced different projects to create their own rules of how Markdown should be parsed. As the result, the base Markdown syntax can have an extra set of features available only in a particular specification. For example, abbreviations or footnotes.</li>
-<li><strong>Flavors</strong>. To mitigate the existing limitations due to the lack of specification, projects (especially static site generators) built on top of Markdown introduce new flavors with their own syntax. Currently, the list of flavors contains <a target="_blank" rel="noopener" href="https://github.com/commonmark/CommonMark/wiki/Markdown-Flavors">34(!) entries</a>. It is obvious that some of these flavors are incompatible with each other or even incomplete, so you have to keep in mind which flavor version you use to avoid syntax and build mistakes.</li>
+<li><strong>Lack of specification</strong>. Since its launch in 2004, Markdown has had no technical specification except for that defined by John Gruber in his <a href="https://daringfireball.net/projects/markdown/">blog post</a>. The absence of strong guidelines forced different projects to create their own rules of how Markdown should be parsed. As the result, the base Markdown syntax can have an extra set of features available only in a particular specification. For example, abbreviations or footnotes.</li>
+<li><strong>Flavors</strong>. To mitigate the existing limitations due to the lack of specification, projects (especially static site generators) built on top of Markdown introduce new flavors with their own syntax. Currently, the list of flavors contains <a href="https://github.com/commonmark/CommonMark/wiki/Markdown-Flavors">34(!) entries</a>. It is obvious that some of these flavors are incompatible with each other or even incomplete, so you have to keep in mind which flavor version you use to avoid syntax and build mistakes.</li>
 <li><strong>Lack of Extensibility</strong>. Markdown doesn’t have an extension system that would allow you to extend the language without affecting the way it is parsed.</li>
 <li><strong>Lack of Semantic Meaning</strong>. With Markdown you can only write text. It means that if you need to grab the reader’s attention with some kind of notes or tips, you have to embed HTML. The lack of semantic support is a problem for a few reasons:
 <ul>
@@ -156,145 +58,145 @@ let toggle = document.querySelector('.toggle-theme');
 </li>
 <li><strong>Lock-In and Lack of Portability</strong>. The tons of flavors and the lack of semantic support results in a lock-in. The more documentation you have, the more you are tied to the existing configuration. After that, it is hard to migrate to another tool, as custom-defined HTML classes and flavor’s features won’t work outside the current set of tools and page designs.</li>
 </ol>
-<h2 id="any-alternatives">Any alternatives?<a class="header-anchor" href="#any-alternatives">¶</a></h2>
+<h2 id="any-alternatives">Any alternatives?</h2>
 <p>Markdown has two serious competitors: reStructuredText (rST) and AsciiDoc. Both are very similar in syntax and have a stronger set of features than Markdown. And the most important - both are designed to create documentation. I was using these plain-text formats for some time and Asciidoc appeared to be more interesting to me. So, let’s give it a small overview.</p>
-<h2 id="why-does-asciidoc-succeed">Why does AsciiDoc succeed?<a class="header-anchor" href="#why-does-asciidoc-succeed">¶</a></h2>
+<h2 id="why-does-asciidoc-succeed">Why does AsciiDoc succeed?</h2>
 <p>AsciiDoc is deprived of the shortcomings I mentioned above for Markdown. In addition, AsciiDoc has some killing features that don’t exist in Markdown, including:</p>
-<h3 id="code-blocks">Code Blocks<a class="header-anchor" href="#code-blocks">¶</a></h3>
+<h3 id="code-blocks">Code Blocks</h3>
 <p>AsciiDoc allows you to add “live” code snippets directly from source files. With this kind of inclusion, you don’t have to worry about outdated examples in documentation as they will be updated automatically once the source code is changed. For example:</p>
-<pre class="line-numbers language-asciidoc" data-language="asciidoc"><code class="language-asciidoc">include::source_code.js []<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre is:raw="" class="astro-code" style="background-color: #232136; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #e0def4">include::source_code.js []</span></span></code></pre>
 <p>It is also possible to include a part of a source file using <code>tag</code> attribute. So, you place the section that should be included between these tags:</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// tag::code_example[]</span>
-<span class="token keyword">function</span> <span class="token function">multiply</span><span class="token punctuation">(</span><span class="token parameter">num1<span class="token punctuation">,</span>num2</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">var</span> result <span class="token operator">=</span> num1 <span class="token operator">*</span> num2<span class="token punctuation">;</span>
-  <span class="token keyword">return</span> result<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token comment">// end::code_example[]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre is:raw="" class="astro-code" style="background-color: #232136; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #908CAA">//</span><span style="color: #6E6A86"> tag::code_example[]</span></span>
+<span class="line"><span style="color: #3E8FB0">function</span><span style="color: #E0DEF4"> </span><span style="color: #EA9A97">multiply</span><span style="color: #908CAA">(</span><span style="color: #C4A7E7">num1</span><span style="color: #908CAA">,</span><span style="color: #C4A7E7">num2</span><span style="color: #908CAA">)</span><span style="color: #E0DEF4"> </span><span style="color: #908CAA">{</span></span>
+<span class="line"><span style="color: #E0DEF4">  </span><span style="color: #3E8FB0">var</span><span style="color: #E0DEF4"> </span><span style="color: #E0DEF4">result</span><span style="color: #E0DEF4"> </span><span style="color: #3E8FB0">=</span><span style="color: #E0DEF4"> </span><span style="color: #E0DEF4">num1</span><span style="color: #E0DEF4"> </span><span style="color: #3E8FB0">*</span><span style="color: #E0DEF4"> </span><span style="color: #E0DEF4">num2</span><span style="color: #908CAA">;</span></span>
+<span class="line"><span style="color: #E0DEF4">  </span><span style="color: #3E8FB0">return</span><span style="color: #E0DEF4"> </span><span style="color: #E0DEF4">result</span><span style="color: #908CAA">;</span></span>
+<span class="line"><span style="color: #908CAA">}</span></span>
+<span class="line"><span style="color: #908CAA">//</span><span style="color: #6E6A86"> end::code_example[]</span></span></code></pre>
 <p>and then include this section using <code>include</code> directive:</p>
-<pre class="line-numbers language-asciidoc" data-language="asciidoc"><code class="language-asciidoc"><span class="token macro"><span class="token function">include</span><span class="token punctuation">::</span>source_code.js<span class="token attributes"><span class="token punctuation">[</span><span class="token variable">tag</span><span class="token operator">=</span><span class="token attr-value">code_example</span><span class="token punctuation">]</span></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="attributes">Attributes<a class="header-anchor" href="#attributes">¶</a></h3>
+<pre is:raw="" class="astro-code" style="background-color: #232136; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #e0def4">include::source_code.js[tag=code_example]</span></span></code></pre>
+<h3 id="attributes">Attributes</h3>
 <p>Attributes are used to enable internal features or hold replacement content like variables. For example:</p>
-<pre class="line-numbers language-asciidoc" data-language="asciidoc"><code class="language-asciidoc"><span class="token attributes"><span class="token punctuation">[</span><span class="token variable">options</span><span class="token operator">=</span><span class="token string">"header,footer,autowidth"</span><span class="token punctuation">]</span></span>
-<span class="token table"><span class="token punctuation">|===</span>
-<span class="token punctuation">|</span> Cell A <span class="token punctuation">|</span> Cell B
-<span class="token punctuation">|===</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre is:raw="" class="astro-code" style="background-color: #232136; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #e0def4">[options="header,footer,autowidth"]</span></span>
+<span class="line"><span style="color: #e0def4">|===</span></span>
+<span class="line"><span style="color: #e0def4">| Cell A | Cell B</span></span>
+<span class="line"><span style="color: #e0def4">|===</span></span></code></pre>
 <p>The example above shows three defined attributes for a table. More details about tables I described <a href="#tables">here</a>.</p>
 <p>Another example:</p>
-<pre class="line-numbers language-asciidoc" data-language="asciidoc"><code class="language-asciidoc"><span class="token attribute-entry tag">:toc: right</span>
-<span class="token attribute-entry tag">:document_version: 1.1.0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre is:raw="" class="astro-code" style="background-color: #232136; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #e0def4">:toc: right</span></span>
+<span class="line"><span style="color: #e0def4">:document_version: 1.1.0</span></span></code></pre>
 <p>The first attribute displays Table of Contents on the right-hand side of the main content, whereas the second one includes a dynamic value of the document version within the content:</p>
-<pre class="line-numbers language-asciidoc" data-language="asciidoc"><code class="language-asciidoc">The current document version is <span class="token inline"><span class="token attribute-ref"><span class="token punctuation">&#123;</span><span class="token variable">document_version</span><span class="token punctuation">&#125;</span></span></span>.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre is:raw="" class="astro-code" style="background-color: #232136; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #e0def4">The current document version is {document_version}.</span></span></code></pre>
 <p>In AsciiDoc, each element has its own set of attributes that allows you to flexibly configure this element. For example, with attributes for images you can add an alternative title, dimensions, external link, define floating and role. In Markdown, the only way to do the same is to use inline HTML.</p>
-<h3 id="conditional-directives">Conditional directives<a class="header-anchor" href="#conditional-directives">¶</a></h3>
+<h3 id="conditional-directives">Conditional directives</h3>
 <p>Attributes are the key to another cool AsciiDoc feature: conditional content inclusion. With special directives <code>ifdef</code>, <code>ifndef</code>, and <code>ifeval</code> you can control what content should be displayed depending on certain conditions are met.</p>
 <p>Use <code>ifdef</code> directive to show content if the specified attribute is set:</p>
-<pre class="line-numbers language-asciidoc" data-language="asciidoc"><code class="language-asciidoc"><span class="token macro"><span class="token function">ifdef</span><span class="token punctuation">::</span>github<span class="token attributes"><span class="token punctuation">[</span><span class="token punctuation">]</span></span></span>
-This content will be displayed for GitHub users only.
-<span class="token macro"><span class="token function">endif</span><span class="token punctuation">::</span><span class="token attributes"><span class="token punctuation">[</span><span class="token punctuation">]</span></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre is:raw="" class="astro-code" style="background-color: #232136; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #e0def4">ifdef::github[]</span></span>
+<span class="line"><span style="color: #e0def4">This content will be displayed for GitHub users only.</span></span>
+<span class="line"><span style="color: #e0def4">endif::[]</span></span></code></pre>
 <p>Conversely, <code>ifndef</code> directive is used to hide content if the specified attribute is not set:</p>
-<pre class="line-numbers language-asciidoc" data-language="asciidoc"><code class="language-asciidoc"><span class="token macro"><span class="token function">ifdef</span><span class="token punctuation">::</span>github<span class="token attributes"><span class="token punctuation">[</span><span class="token punctuation">]</span></span></span>
-This content will not be displayed for GitHub users.
-<span class="token macro"><span class="token function">endif</span><span class="token punctuation">::</span><span class="token attributes"><span class="token punctuation">[</span><span class="token punctuation">]</span></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre is:raw="" class="astro-code" style="background-color: #232136; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #e0def4">ifdef::github[]</span></span>
+<span class="line"><span style="color: #e0def4">This content will not be displayed for GitHub users.</span></span>
+<span class="line"><span style="color: #e0def4">endif::[]</span></span></code></pre>
 <p><code>ifeval</code> directive shows content if the expression inside the square brackets evaluates to <code>true</code>. This may be helpful to show instructions only for particular versions of documentation:</p>
-<pre class="line-numbers language-asciidoc" data-language="asciidoc"><code class="language-asciidoc"><span class="token macro"><span class="token function">ifeval</span><span class="token punctuation">::</span><span class="token attributes"><span class="token punctuation">[</span><span class="token attr-value">&#123;api_version&#125; &lt; 2.0.0</span><span class="token punctuation">]</span></span></span>
-If you want to use API methods available in version <span class="token inline"><span class="token attribute-ref"><span class="token punctuation">&#123;</span><span class="token variable">api_version</span><span class="token punctuation">&#125;</span></span></span>, use the following endpoint: `https://example.com/api/v1/
-<span class="token macro"><span class="token function">endif</span><span class="token punctuation">::</span><span class="token attributes"><span class="token punctuation">[</span><span class="token punctuation">]</span></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h3 id="building-blocks">Building Blocks<a class="header-anchor" href="#building-blocks">¶</a></h3>
+<pre is:raw="" class="astro-code" style="background-color: #232136; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #e0def4">ifeval::[{api_version} &#x3C; 2.0.0]</span></span>
+<span class="line"><span style="color: #e0def4">If you want to use API methods available in version {api_version}, use the following endpoint: `https://example.com/api/v1/</span></span>
+<span class="line"><span style="color: #e0def4">endif::[]</span></span></code></pre>
+<h3 id="building-blocks">Building Blocks</h3>
 <p>Building blocks are special components to include non-paragraph text, such as code listings, quotes, tables, etc. This gives you a greater flexibility in adding versatile content in your document.</p>
 <p>For example, you can add a listing block like this:</p>
-<pre class="line-numbers language-asciidoc" data-language="asciidoc"><code class="language-asciidoc"><span class="token literal-block"><span class="token punctuation">----</span>
-This is an example of a _listing block_.
-The content inside is displayed as &lt;pre> text.
-<span class="token punctuation">----</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre is:raw="" class="astro-code" style="background-color: #232136; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #e0def4">----</span></span>
+<span class="line"><span style="color: #e0def4">This is an example of a _listing block_.</span></span>
+<span class="line"><span style="color: #e0def4">The content inside is displayed as &#x3C;pre> text.</span></span>
+<span class="line"><span style="color: #e0def4">----</span></span></code></pre>
 <p>or like this by adding callouts for additional information right in the sample:</p>
-<pre class="line-numbers language-asciidoc" data-language="asciidoc"><code class="language-asciidoc"><span class="token attributes"><span class="token punctuation">[</span><span class="token attr-value">source</span><span class="token punctuation">,</span><span class="token attr-value">ruby</span><span class="token punctuation">]</span></span>
-<span class="token literal-block"><span class="token punctuation">----</span>
-require 'asciidoctor'  # <span class="token callout symbol">&lt;1></span>
-
-Asciidoctor.convert_file 'mysample.adoc'  # <span class="token callout symbol">&lt;2></span>
-<span class="token punctuation">----</span></span>
-<span class="token callout symbol">&lt;1></span> Imports the library
-<span class="token callout symbol">&lt;2></span> Reads, parses, and converts the file<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="/images/2018/04/asciidoctor-callouts.png" alt="Asciidoctor-callouts" title="AsciiDoctor Callouts"></p>
+<pre is:raw="" class="astro-code" style="background-color: #232136; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #e0def4">[source,ruby]</span></span>
+<span class="line"><span style="color: #e0def4">----</span></span>
+<span class="line"><span style="color: #e0def4">require 'asciidoctor'  # &#x3C;1></span></span>
+<span class="line"><span style="color: #e0def4"></span></span>
+<span class="line"><span style="color: #e0def4">Asciidoctor.convert_file 'mysample.adoc'  # &#x3C;2></span></span>
+<span class="line"><span style="color: #e0def4">----</span></span>
+<span class="line"><span style="color: #e0def4">&#x3C;1> Imports the library</span></span>
+<span class="line"><span style="color: #e0def4">&#x3C;2> Reads, parses, and converts the file</span></span></code></pre>
+<p><img src="/images/do-not-use-markdown-for-docs/asciidoctor-callouts.png" alt="Asciidoctor-callouts" title="AsciiDoctor Callouts"></p>
 <p>Another powerful block is an <em>open block</em>. It can act as any other block and contain any information you want. This may be useful as a non-intrusive way of including content. For example:</p>
-<pre class="line-numbers language-asciidoc" data-language="asciidoc"><code class="language-asciidoc"><span class="token attributes"><span class="token punctuation">[</span><span class="token attr-value">sidebar</span><span class="token punctuation">]</span></span>
-<span class="token title important"><span class="token punctuation">.</span>Related information</span>
-<span class="token other-block"><span class="token punctuation">--</span>
-This is aside text.
-
-It is used to present information related to the main content.
-<span class="token punctuation">--</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="admonitions">Admonitions<a class="header-anchor" href="#admonitions">¶</a></h3>
+<pre is:raw="" class="astro-code" style="background-color: #232136; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #e0def4">[sidebar]</span></span>
+<span class="line"><span style="color: #e0def4">.Related information</span></span>
+<span class="line"><span style="color: #e0def4">--</span></span>
+<span class="line"><span style="color: #e0def4">This is aside text.</span></span>
+<span class="line"><span style="color: #e0def4"></span></span>
+<span class="line"><span style="color: #e0def4">It is used to present information related to the main content.</span></span>
+<span class="line"><span style="color: #e0def4">--</span></span></code></pre>
+<h3 id="admonitions">Admonitions</h3>
 <p>AsciiDoc supports 5 types of admonitions out-of-the-box: Note, Tip, Important, Caution, Warning. The great thing here is that admonition can also encapsulate any block content. If you remember, in Markdown admonitions are some sort of blockquotes and writing a section that includes examples with special formatting is a total disappointment. In AsciiDoc, you just add the desired content with the selected type of the admonition.</p>
-<h3 id="ids-anchors-and-classes">IDs, anchors, and classes<a class="header-anchor" href="#ids-anchors-and-classes">¶</a></h3>
+<h3 id="ids-anchors-and-classes">IDs, anchors, and classes</h3>
 <p>In Markdown (I mean, base syntax), the only thing you can do is to override the auto-generated heading anchor with your own user-friendly slug. With AsciiDoc, you can add a custom anchor almost anywhere: on a section title or discrete heading, on a paragraph, on a block, on a link or inline image, on listing or literal block, on a phrase, and so forth.</p>
 <p>For example:</p>
 <p>ID for a paragraph</p>
-<pre class="line-numbers language-asciidoc" data-language="asciidoc"><code class="language-asciidoc"><span class="token inline"><span class="token url"><span class="token punctuation">[[</span>notice<span class="token punctuation">]]</span></span></span>
-This paragraph gets a lot of attention.
-
-or
-
-<span class="token attributes"><span class="token punctuation">[</span><span class="token attr-value">#notice</span><span class="token punctuation">]</span></span>
-This paragraph gets a lot of attention.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre is:raw="" class="astro-code" style="background-color: #232136; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #e0def4">[[notice]]</span></span>
+<span class="line"><span style="color: #e0def4">This paragraph gets a lot of attention.</span></span>
+<span class="line"><span style="color: #e0def4"></span></span>
+<span class="line"><span style="color: #e0def4">or</span></span>
+<span class="line"><span style="color: #e0def4"></span></span>
+<span class="line"><span style="color: #e0def4">[#notice]</span></span>
+<span class="line"><span style="color: #e0def4">This paragraph gets a lot of attention.</span></span></code></pre>
 <p>Furthermore, classes and additional attributes are available for links. The base syntax looks as follows:</p>
-<pre class="line-numbers language-asciidoc" data-language="asciidoc"><code class="language-asciidoc"><span class="token macro"><span class="token function">link</span><span class="token punctuation">:</span>url<span class="token attributes"><span class="token punctuation">[</span><span class="token attr-value">optional link text</span><span class="token punctuation">,</span><span class="token attr-value"> optional target attribute</span><span class="token punctuation">,</span><span class="token attr-value"> optional role attribute</span><span class="token punctuation">]</span></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre is:raw="" class="astro-code" style="background-color: #232136; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #e0def4">link:url[optional link text, optional target attribute, optional role attribute]</span></span></code></pre>
 <p>So, you can write something like that:</p>
-<pre class="line-numbers language-asciidoc" data-language="asciidoc"><code class="language-asciidoc">Mister Gold Blog was created by <span class="token macro"><span class="token function">https</span><span class="token punctuation">:</span>//mister-gold.pro/<span class="token attributes"><span class="token punctuation">[</span><span class="token attr-value">*Antonio*^</span><span class="token punctuation">,</span> <span class="token variable">role</span><span class="token operator">=</span><span class="token string">"green"</span><span class="token punctuation">]</span></span></span>.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre is:raw="" class="astro-code" style="background-color: #232136; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #e0def4">Mister Gold Blog was created by https://mister-gold.pro/[*Antonio*^, role="green"].</span></span></code></pre>
 <p>and receive a link with bold green text that will be opened in a new tab. Again, these manipulations are possible with no hints of inline HTML or hardcoded CSS classes in it.</p>
-<p><img src="/images/2018/04/asciidoctor-link.png" alt="Asciidoctor-link" title="AsciiDoctor Link"></p>
-<h3 id="tables">Tables<a class="header-anchor" href="#tables">¶</a></h3>
+<p><img src="/images/do-not-use-markdown-for-docs/asciidoctor-link.png" alt="Asciidoctor-link" title="AsciiDoctor Link"></p>
+<h3 id="tables">Tables</h3>
 <p>Tables are available in Markdown as well. But what can you do with them? Align content… aaaand… that’s it. Asciidoc provides a variety of ways to control the size, style, and layout of content within columns. Span over columns and rows, add nested tables, duplicate content across columns, and even display table in landscape mode - I bet this is the best experience with table formatting you ever had.</p>
 <p>Some examples:</p>
 <p><strong>Different table width</strong></p>
-<pre class="line-numbers language-asciidoc" data-language="asciidoc"><code class="language-asciidoc"><span class="token attributes"><span class="token punctuation">[</span><span class="token variable">cols</span><span class="token operator">=</span><span class="token string">"50,20,30"</span><span class="token punctuation">]</span></span>
-<span class="token table"><span class="token punctuation">|===</span>
-<span class="token punctuation">|</span>Cell in column 1, row 1
-<span class="token punctuation">|</span>Cell in column 2, row 1
-<span class="token punctuation">|</span>Cell in column 3, row 1
-
-<span class="token punctuation">|</span>Cell in column 1, row 2
-<span class="token punctuation">|</span>Cell in column 2, row 2
-<span class="token punctuation">|</span>Cell in column 3, row 2
-<span class="token punctuation">|===</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="/images/2018/04/asciidoctor-table-width.png" alt="Asciidoctor-table-width" title="AsciiDoctor Table Width"></p>
+<pre is:raw="" class="astro-code" style="background-color: #232136; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #e0def4">[cols="50,20,30"]</span></span>
+<span class="line"><span style="color: #e0def4">|===</span></span>
+<span class="line"><span style="color: #e0def4">|Cell in column 1, row 1</span></span>
+<span class="line"><span style="color: #e0def4">|Cell in column 2, row 1</span></span>
+<span class="line"><span style="color: #e0def4">|Cell in column 3, row 1</span></span>
+<span class="line"><span style="color: #e0def4"></span></span>
+<span class="line"><span style="color: #e0def4">|Cell in column 1, row 2</span></span>
+<span class="line"><span style="color: #e0def4">|Cell in column 2, row 2</span></span>
+<span class="line"><span style="color: #e0def4">|Cell in column 3, row 2</span></span>
+<span class="line"><span style="color: #e0def4">|===</span></span></code></pre>
+<p><img src="/images/do-not-use-markdown-for-docs/asciidoctor-table-width.png" alt="Asciidoctor-table-width" title="AsciiDoctor Table Width"></p>
 <p><strong>Spanned rows</strong></p>
-<pre class="line-numbers language-asciidoc" data-language="asciidoc"><code class="language-asciidoc"><span class="token table"><span class="token punctuation">|===</span>
-
-<span class="token punctuation">|</span>Cell in column 1, row 1 <span class="token punctuation">|</span>Cell in column 2, row 1 <span class="token punctuation">|</span>Cell in column 3, row 1
-
-<span class="token specifiers attr-value">.2+</span><span class="token punctuation">|</span>Content in a single cell that spans rows 2 and 3
-<span class="token punctuation">|</span>Cell in column 2, row 2
-<span class="token punctuation">|</span>Cell in column 3, row 2
-
-<span class="token punctuation">|</span>Cell in column 2, row 3
-<span class="token punctuation">|</span>Cell in column 3, row 3
-
-<span class="token punctuation">|===</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="/images/2018/04/asciidoctor-table-spanned.png" alt="Asciidoctor-table-spanned" title="AsciiDoctor Table Span"></p>
+<pre is:raw="" class="astro-code" style="background-color: #232136; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #e0def4">|===</span></span>
+<span class="line"><span style="color: #e0def4"></span></span>
+<span class="line"><span style="color: #e0def4">|Cell in column 1, row 1 |Cell in column 2, row 1 |Cell in column 3, row 1</span></span>
+<span class="line"><span style="color: #e0def4"></span></span>
+<span class="line"><span style="color: #e0def4">.2+|Content in a single cell that spans rows 2 and 3</span></span>
+<span class="line"><span style="color: #e0def4">|Cell in column 2, row 2</span></span>
+<span class="line"><span style="color: #e0def4">|Cell in column 3, row 2</span></span>
+<span class="line"><span style="color: #e0def4"></span></span>
+<span class="line"><span style="color: #e0def4">|Cell in column 2, row 3</span></span>
+<span class="line"><span style="color: #e0def4">|Cell in column 3, row 3</span></span>
+<span class="line"><span style="color: #e0def4"></span></span>
+<span class="line"><span style="color: #e0def4">|===</span></span></code></pre>
+<p><img src="/images/do-not-use-markdown-for-docs/asciidoctor-table-spanned.png" alt="Asciidoctor-table-spanned" title="AsciiDoctor Table Span"></p>
 <p><strong>Nested table</strong></p>
-<pre class="line-numbers language-asciidoc" data-language="asciidoc"><code class="language-asciidoc"><span class="token attributes"><span class="token punctuation">[</span><span class="token variable">cols</span><span class="token operator">=</span><span class="token string">"1,2a"</span><span class="token punctuation">]</span></span>
-<span class="token table"><span class="token punctuation">|===</span>
-<span class="token punctuation">|</span> Col 1 <span class="token punctuation">|</span> Col 2
-
-<span class="token punctuation">|</span> Cell 1.1
-<span class="token punctuation">|</span> Cell 1.2
-
-<span class="token punctuation">|</span> Cell 2.1
-<span class="token punctuation">|</span> Cell 2.2
-
-<span class="token attributes"><span class="token punctuation">[</span><span class="token variable">cols</span><span class="token operator">=</span><span class="token string">"2,1"</span><span class="token punctuation">]</span></span>
-<span class="token punctuation">!===</span>
-<span class="token punctuation">!</span> Col1 <span class="token punctuation">!</span> Col2
-
-<span class="token punctuation">!</span> C11
-<span class="token punctuation">!</span> C12
-
-<span class="token punctuation">!===</span>
-
-<span class="token punctuation">|===</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="/images/2018/04/asciidoctor-table-nested.png" alt="Asciidoctor-table-nested" title="AsciiDoctor Table Nested"></p>
-<h3 id="other">Other<a class="header-anchor" href="#other">¶</a></h3>
+<pre is:raw="" class="astro-code" style="background-color: #232136; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #e0def4">[cols="1,2a"]</span></span>
+<span class="line"><span style="color: #e0def4">|===</span></span>
+<span class="line"><span style="color: #e0def4">| Col 1 | Col 2</span></span>
+<span class="line"><span style="color: #e0def4"></span></span>
+<span class="line"><span style="color: #e0def4">| Cell 1.1</span></span>
+<span class="line"><span style="color: #e0def4">| Cell 1.2</span></span>
+<span class="line"><span style="color: #e0def4"></span></span>
+<span class="line"><span style="color: #e0def4">| Cell 2.1</span></span>
+<span class="line"><span style="color: #e0def4">| Cell 2.2</span></span>
+<span class="line"><span style="color: #e0def4"></span></span>
+<span class="line"><span style="color: #e0def4">[cols="2,1"]</span></span>
+<span class="line"><span style="color: #e0def4">!===</span></span>
+<span class="line"><span style="color: #e0def4">! Col1 ! Col2</span></span>
+<span class="line"><span style="color: #e0def4"></span></span>
+<span class="line"><span style="color: #e0def4">! C11</span></span>
+<span class="line"><span style="color: #e0def4">! C12</span></span>
+<span class="line"><span style="color: #e0def4"></span></span>
+<span class="line"><span style="color: #e0def4">!===</span></span>
+<span class="line"><span style="color: #e0def4"></span></span>
+<span class="line"><span style="color: #e0def4">|===</span></span></code></pre>
+<p><img src="/images/do-not-use-markdown-for-docs/asciidoctor-table-nested.png" alt="Asciidoctor-table-nested" title="AsciiDoctor Table Nested"></p>
+<h3 id="other">Other</h3>
 <p>Besides the joker features that stand out, AsciiDoc also has lots of syntax “tricks” that make documents more consistent. I will not dive into too many details here, just list some of them:</p>
 <ul>
 <li>hard breaks: you no longer need to insert blank lines to separate two paragraphs or pieces of content. Just add a plus sign at the end of the line and you’re done!</li>
@@ -303,14 +205,14 @@ This paragraph gets a lot of attention.<span aria-hidden="true" class="line-numb
 <li>lists: with the help of built-in attributes you can make interesting modifications, like defining the starting number, creating a list with reversed numbering, or even a list with command listing without any text.</li>
 <li>math equations and formulas: to insert a math equation of any complexity, just set the <code>stem</code> attribute in the document’s header.</li>
 </ul>
-<p>These tricks are almost unlimited - you will find more cool aspects, as you learn <a target="_blank" rel="noopener" href="https://asciidoctor.org/docs/asciidoc-writers-guide/">AsciiDoc</a> better.</p>
-<h2 id="conclusion">Conclusion<a class="header-anchor" href="#conclusion">¶</a></h2>
+<p>These tricks are almost unlimited - you will find more cool aspects, as you learn <a href="https://asciidoctor.org/docs/asciidoc-writers-guide/">AsciiDoc</a> better.</p>
+<h2 id="conclusion">Conclusion</h2>
 <p>Actually, I was surprised by the fact that so many people think Markdown is a really powerful tool for documentation. Especially, considering the number of articles with the similar topic that appear on Medium. The premises for all these stories are almost identical. You start with a simple document or a set of documents. At this point, the instinct to choose Markdown is good. The fast learning curve and primitive syntax seem to be a winning combination. However, as your documentation evolves and you need something more complex, Markdown simplicity becomes the greatest shortcoming. Ultimately, you end up using flavors (to overcome native limitations) that wreck portability or searching for better alternatives.</p>
-<p>It reminded me of two interesting blog posts that I found some time ago. In the first one, Eric Holscher (the co-founder of Read the Docs and Write the Docs) told <a target="_blank" rel="noopener" href="http://ericholscher.com/blog/2016/mar/15/dont-use-markdown-for-technical-docs/">why you shouldn’t use Markdown for documentation</a>. His article looked convincing, as I tend to trust the opinion of a person who has arguments against Markdown, while he is working on a product that supports both Markdown and reStructuredText. In the second <a target="_blank" rel="noopener" href="https://www.dabapps.com/blog/why-i-use-markdown-for-documentation/">article</a>, Tom Christie tried to refute Eric’s arguments. But his arguments were rather controversial as Tom described only his cases to use Markdown. The answer why Tom was sticking to Markdown was clear - his project is large (hosted with MkDocs), but has nothing more than code blocks under the hood. Markdown is good enough here, for sure.</p>
+<p>It reminded me of two interesting blog posts that I found some time ago. In the first one, Eric Holscher (the co-founder of Read the Docs and Write the Docs) told <a href="http://ericholscher.com/blog/2016/mar/15/dont-use-markdown-for-technical-docs/">why you shouldn’t use Markdown for documentation</a>. His article looked convincing, as I tend to trust the opinion of a person who has arguments against Markdown, while he is working on a product that supports both Markdown and reStructuredText. In the second <a href="https://www.dabapps.com/blog/why-i-use-markdown-for-documentation/">article</a>, Tom Christie tried to refute Eric’s arguments. But his arguments were rather controversial as Tom described only his cases to use Markdown. The answer why Tom was sticking to Markdown was clear - his project is large (hosted with MkDocs), but has nothing more than code blocks under the hood. Markdown is good enough here, for sure.</p>
 <p>As I said before, Markdown has lots of limitations out-of-the-box that cannot be resolved based on the existing CommonMark specifications. For example, sections reusage, source code inclusion or dynamic variables. As the result, Markdown fits only for creating basic documents like READMEs or simple knowledge bases.</p>
 <p>AsciiDoc, in turn, offers better semantic richness, standardization, and support of multiple output formats (HTML, DocBook, PDF, and ePub). It also supports a broader range of syntax than Markdown, so the main focus was set on ensuring the maximum reusability of the content, whereas the syntax was designed to be extended as a core feature. This truly makes AsciiDoc the right investment as a complete, all-sufficient tool for creating documentation of any size, including auto-generated API docs.</p>
 <p>And finally…</p>
-<p><a target="_blank" rel="noopener" href="https://daringfireball.net/projects/markdown/syntax#html">According to John Gruber</a>, the inventor of Markdown:</p>
+<p><a href="https://daringfireball.net/projects/markdown/syntax#html">According to John Gruber</a>, the inventor of Markdown:</p>
 <blockquote>
 <p>Markdown’s syntax is intended for one purpose: to be used as a format for writing for the web.</p>
 </blockquote>
@@ -319,55 +221,6 @@ This paragraph gets a lot of attention.<span aria-hidden="true" class="line-numb
 <p>Do not use Markdown for things it was not designed to do. For example, to write documentation.</p>
 </blockquote>
 
-<p><a class="classtest-link" href="/tags/asciidoc/" rel="tag">asciidoc</a>, <a class="classtest-link" href="/tags/documentation/" rel="tag">documentation</a>, <a class="classtest-link" href="/tags/markdown/" rel="tag">markdown</a> — Apr 24, 2018</p>
-
-          <div class="row">
-  
-    <div class="eight columns">
-      <p id="madewith">Made with
-        <i class="icon-heart"></i>
-        and
-        <a class="footer-link icon" href="https://hexo.io" target="_blank" style="text-decoration: none;" rel="noreferrer" aria-label="Hexo.io">
-          <i class="icon-hexo"></i>
-        </a>
-        
-    </div>
-
-    <div class="four columns mb-3 social">
-      
-      <a class="ml-0 footer-link icon" href="https://github.com/bandantonio" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="GitHub">
-        <i class="icon-github"></i>
-      </a>
-      
-
-      
-      <a class="ml-0 footer-link icon" href="https://www.linkedin.com/in/bandantonio" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="LinkedIn">
-        <i class="icon-linkedin"></i>
-      </a>
-      
-
-      
-      <a class="ml-0 footer-link icon" href="https://stackoverflow.com/users/11147608/anton-zolotukhin" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="Stack Overflow">
-        <i class="icon-stackoverflow"></i>
-      </a>
-      
-
-      
-      <a class="ml-0 footer-link icon" href="https://medium.com/@mister_gold" target="_blank" style="text-decoration: none" rel="noreferrer" aria-label="Medium">
-        <i class="icon-medium"></i>
-      </a>
-      
-
-    </div>
-  
-</div>
-
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</body>
-
-</html>
+		<div class="text-center mt-14"><a href="/blog">← Back to blog</a></div>
+	</article>
+	</body></html>
