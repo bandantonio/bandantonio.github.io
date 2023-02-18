@@ -1,8 +1,0 @@
-projects:
-  - name: Antmarky
-    description: Antmarky is a static-site generator for Asciidoctor based on Node.js/EJS
-    technologies:
-      - ts
-      - node-js
-    link: https://mister-gold.pro/antmarky
-    code: https://github.com/bandantonio/antmarky
