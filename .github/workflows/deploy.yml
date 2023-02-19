@@ -1,32 +1,43 @@
 name: Deploy to GitHub Pages
-on: [push]
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  pages:
+  node-setup:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
-      - name: Use Node.js 16
-        uses: actions/setup-node@v3
+      - uses: ./.github/actions/node-cache
+        id: cache-node-modules
         with:
-          node-version: 16
+          node-version: '16'
+      - run: npm i
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
 
-      - name: Cache dependencies
-        uses: actions/cache@v2
+  generate-website:
+    name: Generate website
+    needs: node-setup
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/node-cache
+        id: cache-node-modules
         with:
-          path: node_modules
-          key: ${{ runner.OS }}-npm-cache
-          restore-keys: |
-            ${{ runner.OS }}-npm-cache
+          node-version: '16'
 
-      - name: Install dependencies
-        run: npm i
-
-      - name: Build
+      - name: Generate website
+        id: build_website
+        if: steps.cache-node-modules.outcome == 'success'
         run: npm run build
-
-      - name: Deploy
+      
+      - name: 🚀 Deploy to GitHub Pages 
+        if: steps.build_website.outcome == 'success'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
