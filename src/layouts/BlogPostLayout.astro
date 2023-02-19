@@ -14,24 +14,19 @@ const postfolder = frontmatter.url!.split('/')[2];
 ---
 
 <BaseLayout title={frontmatter.title}>
-	<div class="m-6 text-center">
+	<div class="text-center">
 		<GoHomeArrow getBackTo="/blog" title={frontmatter.title} />
 		<small class="text-slate-400"
 			>Written by Antonio • {formatDate(frontmatter.date)}</small
 		>
 		<hr class="my-6 mx-auto w-20 border-t-2 border-mg-accent" />
 
-		<img
-			class="mx-auto my-4 max-w-md"
-			src={`/images/${postfolder}/${frontmatter.img}`}
-			alt="image"
-		/>
 	</div>
 	<article
 		class="prose
 		prose-invert
-		max-w-md
 		mx-auto
+		px-6
 		mb-12
 		prose-headings:text-mg-accent
 		prose-a:text-mg-blue
@@ -41,10 +36,19 @@ const postfolder = frontmatter.url!.split('/')[2];
 		prose-blockquote:border-sky-700
 		prose-img:rounded-lg
 		prose-img:mx-auto
-		md:max-w-lg
-		lg:max-w-2xl
+		max-w-xs
+		sm:max-w-sm
+		md:max-w-md
+		lg:max-w-lg
+		xl:max-w-xl
 		"
 	>
+		<img
+			class="rounded-lg"
+			src={`/images/${postfolder}/${frontmatter.img}`}
+			alt="image"
+		/>
+
 		<slot />
 
 		<div class="text-center mt-14"><a href="/blog">← Back to blog</a></div>

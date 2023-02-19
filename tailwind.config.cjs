@@ -4,6 +4,7 @@ module.exports = {
 	theme: {
 		fontFamily: { sans: ['Quicksand', 'system-ui'] },
 		screens: {
+			'xs': '300px',
 			'sm': '480px',
 			'md': '768px',
 			'lg': '976px',

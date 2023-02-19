@@ -7,7 +7,19 @@ export interface Props {
 const { getBackTo, title } = Astro.props as Props;
 ---
 
-<h1 class="my-4 px-14 py-2 text-center text-3xl font-bold">
+<h1 class="
+	my-4
+	mx-auto
+	py-2
+	text-center
+	text-3xl
+	font-bold
+	xs: max-w-xs
+	sm:max-w-sm
+	md:max-w-md
+	lg:max-w-lg
+	xl:max-w-xl
+	">
 	<a
 		class="before:content-['←'] hover:text-mg-accent"
 		href={getBackTo}
