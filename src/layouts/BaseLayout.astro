@@ -16,7 +16,8 @@ const { title = defaultTitle } = Astro.props as Props;
 		title={title}
 		defaultTitle={defaultTitle}
 	/>
-	<body class="bg-mg-primary text-slate-400">
+	<body class="flex flex-col h-screen bg-mg-primary text-slate-400">
 		<slot />
+		<Footer />
 	</body>
 </html>

@@ -1,7 +1,9 @@
 ---
+import Social from "./Social.astro";
+
 const currentYear = new Date().getFullYear();
 ---
-<footer class="text-center flex-col align-bottom pb-6">
-    <p>Created by: Anton Zolotukhin, &copy; 2011 - {currentYear}</p>
-    <p>Built with Astro 🚀, Tailwind CSS, and GitHub Pages</p>
+<footer class="mx-2 justify-center text-xs font-bold lg:flex lg:justify-between lg:mx-4 mb-1">
+    <Social />
+    <p class="text-center">&copy; 2011 - {currentYear} | Built with <a class="text-mg-accent" href="https://astro.build">Astro 🚀</a>, Tailwind CSS, and GitHub Pages</p>
 </footer>
