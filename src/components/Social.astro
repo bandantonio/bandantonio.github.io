@@ -1,37 +1,35 @@
 ---
+import { Icon } from 'astro-icon';
+
 const username = 'bandantonio';
 const platforms = [
 	{
 		name: 'GitHub',
 		url: `https://github.com/${username}`,
+		icon: 'ri:github-fill'
 	},
 	{
 		name: 'LinkedIn',
 		url: `https://www.linkedin.com/in/${username}`,
+		icon: 'ri:linkedin-box-fill'
 	},
 	{
 		name: 'Stack Overflow',
 		url: `https://stackoverflow.com/users/11147608/${username}`,
+		icon: 'ri:stack-overflow-fill',
 	},
 	{
 		name: 'Medium',
 		url: `https://${username}.medium.com`,
+		icon: 'ph:medium-logo-fill'
 	},
 ];
 ---
 
-<ul>
+<ul class="flex justify-center mb-1 space-x-2">
 	{
 		platforms.map((platform) => (
-			<div class="">
-				My projects on{' '}
-				<a
-					class=""
-					href={platform.url}
-				>
-					{platform.name}
-				</a>
-			</div>
+			<li class="inline-block hover:text-mg-accent"><a target="_blank" href={platform.url}><Icon name={platform.icon} height={20} /></a></li>
 		))
 	}
 </ul>
