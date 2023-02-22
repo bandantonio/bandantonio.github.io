@@ -6,13 +6,23 @@ const { post } = Astro.props;
 
 <a href={post.url}>
 	<div
-		class="mx-auto mb-2 flex items-center justify-between border-l-2 border-slate-400 p-4 shadow-sm hover:border-l-mg-accent hover:text-mg-accent focus:ring [&>p]:hover:bg-mg-accent [&>p]:hover:font-bold [&>p]:hover:text-black"
+		class="mb-2
+		flex
+		items-baseline
+		text-xs
+		space-x-4
+		shadow-sm
+		xs:max-w-xs
+		sm:max-w-sm sm:text-sm
+		md:max-w-md md:text-sm
+		lg:max-w-lg lg:text-md
+		xl:max-w-xl xl:text-lg
+		hover:text-mg-accent"
 	>
+	<p class="whitespace-nowrap py-3 tracking-tight text-mg-accent"
+	>
+		{formatDate(post.frontmatter.date).toUpperCase()}
+	</p>
 		<h2>{post.frontmatter.title}</h2>
-		<p
-			class="ml-4 hidden whitespace-nowrap rounded-sm p-2 text-xs text-slate-400 lg:inline"
-		>
-			{formatDate(post.frontmatter.date)}
-		</p>
 	</div>
 </a>
