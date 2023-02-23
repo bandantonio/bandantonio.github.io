@@ -1,6 +1,4 @@
 ---
-import { Icon } from 'astro-icon';
-
 const username = 'bandantonio';
 const platforms = [
 	{
@@ -14,11 +12,6 @@ const platforms = [
 		icon: 'ri:linkedin-box-fill'
 	},
 	{
-		name: 'Stack Overflow',
-		url: `https://stackoverflow.com/users/11147608/${username}`,
-		icon: 'ri:stack-overflow-fill',
-	},
-	{
 		name: 'Medium',
 		url: `https://${username}.medium.com`,
 		icon: 'ph:medium-logo-fill'
@@ -26,10 +19,10 @@ const platforms = [
 ];
 ---
 
-<ul class="flex justify-center mb-1 space-x-2">
+<ul class="flex justify-center mb-1 space-x-4">
 	{
 		platforms.map((platform) => (
-			<li class="inline-block hover:text-mg-accent"><a target="_blank" href={platform.url}><Icon name={platform.icon} height={20} /></a></li>
+			<li class="inline-block hover:text-mg-accent"><a target="_blank" href={platform.url}>{platform.name}</a></li>
 		))
 	}
 </ul>
