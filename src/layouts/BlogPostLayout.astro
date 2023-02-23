@@ -43,11 +43,13 @@ const postfolder = frontmatter.url!.split('/')[2];
 		xl:max-w-xl
 		"
 	>
-		<img
-			class="rounded-lg"
-			src={`/images/${postfolder}/${frontmatter.img}`}
-			alt="image"
-		/>
+		{frontmatter.img && (
+			<img
+				class="rounded-lg"
+				src={`/images/${postfolder}/${frontmatter.img}`}
+				alt="image"
+			/>
+		)}
 
 		<slot />
 
