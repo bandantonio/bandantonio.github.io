@@ -12,14 +12,14 @@ My personal website created with Astro, Tailwind CSS and GitHub Pages.
 
 ### Desktop
 
-[![Lighthouse](https://img.shields.io/badge/-Performance:98-white?style=flat&logo=Lighthouse&logoColor=red)][Lighthouse]
+[![Lighthouse](https://img.shields.io/badge/-Performance:100-white?style=flat&logo=Lighthouse&logoColor=red)][Lighthouse]
 [![Lighthouse](https://img.shields.io/badge/-Accessibility:100-white?style=flat&logo=Lighthouse&logoColor=red)][Lighthouse]
 [![Lighthouse](https://img.shields.io/badge/-Best%20Practices:100-white?style=flat&logo=Lighthouse&logoColor=red)][Lighthouse]
 [![Lighthouse](https://img.shields.io/badge/-SEO:100-white?style=flat&logo=Lighthouse&logoColor=red)][Lighthouse]
 
 ### Mobile
 
-[![Lighthouse](https://img.shields.io/badge/-Performance:98-white?style=flat&logo=Lighthouse&logoColor=red)][Lighthouse]
+[![Lighthouse](https://img.shields.io/badge/-Performance:100-white?style=flat&logo=Lighthouse&logoColor=red)][Lighthouse]
 [![Lighthouse](https://img.shields.io/badge/-Accessibility:100-white?style=flat&logo=Lighthouse&logoColor=red)][Lighthouse]
 [![Lighthouse](https://img.shields.io/badge/-Best%20Practices:100-white?style=flat&logo=Lighthouse&logoColor=red)][Lighthouse]
 [![Lighthouse](https://img.shields.io/badge/-SEO:100-white?style=flat&logo=Lighthouse&logoColor=red)][Lighthouse]
