@@ -1,0 +1,294 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import GoHomeArrow from '@components/GoHomeArrow.astro';
+import { Icon } from 'astro-icon';
+import * as summary from '@collections/work/summary.mdx';
+import * as competencies from '@collections/work/core-competencies.mdx';
+import * as achievements from '@collections/work/achievements.mdx';
+import * as work from '@collections/work/work-experience.mdx';
+import * as earlierWork from '@collections/work/previous-work.mdx';
+import * as openSource from '@collections/work/open-source.mdx';
+import * as skills from '@collections/work/skills.mdx';
+import * as languages from '@collections/work/languages.mdx';
+import * as courses from '@collections/work/courses.mdx';
+import * as education from '@collections/work/education.mdx';
+
+const repoDescription = await fetch(
+	`https://api.github.com/repos/bandantonio/${openSource.frontmatter.personal[0].name}`
+);
+const data = await repoDescription.json();
+const repoDescriptionResult = {
+	name: data.name,
+	description: data.description,
+	url: data.html_url,
+};
+---
+
+<BaseLayout title="Work Experience">
+	<div class="text-center">
+		<GoHomeArrow
+			getBackTo="/"
+			title="Home"
+		/>
+	</div>
+
+	<section class="mx-auto flex max-w-4xl flex-col px-10">
+		<section class="mb-8 md:grid md:grid-cols-4">
+			<h2
+				class="text-center text-xs font-bold uppercase text-mg-accent md:mt-2 md:text-left"
+			>
+				{summary.frontmatter.title}
+			</h2>
+			<div class="col-span-3">
+				<span
+					class="hidden h-2 w-10 border-4 border-mg-accent md:mr-2 md:inline-flex"
+				></span>
+				<span
+					class="my-2 flex justify-center text-xs font-bold uppercase text-mg-accent md:inline-flex md:justify-start"
+					>{summary.frontmatter.position}</span
+				>
+				{(<summary.Content />)}
+				<p class="mt-4">{competencies.frontmatter.title} include:</p>
+				<ul class="list-square pl-8">
+					{
+						competencies.frontmatter.list.map(
+							(competency: string) => <li>{competency}</li>
+						)
+					}
+				</ul>
+			</div>
+		</section>
+		<section class="mb-8 md:grid md:grid-cols-4">
+			<h2
+				class="text-center text-xs font-bold uppercase text-mg-accent md:mt-2 md:text-left"
+			>
+				{achievements.frontmatter.title}
+			</h2>
+			<div class="col-span-3">
+				<ul class="list-square pl-8">
+					{
+						achievements.frontmatter.list.map(
+							(achievement: string) => <li>{achievement}</li>
+						)
+					}
+				</ul>
+			</div>
+		</section>
+		<section class="mb-8 md:grid md:grid-cols-4">
+			<h2
+				class="text-center text-xs font-bold uppercase text-mg-accent md:mt-2 md:text-left"
+			>
+				{work.frontmatter.title}
+			</h2>
+			<div class="col-span-3">
+				{
+					work.frontmatter.positions.map((item: any) => (
+						<ul class="mb-6">
+							<h3 class="my-1 flex flex-col md:flex-row md:justify-start">
+								<span class="border-mg-accent hidden h-2 w-10 border-4 md:mr-3 md:mt-1 md:inline-flex" />
+								<span class="text-mg-accent flex flex-col items-center text-xs font-bold uppercase sm:w-full sm:flex-row sm:justify-between">
+									<span class="block tracking-tighter">
+										{item.company}
+									</span>
+									<span class="tracking-tighter">
+										{item.date}
+									</span>
+								</span>
+							</h3>
+							<li class="text-md my-4 text-center font-bold uppercase tracking-tight md:text-left">
+								{item.job_title}
+							</li>
+							<div class="mt-4 font-bold">Achievements</div>
+							{typeof item.achievements === 'string' ? (
+								<ul class="list-square pl-8">
+									<li>
+										<i>{item.achievements}</i>
+									</li>
+								</ul>
+							) : (
+								<ul class="list-square pl-8">
+									{item.achievements.map(
+										(achievement: string) => (
+											<li>{achievement}</li>
+										)
+									)}
+								</ul>
+							)}
+							<div class="mt-6 font-bold">Responsibilities</div>
+							<ul class="list-square pl-8">
+								{item.responsibilities.map(
+									(responsibility: string) => (
+										<li>{responsibility}</li>
+									)
+								)}
+							</ul>
+						</ul>
+					))
+				}
+			</div>
+		</section>
+		<section class="mb-8 md:grid md:grid-cols-4">
+			<h2
+				class="text-center text-xs font-bold uppercase text-mg-accent md:mt-2 md:text-left"
+			>
+				{earlierWork.frontmatter.title}
+			</h2>
+			<div class="text-center sm:col-span-3">
+				<ul class="mb-4 list-square pl-8 text-left">
+					{
+						earlierWork.frontmatter.list.map((job: string) => (
+							<li>{job}</li>
+						))
+					}
+				</ul>
+				<i class="md:ml-4">{earlierWork.frontmatter.summary}</i>
+			</div>
+		</section>
+
+		<section class="mb-8 md:grid md:grid-cols-4">
+			<h2
+				class="text-center text-xs font-bold uppercase text-mg-accent md:mt-2 md:text-left"
+			>
+				{openSource.frontmatter.title}
+			</h2>
+			<div class="sm: col-span-3">
+				<ul class="list-square pl-8">
+					{
+						openSource.frontmatter.season_of_docs.map(
+							(project: any) => (
+								<li>
+									<a
+										class="text-mg-accent underline-offset-2 hover:underline"
+										href={`https://developers.google.com/season-of-docs/docs/${project.year}/participants`}
+										target="_blank"
+									>
+										Google Season of Docs: {project.year}
+									</a>
+									: successful technical writing project with
+									<a
+										class="text-mg-accent underline-offset-2 hover:underline"
+										href={project.url}
+									>
+										{project.organization}
+									</a>
+								</li>
+							)
+						)
+					}
+				</ul>
+				<ul class="list-square pl-8">
+					<li>
+						Personal open-source project: <a
+							class="text-mg-accent underline-offset-2 hover:underline"
+							href={repoDescriptionResult.url}
+							>{repoDescriptionResult.name}</a
+						> - {repoDescriptionResult.description}
+					</li>
+					<li>
+						Contributor to the <a
+							class="text-mg-accent underline-offset-2 hover:underline"
+							href={openSource.frontmatter.contributions[0].url}
+							target="_blank"
+							>{openSource.frontmatter.contributions[0].name}</a
+						> and <a
+							class="text-mg-accent underline-offset-2 hover:underline"
+							href={openSource.frontmatter.contributions[1].url}
+							target="_blank"
+							>{openSource.frontmatter.contributions[1].name}</a
+						> projects
+					</li>
+					<li>
+						Published a blog post on Medium about my own experience
+						with documentation tools
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section class="mb-8 md:grid md:grid-cols-4">
+			<h2
+				class="text-center text-xs font-bold uppercase text-mg-accent md:mt-2 md:text-left"
+			>
+				{skills.frontmatter.title}
+			</h2>
+			<div class="sm: col-span-3">
+				<ul class="list-square pl-8">
+					{
+						skills.frontmatter.list.map((skill: string) => (
+							<li>{skill}</li>
+						))
+					}
+				</ul>
+			</div>
+		</section>
+		<section class="mb-8 md:grid md:grid-cols-4">
+			<h2
+				class="text-center text-xs font-bold uppercase text-mg-accent md:mt-2 md:text-left"
+			>
+				{languages.frontmatter.title}
+			</h2>
+			<div class="sm: col-span-3">
+				<ul class="list-square pl-8">
+					{
+						languages.frontmatter.list.map((language: any) => (
+							<li>
+								{language.lang}, {language.level}
+							</li>
+						))
+					}
+				</ul>
+			</div>
+		</section>
+		<section class="mb-8 md:grid md:grid-cols-4">
+			<h2
+				class="text-center text-xs font-bold uppercase text-mg-accent md:mt-2 md:text-left"
+			>
+				{courses.frontmatter.title}
+			</h2>
+			<div class="sm: col-span-3">
+				<ul class="list-square pl-8">
+					{
+						courses.frontmatter.list.map((course: any) => (
+							<li>
+								<Icon
+									class="inline-block"
+									name={course.icon}
+									size="16"
+								/>{' '}
+								{course.name}
+							</li>
+						))
+					}
+				</ul>
+			</div>
+		</section>
+		<section class="mb-8 md:grid md:grid-cols-4">
+			<h2
+				class="text-center text-xs font-bold uppercase text-mg-accent md:mt-2 md:text-left"
+			>
+				{education.frontmatter.title}
+			</h2>
+			<div class="sm: col-span-3">
+				<ul class="mb-6">
+					<h3 class="my-1 flex flex-col md:flex-row md:justify-start">
+						<span
+							class="hidden h-2 w-10 border-4 border-mg-accent md:mr-3 md:mt-1 md:inline-flex"
+						></span>
+						<span
+							class="flex flex-col items-center text-xs font-bold uppercase text-mg-accent sm:w-full sm:flex-row sm:justify-between"
+						>
+							<span
+								class="block tracking-tighter xs:text-center sm:text-left"
+								>{education.frontmatter.university}</span
+							>
+							<span class="tracking-tighter"
+								>{education.frontmatter.date}</span
+							>
+						</span>
+					</h3>
+					<li>{education.frontmatter.degree}</li>
+					<li>{education.frontmatter.specialization}</li>
+				</ul>
+			</div>
+		</section>
+	</section>
+</BaseLayout>

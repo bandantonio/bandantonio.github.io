@@ -10,6 +10,9 @@ module.exports = {
 			'lg': '976px',
 			'xl': '1280px',
 		},
+		listStyleType: {
+			square: 'square',
+		},
 		extend: {
 			colors: {
 				'mg-primary': '#222226',
