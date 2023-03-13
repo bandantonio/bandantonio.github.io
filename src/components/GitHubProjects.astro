@@ -1,0 +1,46 @@
+---
+import { Icon } from 'astro-icon';
+import { Octokit } from 'octokit';
+
+export interface Props {
+    name?: string;
+}
+
+const { name } = Astro.props as Props;
+
+const octokit = new Octokit({ auth: `${import.meta.env.GH_API_TOKEN}` });
+let getRepos = await octokit.request('GET /user/repos', {
+  headers: {
+    'X-GitHub-Api-Version': '2022-11-28'
+  }
+});
+
+let repos = getRepos.data
+    .filter(repo => {
+        return (!name) ? repo.topics!.includes('starred') : repo.name === name
+    })
+    .map(repo => {
+        return {
+            name: repo.name,
+            description: repo.description,
+            language: repo.language,
+            url: repo.html_url,
+            stars: repo.stargazers_count,
+            forks: repo.forks_count
+        }
+    });
+---
+
+<ul class="flex flex-col font-bold not-prose p-0">
+    {repos.map(repo => (
+        <a class="rounded-md border-2 border-slate-400 inline-block px-4 py-2 my-2 hover:bg-slate-700" href={repo.url} target="_blank">
+            <p class="text-white cursor-pointer"><Icon class="inline-block mb-1" name="mdi:github" size="20" /> {repo.name}</p>
+            <p class="text-slate-400 font-semibold py-2">{repo.description}</p>
+            <div>
+                <span class="text-white"><Icon class="inline-block text-slate-400" name="carbon:dot-mark" size="20" />{repo.language}</span>
+                <span class="text-white"><Icon class="inline-block text-slate-400 mb-1" name="ic:round-star-border" size="20" /> {repo.stars}</span>
+                <span class="text-white"><Icon class="inline-block text-slate-400" name="tabler:git-fork" size="20" /> {repo.forks}</span>
+            </div>
+        </a>
+    ))}
+</ul>
