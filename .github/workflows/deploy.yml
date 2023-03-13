@@ -34,6 +34,8 @@ jobs:
       - name: Generate website
         id: build_website
         if: steps.cache-node-modules.outcome == 'success'
+        env:
+          GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
         run: npm run build
       
       - name: 🚀 Deploy to GitHub Pages 
