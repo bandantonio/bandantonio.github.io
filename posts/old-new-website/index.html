@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="UTF-8">
+	<link rel="icon" href="/favicon.ico" sizes="any">
+	<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Personal website of Anton Zolotukhin">
+	<title>My old new website on Astro 🚀 | Mister Gold</title>
+<link rel="stylesheet" href="/_astro/blog.c21330a7.css" />
+<link rel="stylesheet" href="/_astro/custom-page-jinja.c7b202da.css" /></head>
+	<body class="flex flex-col h-screen bg-mg-primary text-slate-400">
+		<div class="text-center">
+		<h1 class="
+	my-4
+	mx-auto
+	py-2
+	text-center
+	text-3xl
+	font-bold
+	xs: max-w-xs
+	sm:max-w-sm
+	md:max-w-md
+	lg:max-w-lg
+	xl:max-w-xl
+	">
+	<a class="before:content-['←'] hover:text-mg-accent" href="/blog">
+		My old new website on Astro 🚀</a>
+</h1>
+		<small class="text-slate-400">Written by Antonio • Mar 14</small>
+		<hr class="my-6 mx-auto w-20 border-t-2 border-mg-accent">
+
+	</div><article class="prose
+		prose-invert
+		mx-auto
+		px-6
+		mb-12
+		prose-headings:text-mg-accent
+		prose-a:text-mg-blue
+		prose-a:no-underline
+		hover:prose-a:underline
+		prose-code:text-mg-red
+		prose-blockquote:border-sky-700
+		prose-img:rounded-lg
+		prose-img:mx-auto
+		max-w-xs
+		sm:max-w-sm
+		md:max-w-md
+		lg:max-w-lg
+		xl:max-w-xl
+		">
+		
+
+		<p>Recently I was using <code>Hexo</code> for my website, and it was my 4th platform and 2nd static-site generator after <a href="pelican-on-gitlab-pages">Pelican</a>. Hexo was fast and extensible and it allowed me to create custom pages with custom data (I was using YAML files for that). And that was pretty much it. I was using Hexo for two years, and during that time, I barely touched any customizations except for the theme and minor visual changes to the custom pages I created. Creating a visually appealing and unique design was kind of a pain, so switching to something more progressive and easier to use was a matter of time.</p>
+<h2 id="why-astro">Why Astro?</h2>
+<p>I came across Astro by accident, and that was love at first sight. After reading the documentation, I was impressed by the core features, integration capabilities, and how easily Astro can import your content from different sources. The most exciting parts for me were:</p>
+<ul>
+<li>
+<p><a href="https://docs.astro.build/en/core-concepts/astro-syntax/">Astro Components</a> that are reusable building blocks for your website that you can combine however you want to create the functionality you need for your website. For example, a simple page with components may look like this:</p>
+<pre class="astro-code" style="background-color:#232136;overflow-x:auto;white-space:pre-wrap;word-wrap:break-word"><code><span class="line"><span style="color:#6E6A86">---</span></span>
+<span class="line"><span style="color:#3E8FB0">import </span><span style="color:#E0DEF4">Head</span><span style="color:#3E8FB0"> from </span><span style="color:#F6C177">&#39;./components/Head.astro&#39;</span><span style="color:#908CAA">;</span></span>
+<span class="line"><span style="color:#3E8FB0">import </span><span style="color:#E0DEF4">Footer</span><span style="color:#3E8FB0"> from </span><span style="color:#F6C177">&#39;./components/Footer.astro&#39;</span><span style="color:#908CAA">;</span></span>
+<span class="line"><span style="color:#6E6A86">---</span></span>
+<span class="line"><span style="color:#6E6A86">&lt;!</span><span style="color:#9CCFD8">DOCTYPE</span><span style="color:#E0DEF4"> </span><span style="color:#C4A7E7">html</span><span style="color:#6E6A86">&gt;</span></span>
+<span class="line"><span style="color:#6E6A86">&lt;</span><span style="color:#9CCFD8">html</span><span style="color:#E0DEF4"> </span><span style="color:#C4A7E7">lang</span><span style="color:#908CAA">=</span><span style="color:#F6C177">&quot;en&quot;</span><span style="color:#6E6A86">&gt;</span></span>
+<span class="line"><span style="color:#E0DEF4">    </span><span style="color:#6E6A86">&lt;</span><span style="color:#9CCFD8">Head</span><span style="color:#E0DEF4"> </span><span style="color:#6E6A86">/&gt;</span></span>
+<span class="line"><span style="color:#E0DEF4">    </span><span style="color:#6E6A86">&lt;</span><span style="color:#9CCFD8">body</span><span style="color:#6E6A86">&gt;</span></span>
+<span class="line"><span style="color:#E0DEF4">        </span><span style="color:#6E6A86">&lt;</span><span style="color:#9CCFD8">slot</span><span style="color:#E0DEF4"> </span><span style="color:#6E6A86">/&gt;</span></span>
+<span class="line"><span style="color:#E0DEF4">        </span><span style="color:#6E6A86">&lt;</span><span style="color:#9CCFD8">Footer</span><span style="color:#E0DEF4"> </span><span style="color:#6E6A86">/&gt;</span></span>
+<span class="line"><span style="color:#E0DEF4">    </span><span style="color:#6E6A86">&lt;/</span><span style="color:#9CCFD8">body</span><span style="color:#6E6A86">&gt;</span></span>
+<span class="line"><span style="color:#6E6A86">&lt;/</span><span style="color:#9CCFD8">html</span><span style="color:#6E6A86">&gt;</span></span></code></pre>
+<p>There are two self-descriptive components that contain parts of a page layout. The <code>&lt;slot /&gt;</code> element is used to inject content from other files. You can structure your page however you want and use as many components as you need.</p>
+</li>
+<li>
+<p><a href="https://docs.astro.build/en/concepts/islands/">Astro Islands</a> that are basically isolated interactive UI components within a static page (by default, Astro wipes all the JavaScript out of the generated website). In this way, you can create a website that will remain fully static, and JavaScript will be loaded only for the components that require it.</p>
+</li>
+</ul>
+<p>Another benefit is that Astro is platform-agnostic, so you can continue working with the tools of your choice without sacrificing your workflow and experience. Astro <a href="https://docs.astro.build/en/guides/integrations-guide/#official-integrations">officially supports</a> many popular tools and frameworks that it can set up and configure for you automatically, taking out the hassle of starting from scratch. And if you can’t find the integration you need, you can create your own. In my setup, I use Tailwind integration for styling. I will talk more about it later.</p>
+<h2 id="migration">Migration</h2>
+<h3 id="theme-layouts">Theme layouts</h3>
+<p>I spent some time searching for a suitable theme for my website, but I couldn’t find anything that I liked. There were some interesting templates, but they were rather complex, so organizing and customizing them would take a lot of time. So I decided to follow a samurai’s path and create my own theme from scratch.
+Taking into account my painful experience with customizing styles for Hexo (there were 10 separate CSS files), I decided to proceed with a more modern approach and use Tailwind because the existing frameworks, like Bootstrap, Materialize, Bulma, etc., are too bloated and can’t give you the flexibility you need.</p>
+<p>The best thing about Tailwind is that you no longer have to think up the proper naming of yet another <code>div</code> to make your CSS slightly more readable. Instead, you just add styles right to the HTML. Yes, when your website grows, you will have a lot of classes (this may seem scary at first), but these classes are self-explanatory and easy to use, and once tried, you will never go back to the old way of styling via separate CSS files. I can confirm it. I was really happy to give Tailwind a try.</p>
+<p>For my website, I created two layouts: one for pages and another for blog posts.</p>
+<h4 id="page-layout">Page layout</h4>
+<p>The page layout is simple and consists of several basic components:</p>
+<pre class="astro-code" style="background-color: #232136; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #6E6A86">---</span></span>
+<span class="line"><span style="color: #3E8FB0">import </span><span style="color: #E0DEF4">Head</span><span style="color: #3E8FB0"> from </span><span style="color: #F6C177">&#39;@components/Head.astro&#39;</span><span style="color: #908CAA">;</span></span>
+<span class="line"><span style="color: #3E8FB0">import </span><span style="color: #E0DEF4">Footer</span><span style="color: #3E8FB0"> from </span><span style="color: #F6C177">&#39;@components/Footer.astro&#39;</span><span style="color: #908CAA">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #3E8FB0">export</span><span style="color: #E0DEF4"> </span><span style="color: #3E8FB0">interface</span><span style="color: #E0DEF4"> </span><span style="color: #9CCFD8">Props</span><span style="color: #E0DEF4"> </span><span style="color: #908CAA">{</span></span>
+<span class="line"><span style="color: #E0DEF4">	</span><span style="color: #EA9A97">title</span><span style="color: #3E8FB0">?:</span><span style="color: #E0DEF4"> </span><span style="color: #9CCFD8">string</span><span style="color: #908CAA">;</span></span>
+<span class="line"><span style="color: #908CAA">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #3E8FB0">const</span><span style="color: #E0DEF4"> </span><span style="color: #E0DEF4">defaultTitle</span><span style="color: #E0DEF4"> </span><span style="color: #3E8FB0">=</span><span style="color: #E0DEF4"> </span><span style="color: #F6C177">&#39;Personal website of Anton Zolotukhin&#39;</span><span style="color: #908CAA">;</span></span>
+<span class="line"><span style="color: #3E8FB0">const</span><span style="color: #E0DEF4"> </span><span style="color: #908CAA">{</span><span style="color: #E0DEF4"> </span><span style="color: #E0DEF4">title</span><span style="color: #E0DEF4"> </span><span style="color: #3E8FB0">=</span><span style="color: #E0DEF4"> </span><span style="color: #E0DEF4">defaultTitle</span><span style="color: #E0DEF4"> </span><span style="color: #908CAA">}</span><span style="color: #E0DEF4"> </span><span style="color: #3E8FB0">=</span><span style="color: #E0DEF4"> </span><span style="color: #E0DEF4">Astro</span><span style="color: #3E8FB0">.</span><span style="color: #E0DEF4">props</span><span style="color: #E0DEF4"> </span><span style="color: #3E8FB0">as</span><span style="color: #E0DEF4"> </span><span style="color: #9CCFD8">Props</span><span style="color: #908CAA">;</span></span>
+<span class="line"><span style="color: #6E6A86">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6E6A86">&lt;!</span><span style="color: #9CCFD8">DOCTYPE</span><span style="color: #E0DEF4"> </span><span style="color: #C4A7E7">html</span><span style="color: #6E6A86">&gt;</span></span>
+<span class="line"><span style="color: #6E6A86">&lt;</span><span style="color: #9CCFD8">html</span><span style="color: #E0DEF4"> </span><span style="color: #C4A7E7">lang</span><span style="color: #908CAA">=</span><span style="color: #F6C177">&quot;en&quot;</span><span style="color: #6E6A86">&gt;</span></span>
+<span class="line"><span style="color: #E0DEF4">	</span><span style="color: #6E6A86">&lt;</span><span style="color: #9CCFD8">Head</span></span>
+<span class="line"><span style="color: #E0DEF4">		</span><span style="color: #C4A7E7">title</span><span style="color: #908CAA">={</span><span style="color: #E0DEF4">title</span><span style="color: #908CAA">}</span></span>
+<span class="line"><span style="color: #E0DEF4">		</span><span style="color: #C4A7E7">defaultTitle</span><span style="color: #908CAA">={</span><span style="color: #E0DEF4">defaultTitle</span><span style="color: #908CAA">}</span></span>
+<span class="line"><span style="color: #E0DEF4">	</span><span style="color: #6E6A86">/&gt;</span></span>
+<span class="line"><span style="color: #E0DEF4">	</span><span style="color: #6E6A86">&lt;</span><span style="color: #9CCFD8">body</span><span style="color: #E0DEF4"> </span><span style="color: #C4A7E7">class</span><span style="color: #908CAA">=</span><span style="color: #F6C177">&quot;flex flex-col h-screen bg-mg-primary text-slate-400&quot;</span><span style="color: #6E6A86">&gt;</span></span>
+<span class="line"><span style="color: #E0DEF4">		</span><span style="color: #6E6A86">&lt;</span><span style="color: #9CCFD8">slot</span><span style="color: #E0DEF4"> </span><span style="color: #6E6A86">/&gt;</span></span>
+<span class="line"><span style="color: #E0DEF4">		</span><span style="color: #6E6A86">&lt;</span><span style="color: #9CCFD8">Footer</span><span style="color: #E0DEF4"> </span><span style="color: #6E6A86">/&gt;</span></span>
+<span class="line"><span style="color: #E0DEF4">	</span><span style="color: #6E6A86">&lt;/</span><span style="color: #9CCFD8">body</span><span style="color: #6E6A86">&gt;</span></span>
+<span class="line"><span style="color: #6E6A86">&lt;/</span><span style="color: #9CCFD8">html</span><span style="color: #6E6A86">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6E6A86">&lt;</span><span style="color: #9CCFD8">style</span><span style="color: #E0DEF4"> </span><span style="color: #C4A7E7">is:global</span><span style="color: #6E6A86">&gt;</span></span>
+<span class="line"><span style="color: #E0DEF4">	</span><span style="color: #908CAA">@</span><span style="color: #3E8FB0">font-face</span><span style="color: #E0DEF4"> </span><span style="color: #908CAA">{</span></span>
+<span class="line"><span style="color: #E0DEF4">    </span><span style="color: #9CCFD8">font-family</span><span style="color: #908CAA">:</span><span style="color: #E0DEF4"> </span><span style="color: #F6C177">&#39;Quicksand&#39;</span><span style="color: #908CAA">;</span></span>
+<span class="line"><span style="color: #E0DEF4">    </span><span style="color: #9CCFD8">src</span><span style="color: #908CAA">:</span><span style="color: #E0DEF4"> </span><span style="color: #EB6F92">url</span><span style="color: #908CAA">(</span><span style="color: #C4A7E7">/fonts/quicksand.ttf</span><span style="color: #908CAA">)</span><span style="color: #F6C177"> </span><span style="color: #EB6F92">format</span><span style="color: #908CAA">(</span><span style="color: #F6C177">&#39;truetype-variations&#39;</span><span style="color: #908CAA">);</span></span>
+<span class="line"><span style="color: #908CAA">}</span></span>
+<span class="line"><span style="color: #6E6A86">&lt;/</span><span style="color: #9CCFD8">style</span><span style="color: #6E6A86">&gt;</span></span></code></pre>
+<p>I use components for the page head (where I dynamically pass the page title via props) and footer. Multiple components make parts of the layout easier to maintain and reuse. It is completely up to you to decide how to structure your pages and how many components to use.</p>
+<p>The <code>&lt;slot /&gt;</code> element injects content from other pages, whereas the <code>&lt;style&gt;</code> tag defines the styles for the <em>current</em> component. The <code>is:global</code> attribute explicitly tells Astro that the styles should be applied globally. In my case, I define my custom <code>font-family</code> globally. And this is the only place where I use explicit styles.</p>
+<h4 id="blog-post-layout">Blog post layout</h4>
+<p>The blog post layout is a bit more lengthy because of styling for posts and additional utilities to work with types and date formatting:</p>
+<pre class="astro-code" style="background-color: #232136; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #6E6A86">---</span></span>
+<span class="line"><span style="color: #3E8FB0">import type </span><span style="color: #908CAA">{</span><span style="color: #3E8FB0"> </span><span style="color: #E0DEF4">MarkdownLayoutProps</span><span style="color: #3E8FB0"> </span><span style="color: #908CAA">}</span><span style="color: #3E8FB0"> from </span><span style="color: #F6C177">&#39;astro&#39;</span><span style="color: #908CAA">;</span></span>
+<span class="line"><span style="color: #3E8FB0">import type </span><span style="color: #908CAA">{</span><span style="color: #3E8FB0"> </span><span style="color: #E0DEF4">BlogPostFrontmatter</span><span style="color: #3E8FB0"> </span><span style="color: #908CAA">}</span><span style="color: #3E8FB0"> from </span><span style="color: #F6C177">&#39;@types&#39;</span><span style="color: #908CAA">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #3E8FB0">import </span><span style="color: #E0DEF4">BaseLayout</span><span style="color: #3E8FB0"> from </span><span style="color: #F6C177">&#39;./BaseLayout.astro&#39;</span><span style="color: #908CAA">;</span></span>
+<span class="line"><span style="color: #3E8FB0">import </span><span style="color: #E0DEF4">GoHomeArrow</span><span style="color: #3E8FB0"> from </span><span style="color: #F6C177">&#39;@components/GoHomeArrow.astro&#39;</span><span style="color: #908CAA">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #3E8FB0">import </span><span style="color: #908CAA">{</span><span style="color: #3E8FB0"> </span><span style="color: #E0DEF4">formatDate</span><span style="color: #3E8FB0"> </span><span style="color: #908CAA">}</span><span style="color: #3E8FB0"> from </span><span style="color: #F6C177">&#39;@utils&#39;</span><span style="color: #908CAA">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #3E8FB0">type</span><span style="color: #E0DEF4"> </span><span style="color: #9CCFD8">Props</span><span style="color: #E0DEF4"> </span><span style="color: #3E8FB0">=</span><span style="color: #E0DEF4"> </span><span style="color: #9CCFD8">MarkdownLayoutProps</span><span style="color: #908CAA">&lt;</span><span style="color: #9CCFD8">BlogPostFrontmatter</span><span style="color: #908CAA">&gt;;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #3E8FB0">const</span><span style="color: #E0DEF4"> </span><span style="color: #908CAA">{</span><span style="color: #E0DEF4"> </span><span style="color: #E0DEF4">frontmatter</span><span style="color: #E0DEF4"> </span><span style="color: #908CAA">}</span><span style="color: #E0DEF4"> </span><span style="color: #3E8FB0">=</span><span style="color: #E0DEF4"> </span><span style="color: #E0DEF4">Astro</span><span style="color: #3E8FB0">.</span><span style="color: #E0DEF4">props</span><span style="color: #908CAA">;</span></span>
+<span class="line"><span style="color: #3E8FB0">const</span><span style="color: #E0DEF4"> </span><span style="color: #E0DEF4">postfolder</span><span style="color: #E0DEF4"> </span><span style="color: #3E8FB0">=</span><span style="color: #E0DEF4"> </span><span style="color: #E0DEF4">frontmatter</span><span style="color: #3E8FB0">.</span><span style="color: #E0DEF4">url</span><span style="color: #3E8FB0">!.</span><span style="color: #EA9A97">split</span><span style="color: #E0DEF4">(</span><span style="color: #F6C177">&#39;/&#39;</span><span style="color: #E0DEF4">)[</span><span style="color: #EA9A97">2</span><span style="color: #E0DEF4">]</span><span style="color: #908CAA">;</span></span>
+<span class="line"><span style="color: #6E6A86">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #6E6A86">&lt;</span><span style="color: #9CCFD8">BaseLayout</span><span style="color: #E0DEF4"> </span><span style="color: #C4A7E7">title</span><span style="color: #908CAA">={</span><span style="color: #E0DEF4">frontmatter</span><span style="color: #3E8FB0">.</span><span style="color: #E0DEF4">title</span><span style="color: #908CAA">}</span><span style="color: #6E6A86">&gt;</span></span>
+<span class="line"><span style="color: #E0DEF4">	</span><span style="color: #6E6A86">&lt;</span><span style="color: #9CCFD8">div</span><span style="color: #E0DEF4"> </span><span style="color: #C4A7E7">class</span><span style="color: #908CAA">=</span><span style="color: #F6C177">&quot;text-center&quot;</span><span style="color: #6E6A86">&gt;</span></span>
+<span class="line"><span style="color: #E0DEF4">		</span><span style="color: #6E6A86">&lt;</span><span style="color: #9CCFD8">GoHomeArrow</span><span style="color: #E0DEF4"> </span><span style="color: #C4A7E7">getBackTo</span><span style="color: #908CAA">=</span><span style="color: #F6C177">&quot;/blog&quot;</span><span style="color: #E0DEF4"> </span><span style="color: #C4A7E7">title</span><span style="color: #908CAA">={</span><span style="color: #E0DEF4">frontmatter</span><span style="color: #3E8FB0">.</span><span style="color: #E0DEF4">title</span><span style="color: #908CAA">}</span><span style="color: #E0DEF4"> </span><span style="color: #6E6A86">/&gt;</span></span>
+<span class="line"><span style="color: #E0DEF4">		</span><span style="color: #6E6A86">&lt;</span><span style="color: #9CCFD8">small</span><span style="color: #E0DEF4"> </span><span style="color: #C4A7E7">class</span><span style="color: #908CAA">=</span><span style="color: #F6C177">&quot;text-slate-400&quot;</span></span>
+<span class="line"><span style="color: #E0DEF4">			</span><span style="color: #6E6A86">&gt;</span><span style="color: #E0DEF4">Written by Antonio • </span><span style="color: #908CAA">{</span><span style="color: #EA9A97">formatDate</span><span style="color: #E0DEF4">(</span><span style="color: #E0DEF4">frontmatter</span><span style="color: #3E8FB0">.</span><span style="color: #E0DEF4">date</span><span style="color: #E0DEF4">)</span><span style="color: #908CAA">}</span><span style="color: #6E6A86">&lt;/</span><span style="color: #9CCFD8">small</span></span>
+<span class="line"><span style="color: #E0DEF4">		</span><span style="color: #6E6A86">&gt;</span></span>
+<span class="line"><span style="color: #E0DEF4">		</span><span style="color: #6E6A86">&lt;</span><span style="color: #9CCFD8">hr</span><span style="color: #E0DEF4"> </span><span style="color: #C4A7E7">class</span><span style="color: #908CAA">=</span><span style="color: #F6C177">&quot;my-6 mx-auto w-20 border-t-2 border-mg-accent&quot;</span><span style="color: #E0DEF4"> </span><span style="color: #6E6A86">/&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E0DEF4">	</span><span style="color: #6E6A86">&lt;/</span><span style="color: #9CCFD8">div</span><span style="color: #6E6A86">&gt;</span></span>
+<span class="line"><span style="color: #E0DEF4">	</span><span style="color: #6E6A86">&lt;</span><span style="color: #9CCFD8">article</span></span>
+<span class="line"><span style="color: #E0DEF4">		</span><span style="color: #C4A7E7">class</span><span style="color: #908CAA">=</span><span style="color: #F6C177">&quot;prose</span></span>
+<span class="line"><span style="color: #F6C177">		prose-invert</span></span>
+<span class="line"><span style="color: #F6C177">		mx-auto</span></span>
+<span class="line"><span style="color: #F6C177">		px-6</span></span>
+<span class="line"><span style="color: #F6C177">		mb-12</span></span>
+<span class="line"><span style="color: #F6C177">		prose-headings:text-mg-accent</span></span>
+<span class="line"><span style="color: #F6C177">		prose-a:text-mg-blue</span></span>
+<span class="line"><span style="color: #F6C177">		prose-a:no-underline</span></span>
+<span class="line"><span style="color: #F6C177">		hover:prose-a:underline</span></span>
+<span class="line"><span style="color: #F6C177">		prose-code:text-mg-red</span></span>
+<span class="line"><span style="color: #F6C177">		prose-blockquote:border-sky-700</span></span>
+<span class="line"><span style="color: #F6C177">		prose-img:rounded-lg</span></span>
+<span class="line"><span style="color: #F6C177">		prose-img:mx-auto</span></span>
+<span class="line"><span style="color: #F6C177">		max-w-xs</span></span>
+<span class="line"><span style="color: #F6C177">		sm:max-w-sm</span></span>
+<span class="line"><span style="color: #F6C177">		md:max-w-md</span></span>
+<span class="line"><span style="color: #F6C177">		lg:max-w-lg</span></span>
+<span class="line"><span style="color: #F6C177">		xl:max-w-xl</span></span>
+<span class="line"><span style="color: #F6C177">		&quot;</span></span>
+<span class="line"><span style="color: #E0DEF4">	</span><span style="color: #6E6A86">&gt;</span></span>
+<span class="line"><span style="color: #E0DEF4">		</span><span style="color: #908CAA">{</span><span style="color: #E0DEF4">frontmatter</span><span style="color: #3E8FB0">.</span><span style="color: #E0DEF4">img</span><span style="color: #E0DEF4"> </span><span style="color: #3E8FB0">&amp;&amp;</span><span style="color: #E0DEF4"> (</span></span>
+<span class="line"><span style="color: #E0DEF4">			</span><span style="color: #6E6A86">&lt;</span><span style="color: #9CCFD8">img</span></span>
+<span class="line"><span style="color: #E0DEF4">				</span><span style="color: #C4A7E7">class</span><span style="color: #3E8FB0">=</span><span style="color: #F6C177">&quot;rounded-lg&quot;</span></span>
+<span class="line"><span style="color: #E0DEF4">				</span><span style="color: #C4A7E7">src</span><span style="color: #3E8FB0">=</span><span style="color: #908CAA">{</span><span style="color: #F6C177">`/images/</span><span style="color: #908CAA">${</span><span style="color: #E0DEF4">postfolder</span><span style="color: #908CAA">}</span><span style="color: #F6C177">/</span><span style="color: #908CAA">${</span><span style="color: #E0DEF4">frontmatter</span><span style="color: #3E8FB0">.</span><span style="color: #E0DEF4">img</span><span style="color: #908CAA">}</span><span style="color: #F6C177">`</span><span style="color: #908CAA">}</span></span>
+<span class="line"><span style="color: #E0DEF4">				</span><span style="color: #C4A7E7">alt</span><span style="color: #3E8FB0">=</span><span style="color: #F6C177">&quot;image&quot;</span></span>
+<span class="line"><span style="color: #E0DEF4">			</span><span style="color: #6E6A86">/&gt;</span></span>
+<span class="line"><span style="color: #E0DEF4">		)</span><span style="color: #908CAA">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E0DEF4">		</span><span style="color: #6E6A86">&lt;</span><span style="color: #9CCFD8">slot</span><span style="color: #E0DEF4"> </span><span style="color: #6E6A86">/&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E0DEF4">		</span><span style="color: #6E6A86">&lt;</span><span style="color: #9CCFD8">div</span><span style="color: #E0DEF4"> </span><span style="color: #C4A7E7">class</span><span style="color: #908CAA">=</span><span style="color: #F6C177">&quot;text-center mt-14&quot;</span><span style="color: #6E6A86">&gt;&lt;</span><span style="color: #9CCFD8">a</span><span style="color: #E0DEF4"> </span><span style="color: #C4A7E7">href</span><span style="color: #908CAA">=</span><span style="color: #F6C177">&quot;/blog&quot;</span><span style="color: #6E6A86">&gt;</span><span style="color: #E0DEF4">← Back to blog</span><span style="color: #6E6A86">&lt;/</span><span style="color: #9CCFD8">a</span><span style="color: #6E6A86">&gt;&lt;/</span><span style="color: #9CCFD8">div</span><span style="color: #6E6A86">&gt;</span></span>
+<span class="line"><span style="color: #E0DEF4">	</span><span style="color: #6E6A86">&lt;/</span><span style="color: #9CCFD8">article</span><span style="color: #6E6A86">&gt;</span></span>
+<span class="line"><span style="color: #6E6A86">&lt;/</span><span style="color: #9CCFD8">BaseLayout</span><span style="color: #6E6A86">&gt;</span></span>
+<span class="line"></span></code></pre>
+<p>The only interesting part of the layout is the <code>&lt;article&gt;</code> tag that contains the <code>&lt;slot /&gt;</code> element to inject the content from the blog post. As blog posts are retrieved dynamically using the <a href="https://docs.astro.build/en/reference/api-reference/#astroglob"><code>Astro.glob()</code> function</a>, the content of the posts is passed to the <code>&lt;slot /&gt;</code> element as plain text, and you cannot directly control the formatting.</p>
+<p>Styling all the Markdown elements on your own sounds like a huge overhead and the last thing in this world you want to do. But Tailwind has an elegant solution called <a href="https://tailwindcss.com/docs/typography-plugin">Typography</a>. It is a plugin that provides basic formatting for Markdown content along with a set of utilities to further customize it, if necessary. To apply the basic styling, you just need to add <code>prose</code> class to the <code>&lt;article&gt;</code> tag that acts as a wrapper for the content. As you can see, I also used additional classes starting with <code>prose-*</code> to customize some of the elements.</p>
+<h3 id="pages">Pages</h3>
+<p>Previously, there were two custom pages on the website: my resume and my projects. On the new website, these pages are still there but with some updates.
+I decided to keep the resume page “as is” so I only recreated the layout and design using Tailwind.</p>
+<ul>
+<li><a href="/resume">My resume page</a></li>
+</ul>
+<p>In turn, the projects page is no longer static (well, almost 😄). I created a component that makes an API call to GitHub, retrieves the list of my projects, and renders it. If I need to show a specific project, I can pass its name as the component’s prop. This way, I don’t have to update the list manually when something changes, and I can also refer to the projects or a specific project from other pages.</p>
+<p>This is how the Projects component is rendered on the page:</p>
+<ul class="flex flex-col font-bold not-prose p-0">
+    <a class="rounded-md border-2 border-slate-400 inline-block px-4 py-2 my-2 hover:bg-slate-700" href="https://github.com/bandantonio/antmarky" target="_blank">
+            <p class="text-white cursor-pointer"><svg viewBox="0 0 24 24" class="inline-block mb-1" width="20" height="20" astro-icon="mdi:github"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg> antmarky</p>
+            <p class="text-slate-400 font-semibold py-2">Static-site generator for Asciidoctor based on Node.js and EJS</p>
+            <div>
+                <span class="text-white"><svg viewBox="0 0 32 32" class="inline-block text-slate-400" width="20" height="20" astro-icon="carbon:dot-mark"><circle cx="16" cy="16" r="8" fill="currentColor"/></svg>TypeScript</span>
+                <span class="text-white"><svg viewBox="0 0 24 24" class="inline-block text-slate-400 mb-1" width="20" height="20" astro-icon="ic:round-star-border"><path fill="currentColor" d="m19.65 9.04-4.84-.42-1.89-4.45c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18-1.1 4.72c-.2.86.73 1.54 1.49 1.08l4.15-2.5 4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.73 3.67-3.18c.67-.58.32-1.68-.56-1.75zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"/></svg> 0</span>
+                <span class="text-white"><svg viewBox="0 0 24 24" class="inline-block text-slate-400" width="20" height="20" astro-icon="tabler:git-fork"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon-tabler"><circle cx="12" cy="18" r="2"/><circle cx="7" cy="6" r="2"/><circle cx="17" cy="6" r="2"/><path d="M7 8v2a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V8M12 12v4"/></g></svg> 0</span>
+            </div>
+        </a><a class="rounded-md border-2 border-slate-400 inline-block px-4 py-2 my-2 hover:bg-slate-700" href="https://github.com/bandantonio/bandantonio.github.io" target="_blank">
+            <p class="text-white cursor-pointer"><svg viewBox="0 0 24 24" class="inline-block mb-1" width="20" height="20" astro-icon="mdi:github"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg> bandantonio.github.io</p>
+            <p class="text-slate-400 font-semibold py-2">My personal website created with Astro, Tailwind CSS, and GitHub Pages</p>
+            <div>
+                <span class="text-white"><svg viewBox="0 0 32 32" class="inline-block text-slate-400" width="20" height="20" astro-icon="carbon:dot-mark"><circle cx="16" cy="16" r="8" fill="currentColor"/></svg>Astro</span>
+                <span class="text-white"><svg viewBox="0 0 24 24" class="inline-block text-slate-400 mb-1" width="20" height="20" astro-icon="ic:round-star-border"><path fill="currentColor" d="m19.65 9.04-4.84-.42-1.89-4.45c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18-1.1 4.72c-.2.86.73 1.54 1.49 1.08l4.15-2.5 4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.73 3.67-3.18c.67-.58.32-1.68-.56-1.75zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"/></svg> 0</span>
+                <span class="text-white"><svg viewBox="0 0 24 24" class="inline-block text-slate-400" width="20" height="20" astro-icon="tabler:git-fork"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="icon-tabler"><circle cx="12" cy="18" r="2"/><circle cx="7" cy="6" r="2"/><circle cx="17" cy="6" r="2"/><path d="M7 8v2a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V8M12 12v4"/></g></svg> 2</span>
+            </div>
+        </a>
+</ul>
+<h3 id="blog">Blog</h3>
+<p>I have only a few blog posts, so no rocket science was involved when migrating them. I moved all the static files, updated paths and links, and slightly changed the frontmatter. That’s it. The URL structure remains the same.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The migration took approximately 1.5 weeks, and guess what? I really enjoyed the process, and I’m happy with the result. Astro’s unique features are powerful enough to give you freedom and flexibility to create a truly unique experience. I feel like the decision to switch to Astro was totally worth it, as I haven’t had this much fun in a long time working on my website.</p>
+<hr/>
+<p>Thanks for reading! I hope you enjoyed this article.</p>
+
+		<div class="text-center mt-14"><a href="/blog">← Back to blog</a></div>
+	</article>
+		<footer class="mx-2 justify-center text-xs lg:flex lg:justify-between lg:mx-4 mb-1">
+    <ul class="flex justify-center mb-1 space-x-4">
+	<li class="inline-block hover:text-mg-accent"><a target="_blank" href="https://github.com/bandantonio">GitHub</a></li><li class="inline-block hover:text-mg-accent"><a target="_blank" href="https://www.linkedin.com/in/bandantonio">LinkedIn</a></li><li class="inline-block hover:text-mg-accent"><a target="_blank" href="https://bandantonio.medium.com">Medium</a></li>
+</ul>
+    <p class="hidden md:block text-center">&copy; 2011 - 2023 | Built with <a class="text-mg-accent" href="https://astro.build">Astro 🚀</a>, Tailwind CSS, and GitHub Pages</p>
+</footer>
+	</body></html>
