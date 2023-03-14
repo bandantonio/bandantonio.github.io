@@ -1,7 +1,7 @@
 import { defineCollection } from 'astro:content';
 
-const workCollection = defineCollection({});
+const resume = defineCollection({});
 
 export const collections = {
-	work: workCollection,
+	resume: resume,
 };

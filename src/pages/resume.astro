@@ -2,16 +2,16 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import GoHomeArrow from '@components/GoHomeArrow.astro';
 import { Icon } from 'astro-icon';
-import * as summary from '@collections/work/summary.mdx';
-import * as competencies from '@collections/work/core-competencies.mdx';
-import * as achievements from '@collections/work/achievements.mdx';
-import * as work from '@collections/work/work-experience.mdx';
-import * as earlierWork from '@collections/work/previous-work.mdx';
-import * as openSource from '@collections/work/open-source.mdx';
-import * as skills from '@collections/work/skills.mdx';
-import * as languages from '@collections/work/languages.mdx';
-import * as courses from '@collections/work/courses.mdx';
-import * as education from '@collections/work/education.mdx';
+import * as summary from '@collections/resume/summary.mdx';
+import * as competencies from '@collections/resume/core-competencies.mdx';
+import * as achievements from '@collections/resume/achievements.mdx';
+import * as work from '@collections/resume/work-experience.mdx';
+import * as earlierWork from '@collections/resume/previous-work.mdx';
+import * as openSource from '@collections/resume/open-source.mdx';
+import * as skills from '@collections/resume/skills.mdx';
+import * as languages from '@collections/resume/languages.mdx';
+import * as courses from '@collections/resume/courses.mdx';
+import * as education from '@collections/resume/education.mdx';
 
 const repoDescription = await fetch(
 	`https://api.github.com/repos/bandantonio/${openSource.frontmatter.personal[0].name}`
@@ -250,7 +250,7 @@ const repoDescriptionResult = {
 						courses.frontmatter.list.map((course: any) => (
 							<li>
 								<Icon
-									class="inline-block"
+									class="inline-block mb-1"
 									name={course.icon}
 									size="16"
 								/>{' '}
