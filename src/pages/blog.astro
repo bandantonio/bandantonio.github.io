@@ -3,7 +3,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import BlogPostCard from '@components/BlogPostCard.astro';
 import GoHomeArrow from '@components/GoHomeArrow.astro';
 
-let posts = await Astro.glob('../pages/posts/*md');
+let posts = await Astro.glob('../pages/posts/*.{md,mdx}');
 posts = posts
 	.filter(post => !post.frontmatter.draft)
 	.sort((a, b): -1 | 1 =>

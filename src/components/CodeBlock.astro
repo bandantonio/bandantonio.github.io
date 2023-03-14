@@ -1,0 +1,9 @@
+---
+import { Code } from 'astro/components';
+const { link, lang } = Astro.props;
+
+const response = await fetch(link);
+const fileData = await response.text();
+---
+
+<Code code={fileData} lang={lang} theme="rose-pine-moon" wrap />
