@@ -1,0 +1,93 @@
+---
+layout: '../../layouts/BlogPostLayout.astro'
+title: My old new website on Astro 🚀
+date: 2023-03-14
+featured: false
+excerpt: "Yet another platform switch, but this time, everything is different."
+---
+import CodeBlock from '@components/CodeBlock.astro';
+import GitHubProjects from '@components/GitHubProjects.astro';
+
+Recently I was using `Hexo` for my website, and it was my 4th platform and 2nd static-site generator after [Pelican](pelican-on-gitlab-pages). Hexo was fast and extensible and it allowed me to create custom pages with custom data (I was using YAML files for that). And that was pretty much it. I was using Hexo for two years, and during that time, I barely touched any customizations except for the theme and minor visual changes to the custom pages I created. Creating a visually appealing and unique design was kind of a pain, so switching to something more progressive and easier to use was a matter of time.
+
+## Why Astro?
+
+I came across Astro by accident, and that was love at first sight. After reading the documentation, I was impressed by the core features, integration capabilities, and how easily Astro can import your content from different sources. The most exciting parts for me were:
+- [Astro Components](https://docs.astro.build/en/core-concepts/astro-syntax/) that are reusable building blocks for your website that you can combine however you want to create the functionality you need for your website. For example, a simple page with components may look like this:
+    
+    ```astro
+    ---
+    import Head from './components/Head.astro';
+    import Footer from './components/Footer.astro';
+    ---
+    <!DOCTYPE html>
+    <html lang="en">
+        <Head />
+        <body>
+            <slot />
+            <Footer />
+        </body>
+    </html>
+    ```
+
+    There are two self-descriptive components that contain parts of a page layout. The `<slot />` element is used to inject content from other files. You can structure your page however you want and use as many components as you need.
+
+- [Astro Islands](https://docs.astro.build/en/concepts/islands/) that are basically isolated interactive UI components within a static page (by default, Astro wipes all the JavaScript out of the generated website). In this way, you can create a website that will remain fully static, and JavaScript will be loaded only for the components that require it.
+
+Another benefit is that Astro is platform-agnostic, so you can continue working with the tools of your choice without sacrificing your workflow and experience. Astro [officially supports](https://docs.astro.build/en/guides/integrations-guide/#official-integrations) many popular tools and frameworks that it can set up and configure for you automatically, taking out the hassle of starting from scratch. And if you can't find the integration you need, you can create your own. In my setup, I use Tailwind integration for styling. I will talk more about it later.
+
+## Migration
+
+### Theme layouts
+
+I spent some time searching for a suitable theme for my website, but I couldn't find anything that I liked. There were some interesting templates, but they were rather complex, so organizing and customizing them would take a lot of time. So I decided to follow a samurai's path and create my own theme from scratch.
+Taking into account my painful experience with customizing styles for Hexo (there were 10 separate CSS files), I decided to proceed with a more modern approach and use Tailwind because the existing frameworks, like Bootstrap, Materialize, Bulma, etc., are too bloated and can't give you the flexibility you need.
+
+The best thing about Tailwind is that you no longer have to think up the proper naming of yet another `div` to make your CSS slightly more readable. Instead, you just add styles right to the HTML. Yes, when your website grows, you will have a lot of classes (this may seem scary at first), but these classes are self-explanatory and easy to use, and once tried, you will never go back to the old way of styling via separate CSS files. I can confirm it. I was really happy to give Tailwind a try.
+
+For my website, I created two layouts: one for pages and another for blog posts.
+
+#### Page layout
+
+The page layout is simple and consists of several basic components:
+
+<CodeBlock link='https://raw.githubusercontent.com/bandantonio/bandantonio.github.io/3da6d26a9307f25e8ca8c2e1cadc94186409fc23/src/layouts/BaseLayout.astro' lang='astro' />
+
+I use components for the page head (where I dynamically pass the page title via props) and footer. Multiple components make parts of the layout easier to maintain and reuse. It is completely up to you to decide how to structure your pages and how many components to use.
+
+The `<slot />` element injects content from other pages, whereas the `<style>` tag defines the styles for the *current* component. The `is:global` attribute explicitly tells Astro that the styles should be applied globally. In my case, I define my custom `font-family` globally. And this is the only place where I use explicit styles.
+
+#### Blog post layout
+
+The blog post layout is a bit more lengthy because of styling for posts and additional utilities to work with types and date formatting:
+
+<CodeBlock link='https://raw.githubusercontent.com/bandantonio/bandantonio.github.io/3da6d26a9307f25e8ca8c2e1cadc94186409fc23/src/layouts/BlogPostLayout.astro' lang='astro' />
+
+The only interesting part of the layout is the `<article>` tag that contains the `<slot />` element to inject the content from the blog post. As blog posts are retrieved dynamically using the [`Astro.glob()` function](https://docs.astro.build/en/reference/api-reference/#astroglob), the content of the posts is passed to the `<slot />` element as plain text, and you cannot directly control the formatting.
+
+Styling all the Markdown elements on your own sounds like a huge overhead and the last thing in this world you want to do. But Tailwind has an elegant solution called [Typography](https://tailwindcss.com/docs/typography-plugin). It is a plugin that provides basic formatting for Markdown content along with a set of utilities to further customize it, if necessary. To apply the basic styling, you just need to add `prose` class to the `<article>` tag that acts as a wrapper for the content. As you can see, I also used additional classes starting with `prose-*` to customize some of the elements.
+
+### Pages
+
+Previously, there were two custom pages on the website: my resume and my projects. On the new website, these pages are still there but with some updates.
+I decided to keep the resume page "as is" so I only recreated the layout and design using Tailwind.
+
+- [My resume page](/resume)
+
+In turn, the projects page is no longer static (well, almost 😄). I created a component that makes an API call to GitHub, retrieves the list of my projects, and renders it. If I need to show a specific project, I can pass its name as the component's prop. This way, I don't have to update the list manually when something changes, and I can also refer to the projects or a specific project from other pages.
+
+This is how the Projects component is rendered on the page:
+
+<GitHubProjects />
+
+### Blog
+
+I have only a few blog posts, so no rocket science was involved when migrating them. I moved all the static files, updated paths and links, and slightly changed the frontmatter. That's it. The URL structure remains the same.
+
+## Conclusion
+
+The migration took approximately 1.5 weeks, and guess what? I really enjoyed the process, and I'm happy with the result. Astro's unique features are powerful enough to give you freedom and flexibility to create a truly unique experience. I feel like the decision to switch to Astro was totally worth it, as I haven't had this much fun in a long time working on my website.
+
+----
+
+Thanks for reading! I hope you enjoyed this article.
