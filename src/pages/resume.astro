@@ -166,10 +166,11 @@ const repoDescriptionResult = {
 									</a>
 									: successful technical writing project with
 									<a
-										class="text-mg-accent underline-offset-2 hover:underline"
+										class="text-mg-accent inline-block underline-offset-2 hover:underline"
 										href={project.url}
+										target="_blank"
 									>
-										{project.organization}
+										<Icon class="inline-block mb-1" name={project.icon} size="14" /> {project.organization}
 									</a>
 								</li>
 							)
@@ -189,12 +190,20 @@ const repoDescriptionResult = {
 							class="text-mg-accent underline-offset-2 hover:underline"
 							href={openSource.frontmatter.contributions[0].url}
 							target="_blank"
-							>{openSource.frontmatter.contributions[0].name}</a
+							><Icon
+									class="inline-block mb-1"
+									name={openSource.frontmatter.contributions[0].icon}
+									size="16"
+								/> {openSource.frontmatter.contributions[0].name}</a
 						> and <a
 							class="text-mg-accent underline-offset-2 hover:underline"
 							href={openSource.frontmatter.contributions[1].url}
 							target="_blank"
-							>{openSource.frontmatter.contributions[1].name}</a
+							><Icon
+									class="inline-block mb-1"
+									name={openSource.frontmatter.contributions[1].icon}
+									size="16"
+								/> {openSource.frontmatter.contributions[1].name}</a
 						> projects
 					</li>
 					<li>
