@@ -4,31 +4,51 @@ import GoHomeArrow from "@components/GoHomeArrow.astro";
 import { Icon } from "astro-icon";
 import { getCollection } from 'astro:content';
 const me = await getCollection('me');
+import Link from "@components/Link.astro";
 ---
 
 <BaseLayout title="About me">
     <GoHomeArrow getBackTo="/" title="Home" />
-    <div class="flex flex-col h-screen mx-auto sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl">
+    <div class="flex flex-col h-screen mx-auto sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl px-6">
         <p>Hi stranger and welcome to my little space.</p>
 
         <div class="my-4">
             <h2 class="text-lg font-bold text-mg-accent">My passions</h2>
-            <ul class="grid grid-cols-2 gap-x-10 gap-y-2 my-4">
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-2 my-4">
                 <li>👨🏻‍💻 Coding</li>
                 <li>🌎 Traveling</li>
                 <li>🏂 Snowboarding</li>
                 <li>📚 Reading</li>
             </ul>
         </div>
+
         <div class="my-4">
             <h2 class="text-lg font-bold text-mg-accent">Tools and technologies I use</h2>
-            <ul class="grid grid-cols-2 gap-x-10 gap-y-2 my-4">
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-2 my-4">
                 {
                     me[0].data.list.map((item) => (                       
-                        <li><Icon class="inline-block mx-2" name={item.icon} size="20" />{item.name}</li>
+                        <li><Icon class="inline-block mx-2 mb-1" name={item.icon} size="20" />{item.name}</li>
                     ))
-
                 }
+            </ul>
+        </div>
+
+        <div class="my-4">
+            <h2 class="text-lg font-bold text-mg-accent">Interesting facts</h2>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-2 my-4">
+                <li><Icon class="inline-block mx-2 mb-1" name="mdi:hand-front-left" size="20" />Left-handed person</li>
+                <li><Icon class="inline-block mx-2 mb-1" name="mdi:lego" size="20" /><a href="#">Huge LEGO fan</a></li>
+                <li><Icon class="inline-block mx-2 mb-1" name="ph:number-square-nine-fill" size="20" /><a href="#">I have 9 Rubik's Cubes</a></li>
+            </ul>
+        </div>
+
+        <div class="my-4">
+            <h2 class="text-lg font-bold text-mg-accent">Get in touch</h2>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-2 my-4">
+                <Link />
+                <li class="cursor-pointer">
+                    <abbr title="bandantonio#0124"><Icon class="inline-block mx-2 mb-1" name="ic:round-discord" size="20" />Discord</abbr>
+                </li>
             </ul>
         </div>
     </div>
