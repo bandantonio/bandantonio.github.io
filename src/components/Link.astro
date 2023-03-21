@@ -1,0 +1,53 @@
+---
+import { Icon } from 'astro-icon';
+
+export interface Props {
+    getAll?: boolean;
+    name?: string;
+    isText?: boolean;
+    styles?: string;
+}
+
+const { getAll = false, name = 'GitHub', isText = false, styles = '' } = Astro.props;
+
+const username = 'bandantonio';
+const platforms = [
+	{
+		name: 'GitHub',
+		url: `https://github.com/${username}`,
+		icon: 'ri:github-fill'
+	},
+	{
+		name: 'LinkedIn',
+		url: `https://www.linkedin.com/in/${username}`,
+		icon: 'ri:linkedin-box-fill'
+	},
+	{
+		name: 'Medium',
+		url: `https://${username}.medium.com`,
+		icon: 'ph:medium-logo-fill'
+	},
+];
+
+const platform = platforms.find(platform => ( platform.name === name ))!;
+---
+
+{ getAll && (
+    platforms.map(platform => (
+        <li class={styles}>
+            { !isText && (
+                <Icon class="inline-block mx-2 mb-1" name={platform.icon} size="20" />
+            )}
+            <a href={platform.url} target="_blank">{platform.name}</a>
+        </li>
+    ))
+)}
+
+{ !getAll && (
+    <li class={styles}>
+        { !isText && (
+            <Icon class="inline-block mx-2 mb-1" name={platform.icon} size="20" />
+        )}
+        <a href={platform.url} target="_blank">{platform.name}</a>
+    </li>
+)}
