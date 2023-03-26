@@ -1,0 +1,21 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="404 - Not Found">
+	<div class="flex flex-grow flex-col items-center justify-center font-bold">
+        <h1 class="text-2xl">404 - Page Not Found 😔</h1>
+        <pre class="text-xs text-mg-red my-4">{Astro.url.pathname}</pre>
+        <p class="suggest"></p>
+        <h2 class="mt-4 text-sm">Return to <a class="text-mg-accent" href="/">mister-gold.pro</a></h2>
+    </div>
+</BaseLayout>
+
+<script>
+    if (window.location.pathname.includes('asciidoc-vs-markdown')) {
+        window.location.pathname = '/posts/do-not-use-markdown-for-docs';
+    }
+    if (window.location.pathname.startsWith('/work')) {
+        window.location.pathname = '/resume';
+    }
+</script>
