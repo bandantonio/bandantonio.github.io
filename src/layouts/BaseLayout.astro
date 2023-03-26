@@ -18,7 +18,9 @@ const { title = defaultTitle } = Astro.props as Props;
 	/>
 	<body class="flex flex-col h-screen bg-mg-primary text-slate-400">
 		<slot />
-		<Footer />
+		{!(title === '404 - Not Found') &&
+			<Footer />
+		}
 	</body>
 </html>
 
