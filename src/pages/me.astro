@@ -4,7 +4,7 @@ import GoHomeArrow from "@components/GoHomeArrow.astro";
 import { Icon } from "astro-icon";
 import { getCollection } from 'astro:content';
 const me = await getCollection('me');
-import Link from "@components/Link.astro";
+import { github } from '@linksStorage';
 ---
 
 <BaseLayout title="About me">
@@ -45,7 +45,7 @@ import Link from "@components/Link.astro";
         <div class="my-4">
             <h2 class="text-lg font-bold text-mg-accent">Get in touch</h2>
             <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-2 my-4">
-                <Link />
+                <li><a href={github.url}><Icon class="inline-block mx-2 mb-1" name={github.icon} size="20" />GitHub</a></li>
                 <li class="cursor-pointer">
                     <abbr title="bandantonio#0124"><Icon class="inline-block mx-2 mb-1" name="ic:round-discord" size="20" />Discord</abbr>
                 </li>
