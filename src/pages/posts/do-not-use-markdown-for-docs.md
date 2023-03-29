@@ -5,6 +5,7 @@ date: 2018-04-24
 excerpt: Markdown is a poor writing tool that you should avoid using in your documentation.
 img: 'stop-using-markdown-title.png'
 featured: true
+medium: stop-using-markdown-for-documentation-5bda05ad17e3
 ---
 
 ## Introduction
