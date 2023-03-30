@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon';
+import { platforms } from '@linksStorage';
 
 export interface Props {
     getAll?: boolean;
@@ -9,30 +10,6 @@ export interface Props {
 }
 
 const { getAll = false, name = 'GitHub', isText = false, styles = '' } = Astro.props;
-
-const username = 'bandantonio';
-const platforms = [
-	{
-		name: 'GitHub',
-		url: `https://github.com/${username}`,
-		icon: 'ri:github-fill'
-	},
-	{
-		name: 'LinkedIn',
-		url: `https://www.linkedin.com/in/${username}`,
-		icon: 'ri:linkedin-box-fill'
-	},
-	{
-		name: 'Medium',
-		url: `https://${username}.medium.com`,
-		icon: 'ph:medium-logo-fill'
-	},
-    {
-        name: 'Dev.to',
-        url: `https://dev.to/${username}`,
-        icon: 'ph:dev-to-logo-fill'
-    }
-];
 
 const platform = platforms.find(platform => ( platform.name === name ))!;
 ---
