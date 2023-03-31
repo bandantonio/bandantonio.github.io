@@ -1,13 +1,6 @@
 {
     import.meta.env.PROD && (
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-2M6BS2GSY3"></script>
-        <script>
-            // @ts-nocheck
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-2M6BS2GSY3');
-        </script>
+        <script defer src="https://www.googletagmanager.com/gtag/js?id=G-2M6BS2GSY3"></script>
+        <script defer src="../src/ga.ts"></script>
     )
 }
