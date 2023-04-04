@@ -9,15 +9,10 @@ export const linkedin = {
     url: `https://www.linkedin.com/in/${username}`,
     icon: 'ri:linkedin-box-fill'
 }
-export const medium = {
-    name: 'Medium',
-    url: `https://${username}.medium.com`,
-    icon: 'ph:medium-logo-fill'
-}
-export const devto = {
-    name: 'Dev.to',
-    url: `https://dev.to/${username}`,
-    icon: 'mdi:dev-to'
+export const hashnode = {
+    name: 'Hashnode',
+    url: `https://${username}.hashnode.dev`,
+    icon: 'logos:hashnode-icon'
 }
 
-export const platforms = [github, linkedin, medium, devto];
+export const platforms = [github, linkedin, hashnode];
