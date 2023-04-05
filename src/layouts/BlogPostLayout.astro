@@ -5,7 +5,7 @@ import { Icon } from "astro-icon";
 
 import BaseLayout from './BaseLayout.astro';
 import GoHomeArrow from '@components/GoHomeArrow.astro';
-import { medium, devto } from '@linksStorage';
+import { hashnode } from '@linksStorage';
 
 import { formatDate } from '@utils';
 
@@ -21,15 +21,10 @@ const postfolder = frontmatter.url!.split('/')[2];
 		<small class="text-slate-400"
 			>Written by Antonio • {formatDate(frontmatter.date)}</small
 		>
-		<small class="block space-x-2">
-		{ frontmatter.medium && (
-			<a href={`${medium.url}/${frontmatter.medium}`} target="_blank">
-				<Icon class="inline-block mx-auto my-2" name={medium.icon} size="18" />
-			</a>
-		)}
-		{ frontmatter.devto && (
-			<a href={`${devto.url}/${frontmatter.devto}`} target="_blank">
-				<Icon class="inline-block mx-auto my-2" name={devto.icon} size="18" />
+		<small class="block">
+		{ frontmatter.hashnode && (
+			<a href={`${hashnode.url}/${frontmatter.hashnode}`} target="_blank">
+				<Icon class="inline-block mx-auto my-2" name={hashnode.icon} size="14" />
 			</a>
 		)}
 		</small>

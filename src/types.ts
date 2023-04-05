@@ -4,6 +4,5 @@ export interface BlogPostFrontmatter {
     img?: string,
     excerpt: string,
     featured?: boolean,
-    medium?: string,
-    devto?: string,
+    hashnode?: string
 }
