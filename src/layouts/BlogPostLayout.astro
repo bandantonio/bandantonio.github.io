@@ -60,9 +60,17 @@ const postfolder = frontmatter.url!.split('/')[2];
 				alt="image"
 			/>
 		)}
-
+		<div class="border-b-2 border-solid border-mg-accent w-0 fixed top-0 left-0" id="progress"></div>
 		<slot />
 
 		<div class="text-center mt-14"><a href="/blog">← Back to blog</a></div>
 	</article>
 </BaseLayout>
+
+<script>
+	let bar = document.querySelector('#progress') as HTMLElement;
+	window.addEventListener('scroll', () => {
+		let max = document.body.scrollHeight - innerHeight
+		bar.style.width = `${(pageYOffset / max) * 100}%`;
+	});
+</script>
