@@ -2,6 +2,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import GoHomeArrow from '@components/GoHomeArrow.astro';
 import { Icon } from 'astro-icon';
+import { hashnode } from '@linksStorage';
 import * as summary from '@collections/resume/summary.mdx';
 import * as competencies from '@collections/resume/core-competencies.mdx';
 import * as achievements from '@collections/resume/achievements.mdx';
@@ -207,8 +208,15 @@ const repoDescriptionResult = {
 						> projects
 					</li>
 					<li>
-						Published a blog post on Medium about my own experience
-						with documentation tools
+						Blog on <a
+						class="text-mg-accent underline-offset-2 hover:underline"
+						href={hashnode.url}
+						target="_blank"
+						><Icon
+							class="inline-block mb-1"
+							name={hashnode.icon}
+							size="16"
+						/> {hashnode.name}</a>
 					</li>
 				</ul>
 			</div>
