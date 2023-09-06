@@ -12,11 +12,11 @@ jobs:
   node-setup:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ./.github/actions/node-cache
         id: cache-node-modules
         with:
-          node-version: '16'
+          node-version: 'lts'
       - run: npm i
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
 
@@ -25,11 +25,11 @@ jobs:
     needs: node-setup
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: ./.github/actions/node-cache
         id: cache-node-modules
         with:
-          node-version: '16'
+          node-version: 'lts'
 
       - name: Generate website
         id: build_website
