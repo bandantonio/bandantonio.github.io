@@ -2,7 +2,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import GoHomeArrow from '@components/GoHomeArrow.astro';
 import { Icon } from 'astro-icon';
-import { hashnode } from '@linksStorage';
+import { devto, hashnode } from '@linksStorage';
 import * as summary from '@collections/resume/summary.mdx';
 import * as competencies from '@collections/resume/core-competencies.mdx';
 import * as achievements from '@collections/resume/achievements.mdx';
@@ -171,7 +171,7 @@ const repoDescriptionResult = {
 										href={project.url}
 										target="_blank"
 									>
-										<Icon class="inline-block mb-1" name={project.icon} size="14" /> {project.organization}
+										<Icon class="inline-block mb-1 mr-1" name={project.icon} size="14" /> {project.organization}
 									</a>
 								</li>
 							)
@@ -192,28 +192,45 @@ const repoDescriptionResult = {
 							href={openSource.frontmatter.contributions[0].url}
 							target="_blank"
 							><Icon
-									class="inline-block mb-1"
+									class="inline-block mb-1 mr-1"
 									name={openSource.frontmatter.contributions[0].icon}
 									size="16"
 								/> {openSource.frontmatter.contributions[0].name}</a
-						> and <a
+						>, <a
 							class="text-mg-accent underline-offset-2 hover:underline"
 							href={openSource.frontmatter.contributions[1].url}
 							target="_blank"
 							><Icon
-									class="inline-block mb-1"
+									class="inline-block mb-1 mr-1"
 									name={openSource.frontmatter.contributions[1].icon}
 									size="16"
 								/> {openSource.frontmatter.contributions[1].name}</a
+						>, and <a
+							class="text-mg-accent underline-offset-2 hover:underline"
+							href={openSource.frontmatter.contributions[2].url}
+							target="_blank"
+							><Icon
+									class="inline-block mb-1 mr-1"
+									name={openSource.frontmatter.contributions[2].icon}
+									size="16"
+								/> {openSource.frontmatter.contributions[2].name}</a
 						> projects
 					</li>
 					<li>
-						Blog on <a
+						Dev notes on <a
+						class="text-mg-accent underline-offset-2 hover:underline"
+						href={devto.url}
+						target="_blank"
+						><Icon
+							class="text-slate-400 inline-block mb-1 mr-1"
+							name={devto.icon}
+							size="16"
+						/> {devto.name}</a> and <a
 						class="text-mg-accent underline-offset-2 hover:underline"
 						href={hashnode.url}
 						target="_blank"
 						><Icon
-							class="inline-block mb-1"
+							class="inline-block mb-1 mr-1"
 							name={hashnode.icon}
 							size="16"
 						/> {hashnode.name}</a>
