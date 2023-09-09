@@ -70,7 +70,7 @@
 </li>
 <li>
 <p>In the folder, create a <code>package.json</code> file that is an extension <a href="https://code.visualstudio.com/api/references/extension-manifest">manifest file</a>. The content of the file is the following:</p>
-<pre class="astro-code rose-pine-moon" style="background-color:#232136;overflow-x:auto;white-space:pre-wrap;word-wrap:break-word" tabindex="0"><code><span class="line"><span style="color:#908CAA">{</span></span>
+<pre is:raw="" class="astro-code rose-pine-moon" style="background-color:#232136;overflow-x:auto;white-space:pre-wrap;word-wrap:break-word" tabindex="0"><code><span class="line"><span style="color:#908CAA">{</span></span>
 <span class="line"><span style="color:#E0DEF4">    </span><span style="color:#908CAA">&quot;</span><span style="color:#9CCFD8">name</span><span style="color:#908CAA">&quot;</span><span style="color:#908CAA">:</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">&quot;my-first-pack&quot;</span><span style="color:#908CAA">,</span></span>
 <span class="line"><span style="color:#E0DEF4">    </span><span style="color:#908CAA">&quot;</span><span style="color:#9CCFD8">displayName</span><span style="color:#908CAA">&quot;</span><span style="color:#908CAA">:</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">&quot;Mister Gold Extension Pack&quot;</span><span style="color:#908CAA">,</span></span>
 <span class="line"><span style="color:#E0DEF4">    </span><span style="color:#908CAA">&quot;</span><span style="color:#9CCFD8">version</span><span style="color:#908CAA">&quot;</span><span style="color:#908CAA">:</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">&quot;0.0.1&quot;</span><span style="color:#908CAA">,</span></span>
@@ -102,13 +102,13 @@
 </li>
 <li>
 <p>Create a <code>README.md</code> file with the following content:</p>
-<pre class="astro-code rose-pine-moon" style="background-color:#232136;overflow-x:auto;white-space:pre-wrap;word-wrap:break-word" tabindex="0"><code><span class="line"><span style="color:#908CAA;font-weight:bold">#</span><span style="color:#E0DEF4;font-weight:bold"> </span><span style="color:#9CCFD8;font-weight:bold">Mister Gold Extension Pack</span></span>
+<pre is:raw="" class="astro-code rose-pine-moon" style="background-color:#232136;overflow-x:auto;white-space:pre-wrap;word-wrap:break-word" tabindex="0"><code><span class="line"><span style="color:#908CAA;font-weight:bold">#</span><span style="color:#E0DEF4;font-weight:bold"> </span><span style="color:#9CCFD8;font-weight:bold">Mister Gold Extension Pack</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#E0DEF4">Hello world! this is my extension pack for VS Code.</span></span></code></pre>
 </li>
 <li>
 <p>Create a <code>CHANGELOG.md</code> file with the following content:</p>
-<pre class="astro-code rose-pine-moon" style="background-color:#232136;overflow-x:auto;white-space:pre-wrap;word-wrap:break-word" tabindex="0"><code><span class="line"><span style="color:#908CAA;font-weight:bold">#</span><span style="color:#E0DEF4;font-weight:bold"> </span><span style="color:#9CCFD8;font-weight:bold">Changelog</span></span>
+<pre is:raw="" class="astro-code rose-pine-moon" style="background-color:#232136;overflow-x:auto;white-space:pre-wrap;word-wrap:break-word" tabindex="0"><code><span class="line"><span style="color:#908CAA;font-weight:bold">#</span><span style="color:#E0DEF4;font-weight:bold"> </span><span style="color:#9CCFD8;font-weight:bold">Changelog</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#E0DEF4">All notable changes to the &quot;my-first-pack&quot; extension pack will be documented in this file.</span></span>
 <span class="line"></span>
@@ -118,11 +118,11 @@
 </li>
 <li>
 <p>Create a <code>LICENSE</code> file with the following content:</p>
-<pre class="astro-code rose-pine-moon" style="background-color:#232136;overflow-x:auto;white-space:pre-wrap;word-wrap:break-word" tabindex="0"><code><span class="line"><span style="color:#E0DEF4">MIT License</span></span></code></pre>
+<pre is:raw="" class="astro-code rose-pine-moon" style="background-color:#232136;overflow-x:auto;white-space:pre-wrap;word-wrap:break-word" tabindex="0"><code><span class="line"><span style="color:#E0DEF4">MIT License</span></span></code></pre>
 </li>
 </ol>
 <p>Let’s test the extension pack by creating a VSIX package using <code>@vscode/vsce</code> CLI tool. For convenience, you can use the <code>npx</code> command to run the tool without installing it globally:</p>
-<pre class="astro-code rose-pine-moon" style="background-color:#232136;overflow-x:auto;white-space:pre-wrap;word-wrap:break-word" tabindex="0"><code><span class="line"><span style="color:#EA9A97">npx</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">@vscode/vsce</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">package</span></span>
+<pre is:raw="" class="astro-code rose-pine-moon" style="background-color:#232136;overflow-x:auto;white-space:pre-wrap;word-wrap:break-word" tabindex="0"><code><span class="line"><span style="color:#EA9A97">npx</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">@vscode/vsce</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">package</span></span>
 <span class="line"><span style="color:#EA9A97">Need</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">to</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">install</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">the</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">following</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">packages:</span></span>
 <span class="line"><span style="color:#E0DEF4">  </span><span style="color:#EA9A97">@vscode/vsce</span></span>
 <span class="line"><span style="color:#EA9A97">Ok</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">to</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">proceed?</span><span style="color:#E0DEF4"> (y) y</span></span>
@@ -130,7 +130,7 @@
 <p>After that, you should see a new file in your folder: <code>my-first-pack-0.0.1.vsix</code>:</p>
 <p><img src="/images/create-vscode-extension-pack/package-created.png" alt="VSIX package created"/></p>
 <p>To install the package, execute the following command in your terminal:</p>
-<pre class="astro-code rose-pine-moon" style="background-color:#232136;overflow-x:auto;white-space:pre-wrap;word-wrap:break-word" tabindex="0"><code><span class="line"><span style="color:#908CAA;font-style:italic">#</span><span style="color:#6E6A86;font-style:italic"> if you use VS Code</span></span>
+<pre is:raw="" class="astro-code rose-pine-moon" style="background-color:#232136;overflow-x:auto;white-space:pre-wrap;word-wrap:break-word" tabindex="0"><code><span class="line"><span style="color:#908CAA;font-style:italic">#</span><span style="color:#6E6A86;font-style:italic"> if you use VS Code</span></span>
 <span class="line"><span style="color:#EA9A97">code</span><span style="color:#E0DEF4"> </span><span style="color:#3E8FB0">--install-extension</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">my-first-pack-0.0.1.vsix</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#908CAA;font-style:italic">#</span><span style="color:#6E6A86;font-style:italic"> if you use VS Code Insiders</span></span>
@@ -142,7 +142,7 @@
 <p><img src="/images/create-vscode-extension-pack/extension-id.png" alt="Extension pack id"/></p>
 <p><strong>TIP:</strong> Extension ID consists of the <code>publisher</code> and <code>name</code> parameters from the <code>package.json</code> file and has the following format: <code>publisher.name</code>.</p>
 <p>You can also right-click on the extension in the Extensions view and select <code>Copy Extension ID</code>.</p>
-<pre class="astro-code rose-pine-moon" style="background-color:#232136;overflow-x:auto;white-space:pre-wrap;word-wrap:break-word" tabindex="0"><code><span class="line"><span style="color:#908CAA;font-style:italic">#</span><span style="color:#6E6A86;font-style:italic"> if you use VS Code</span></span>
+<pre is:raw="" class="astro-code rose-pine-moon" style="background-color:#232136;overflow-x:auto;white-space:pre-wrap;word-wrap:break-word" tabindex="0"><code><span class="line"><span style="color:#908CAA;font-style:italic">#</span><span style="color:#6E6A86;font-style:italic"> if you use VS Code</span></span>
 <span class="line"><span style="color:#EA9A97">code</span><span style="color:#E0DEF4"> </span><span style="color:#3E8FB0">--uninstall-extension</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">mister-gold.my-first-pack</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#908CAA;font-style:italic">#</span><span style="color:#6E6A86;font-style:italic"> if you use VS Code Insiders</span></span>
@@ -155,14 +155,14 @@
 <li>Astro (id: <code>astro-build.astro-vscode</code>)</li>
 </ul>
 <p>You can follow along with the same extensions or choose your own. With the extensions listed above, the <code>extensionPack</code> section of the <code>package.json</code> file will look like this:</p>
-<pre class="astro-code rose-pine-moon" style="background-color:#232136;overflow-x:auto;white-space:pre-wrap;word-wrap:break-word" tabindex="0"><code><span class="line"><span style="color:#F6C177">&quot;extensionPack&quot;</span><span style="color:#E0DEF4">: </span><span style="color:#908CAA">[</span></span>
+<pre is:raw="" class="astro-code rose-pine-moon" style="background-color:#232136;overflow-x:auto;white-space:pre-wrap;word-wrap:break-word" tabindex="0"><code><span class="line"><span style="color:#F6C177">&quot;extensionPack&quot;</span><span style="color:#E0DEF4">: </span><span style="color:#908CAA">[</span></span>
 <span class="line"><span style="color:#E0DEF4">    </span><span style="color:#F6C177">&quot;ritwickdey.liveserver&quot;</span><span style="color:#908CAA">,</span></span>
 <span class="line"><span style="color:#E0DEF4">    </span><span style="color:#F6C177">&quot;pkief.material-icon-theme&quot;</span><span style="color:#908CAA">,</span></span>
 <span class="line"><span style="color:#E0DEF4">    </span><span style="color:#F6C177">&quot;ms-azuretools.vscode-docker&quot;</span><span style="color:#908CAA">,</span></span>
 <span class="line"><span style="color:#E0DEF4">    </span><span style="color:#F6C177">&quot;astro-build.astro-vscode&quot;</span></span>
 <span class="line"><span style="color:#908CAA">]</span></span></code></pre>
 <p>Now, you need to create a new VSIX package and install it:</p>
-<pre class="astro-code rose-pine-moon" style="background-color:#232136;overflow-x:auto;white-space:pre-wrap;word-wrap:break-word" tabindex="0"><code><span class="line"><span style="color:#EA9A97">npx</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">@vscode/vsce</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">package</span><span style="color:#E0DEF4">                                  </span></span>
+<pre is:raw="" class="astro-code rose-pine-moon" style="background-color:#232136;overflow-x:auto;white-space:pre-wrap;word-wrap:break-word" tabindex="0"><code><span class="line"><span style="color:#EA9A97">npx</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">@vscode/vsce</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">package</span><span style="color:#E0DEF4">                                  </span></span>
 <span class="line"><span style="color:#E0DEF4"> </span><span style="color:#EA9A97">DONE</span><span style="color:#E0DEF4">  </span><span style="color:#F6C177">Packaged:</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">/vscode-extension-pack/my-first-pack-0.0.1.vsix</span><span style="color:#E0DEF4"> (7 </span><span style="color:#F6C177">files,</span><span style="color:#E0DEF4"> </span><span style="color:#EA9A97">5.57</span><span style="color:#F6C177">KB</span><span style="color:#E0DEF4">)</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#EA9A97">code-insiders</span><span style="color:#E0DEF4"> </span><span style="color:#3E8FB0">--install-extension</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">my-first-pack-0.0.1.vsix</span></span>
@@ -176,7 +176,7 @@
 <p>If you’re reading this section, it means that you’ve already completed the second step in the <a href="#prerequisites">Prerequisites section</a>. If not, please do it now.</p>
 <p>You can publish your extension pack in two ways: using the <code>@vscode/vsce</code> CLI tool or using the Visual Studio Marketplace website. But who cares about the website? Real ninjas use the command line.</p>
 <p>Before publishing your extension pack, you can test your publisher’s PAT using <code>vsce</code>:</p>
-<pre class="astro-code rose-pine-moon" style="background-color:#232136;overflow-x:auto;white-space:pre-wrap;word-wrap:break-word" tabindex="0"><code><span class="line"><span style="color:#908CAA;font-style:italic">#</span><span style="color:#6E6A86;font-style:italic"> vsce login &lt;publisher name&gt;</span></span>
+<pre is:raw="" class="astro-code rose-pine-moon" style="background-color:#232136;overflow-x:auto;white-space:pre-wrap;word-wrap:break-word" tabindex="0"><code><span class="line"><span style="color:#908CAA;font-style:italic">#</span><span style="color:#6E6A86;font-style:italic"> vsce login &lt;publisher name&gt;</span></span>
 <span class="line"><span style="color:#EA9A97">npx</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">@vscode/vsce</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">login</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">mister-gold</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#EA9A97">https://marketplace.visualstudio.com/manage/publishers/</span></span>
@@ -184,7 +184,7 @@
 <span class="line"></span>
 <span class="line"><span style="color:#EA9A97">The</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">Personal</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">Access</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">Token</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">verification</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">succeeded</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">for</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">the</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">publisher</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">&#39;mister-gold&#39;.</span></span></code></pre>
 <p>Now you are ready to publish your extension pack:</p>
-<pre class="astro-code rose-pine-moon" style="background-color:#232136;overflow-x:auto;white-space:pre-wrap;word-wrap:break-word" tabindex="0"><code><span class="line"><span style="color:#EA9A97">npx</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">@vscode/vsce</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">publish</span></span>
+<pre is:raw="" class="astro-code rose-pine-moon" style="background-color:#232136;overflow-x:auto;white-space:pre-wrap;word-wrap:break-word" tabindex="0"><code><span class="line"><span style="color:#EA9A97">npx</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">@vscode/vsce</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">publish</span></span>
 <span class="line"><span style="color:#E0DEF4"> </span><span style="color:#EA9A97">INFO</span><span style="color:#E0DEF4">  </span><span style="color:#F6C177">Publishing</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">&#39;mister-gold.my-first-pack v0.0.1&#39;...</span></span>
 <span class="line"><span style="color:#E0DEF4"> </span><span style="color:#EA9A97">INFO</span><span style="color:#E0DEF4">  </span><span style="color:#F6C177">Extension</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">URL</span><span style="color:#E0DEF4"> (might </span><span style="color:#F6C177">take</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">a</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">few</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">minutes</span><span style="color:#E0DEF4">): https://marketplace.visualstudio.com/items</span><span style="color:#3E8FB0">?</span><span style="color:#E0DEF4">itemName=mister-gold.my-first-pack</span></span>
 <span class="line"><span style="color:#E0DEF4"> </span><span style="color:#EA9A97">INFO</span><span style="color:#E0DEF4">  </span><span style="color:#F6C177">Hub</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">URL:</span><span style="color:#E0DEF4"> </span><span style="color:#F6C177">https://marketplace.visualstudio.com/manage/publishers/mister-gold/extensions/my-first-pack/hub</span></span>
