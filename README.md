@@ -1,7 +1,5 @@
 # mister-gold.pro
 
-[Personal website of Anton Zolotukhin](https://mister-gold.pro)
-
 ----
 
 [![Deploy to GitHub Pages](https://github.com/bandantonio/bandantonio.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/bandantonio/bandantonio.github.io/actions/workflows/deploy.yml)
